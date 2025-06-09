@@ -1,101 +1,106 @@
-# De novo Genome Assembly and Variant Analysis of Cupriavidus necator H16
+## De novo Genome Assembly and Variant Analysis of *Cupriavidus necator* H16
+
+---
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Objectives](#-objectives)
-- [Materials and Methods](#-materials-and-methods)
-- [Expected Results](#-expected-results)
-- [Budget](#-budget)
-- [Contact](#-contact)
+- [Overview](#overview)
+- [Objectives](#objectives)
+- [Materials and Methods](#materials-and-methods)
+- [Expected Results](#expected-results)
+- [Budget and Explanations](#budget-and-explanations)
+- [Additional Notes on Budget Items](#additional-notes-on-budget-items)
+- [Contact](#contact)
 
 ---
 
 ## Overview
-
-This project focuses on the **de novo assembly and variant analysis** of an industrial strain of *Cupriavidus necator* H16, a model bacterium for polyhydroxyalkanoate (PHA) bioplastic production. The aim is to generate a high-quality genome assembly and identify genetic variants (SNPs, indels, CNVs) compared to the reference strain (DSM 428), with a focus on PHA biosynthetic genes (phaA, phaB, phaC).
+This project aims to generate a high-quality de novo genome assembly of an industrial strain of *Cupriavidus necator* H16, a key model organism for the production of biodegradable plastics (polyhydroxyalkanoates, PHA). The genome of the DSM 428 reference strain is already available (Lu et al., 2019), but industrial strains may exhibit genetic differences impacting PHA productivity. By sequencing, assembling, and analyzing the genome, we aim to identify mutations (SNPs and CNVs) in genes like phaA, phaB, and phaC that could be exploited for strain improvement.
 
 ---
 
 ## Objectives
-
--Generate a de novo genome assembly of an industrial strain of *C. necator* H16.  
--Compare this assembly with the reference genome to identify genomic variants.  
--Annotate the variants and assess their potential impact on PHA production.
+- Assemble a high-quality genome of an industrial strain of *C. necator* H16 using long-read and short-read sequencing.
+- Compare the assembled genome with the DSM 428 reference genome to identify SNPs, indels, and CNVs.
+- Annotate variants in key PHA biosynthesis genes to assess their potential impact on PHA production.
 
 ---
 
 ## Materials and Methods
 
-### 1️⃣ Sample Collection and DNA Extraction  
-- Bacterial strain: industrial strain of *C. necator* H16.  
-- DNA extraction using commercial kits.  
-- DNA quality check: Nanodrop (A260/280), Qubit, agarose gel electrophoresis.
+### Sample Collection and DNA Extraction
+- An industrial strain of *C. necator* H16 will be grown in LB medium at 30°C.
+- Genomic DNA will be extracted using Qiagen DNeasy Blood & Tissue Kit.
+- Quality of the DNA will be assessed using Nanodrop (A260/280), Qubit, and agarose gel electrophoresis.
 
-### 2️⃣ Sequencing  
-- **Long-read sequencing**: PacBio HiFi reads (~100X coverage).  
-- **Short-read sequencing**: Illumina paired-end 150 bp (~100X coverage).
+### Sequencing
+- Long-read sequencing: PacBio HiFi (~100X genome coverage).
+- Short-read sequencing: Illumina NovaSeq 6000 PE150 (~100X genome coverage).
 
-### 3️⃣ Quality Control  
-- **FASTQC**: quality assessment of raw reads.  
-- **Prinseq**: trimming of low-quality bases and adapter removal.
+### Quality Control
+- FastQC: assessment of raw read quality.
+- Prinseq: trimming of low-quality reads and adapters.
 
-### 4️⃣ Genome Assembly  
-- **Flye**: assembly of PacBio long reads.  
-- **Pilon**: polishing of the assembly using Illumina reads.  
-- **QUAST**: assessment of assembly quality (N50, L50, completeness).
+### Genome Assembly
+- Flye: assembly of long reads.
+- Pilon: polishing of the assembly with Illumina short reads.
+- QUAST: assessment of assembly quality (N50, L50, completeness).
 
-### 5️⃣ Genome Annotation  
-- **Prokka**: automated annotation of the bacterial genome.  
-- **Ensembl Bacteria**: functional annotation and reference data integration.
+### Genome Annotation
+- Prokka: rapid bacterial genome annotation.
+- Ensembl Bacteria: functional reference and confirmation of key genes.
 
-### 6️⃣ Variant Calling and Analysis  
-- **BWA**: alignment of Illumina reads to the reference genome (DSM 428).  
-- **Samtools**: manipulation of BAM files (sorting, indexing).  
-- **GATK HaplotypeCaller**: SNP and indel calling.  
-- **VCFtools**: variant filtration (QUAL>30, DP>10).  
-- **SnpEff**: variant effect annotation.  
-- **CNV detection**: coverage-based analysis (CNVnator or similar, if required).
+### Variant Analysis
+- BWA: alignment of Illumina reads to the reference genome DSM 428.
+- Samtools: manipulation of BAM files (sorting, indexing).
+- GATK HaplotypeCaller: variant calling for SNPs and indels.
+- VCFtools: filtering of variant calls (QUAL >30, DP >10).
+- SnpEff: annotation of variant effects.
+- CNVnator (or coverage-based analysis): detection of CNVs.
 
-### 7️⃣ Visualization and Reporting  
-- **IGV (Integrative Genomics Viewer)**: visualization of variant calls and coverage.
+### Visualization
+- IGV: visualization of variant calls and read alignments.
 
 ---
 
 ## Expected Results
-
-- High-quality de novo genome assembly of the industrial strain.  
-- Complete list of SNPs, indels and CNVs compared to the reference genome.  
-- Functional annotation of variants in PHA biosynthetic genes (phaA, phaB, phaC).  
-- Summary tables and visual reports for downstream applications.
+- A high-quality genome assembly of the industrial strain of *C. necator* H16.
+- A list of SNPs, indels, and CNVs compared to the DSM 428 reference.
+- Annotated variants in PHA biosynthesis genes (phaA, phaB, phaC).
+- Tables and summary figures to support downstream analyses.
 
 ---
 
-## Budget (Indicative)
+## Budget and Explanations
 
-**Total Budget**: **200,000 €**  
+| Step                               | Estimated Cost (€) | Description |
+|------------------------------------|--------------------|-------------|
+| Sample prep & DNA extraction       | 2,000              | Includes culture media, DNA extraction kits, quality control reagents (Nanodrop, Qubit) and laboratory consumables. |
+| PacBio sequencing                  | 60,000             | Covers library preparation (SMRTbell kit) and sequencing (~100X genome coverage). Essential for long-read assembly. |
+| Illumina sequencing                | 30,000             | Includes library preparation and sequencing (PE150, ~100X coverage). Used for polishing and accurate variant detection. |
+| Library preparation kits           | 10,000             | Specific kits for both PacBio and Illumina library construction. |
+| Assembly and variant analysis      | 30,000             | Covers bioinformatics software licensing, computational time, storage, and personnel time for genome assembly, variant calling, and annotation. |
+| Personnel (6 months)               | 60,000             | Researcher(s) dedicated to lab work, data analysis, and reporting. |
+| Dissemination & consumables        | 8,000              | Costs for report preparation, figures, presentations, and general laboratory consumables (pipettes, gloves, safety equipment). |
+| **Total**                          | **200,000**        |  |
 
-| Step | Cost (€) |
-|------|----------|
-| Sample prep and DNA extraction | 2,500 |
-| PacBio sequencing | 50,000 |
-| Illumina sequencing | 30,000 |
-| Library preparation (PacBio + Illumina) | 10,000 |
-| Assembly and variant analysis | 30,000 |
-| Personnel (6 months) | 60,000 |
-| Dissemination and consumables | 5,000 |
-| **Total** | **187,500** |
+---
+
+## Additional Notes on Budget Items
+- **Sample prep & DNA extraction**: High-quality DNA is critical for PacBio sequencing success.
+- **PacBio sequencing**: Long reads help assemble repetitive regions and reduce assembly fragmentation.
+- **Illumina sequencing**: High-accuracy short reads are essential for polishing the assembly and for robust variant calling.
+- **Library preparation kits**: Essential for constructing sequencing-ready DNA libraries with appropriate quality and insert size.
+- **Assembly and variant analysis**: Includes costs for software tools (some may require licenses or cloud resources) and for trained bioinformaticians.
+- **Personnel**: Reflects a half-year contract for one researcher, including social costs and benefits.
+- **Dissemination & consumables**: Covers publication fees, figure preparation, basic lab materials, and safety compliance.
 
 ---
 
 ## Contact
+Martina Castellucci 
+Applied Genomics Project – University of Bologna  
+Email: martina.castellucci@studio.unibo.it
 
-For questions, please contact:  
-**[Martina Castellucci]**  
-*Applied Genomics Project – University of Bologna*  
-Email: [martina.castellucci@studio.unibo.it]
-
----
-
-
+## Project Structure
 
