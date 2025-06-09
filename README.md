@@ -97,9 +97,8 @@ This project aims to generate a high-quality de novo genome assembly of an indus
 ---
 
 ## Contact
+
 Martina Castellucci 
+
 Applied Genomics Project – University of Bologna  
 Email: martina.castellucci@studio.unibo.it
-
-## Project Structure
-
