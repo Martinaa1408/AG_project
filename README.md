@@ -1,5 +1,17 @@
 # De novo Genome Assembly and Variant Analysis of Cupriavidus necator H16
 
+## Table of Contents
+
+- [Overview](#-overview)
+- [Objectives](#-objectives)
+- [Materials and Methods](#-materials-and-methods)
+- [Expected Results](#-expected-results)
+- [Computational Resources](#-computational-resources)
+- [Budget](#-budget)
+- [Contact](#-contact)
+
+---
+
 ## Overview
 
 This project focuses on the **de novo assembly and variant analysis** of an industrial strain of *Cupriavidus necator* H16, a model bacterium for polyhydroxyalkanoate (PHA) bioplastic production. The aim is to generate a high-quality genome assembly and identify genetic variants (SNPs, indels, CNVs) compared to the reference strain (DSM 428), with a focus on PHA biosynthetic genes (phaA, phaB, phaC).
@@ -69,6 +81,8 @@ This project focuses on the **de novo assembly and variant analysis** of an indu
 ---
 
 ## Budget (Indicative)
+
+**Total Budget**: **200,000 €**  
 
 | Step | Cost (€) |
 |------|----------|
