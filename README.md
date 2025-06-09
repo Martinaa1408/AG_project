@@ -1,9 +1,5 @@
-# README
+## De novo Genome Sequencing and Comparative Genomic Analysis of *Cupriavidus necator* H16 for Bioeconomy Applications
 
-## Project Title
-De novo Genome Sequencing and Comparative Genomic Analysis of *Cupriavidus necator* H16 for Bioeconomy Applications
-
----
 
 ## Table of Contents
 
