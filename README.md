@@ -9,7 +9,7 @@
 - [Methodological Pipeline](#methodological-pipeline)
 - [Detailed Cost Breakdown](#detailed-cost-breakdown)
 - [Expected Results and Bioeconomy Impact](#expected-results-and-bioeconomy-impact)
-- [Alignment with Applied Genomics Course](#alignment-with-applied-genomics-course)
+- [Sequencing Technology Overview](#sequencing-technology-overview)
 - [Data Management](#data-management)
 - [References](#references)
 - [Contact](#contact)
@@ -18,6 +18,10 @@
 
 ## Project Overview
 This project supports the sustainable production of biodegradable plastics (polyhydroxyalkanoates, PHAs) through applied genomics. By sequencing and comparing the genome of an industrial strain to the reference strain (DSM 428) and additional industrial strains, the project aims to identify key genes and pathways relevant to industrial PHA production, aligning with circular bioeconomy goals.
+
+### About *Cupriavidus necator* H16
+
+*Cupriavidus necator* H16 (DSM 428) is a Gram-negative, hydrogen-oxidizing bacterium known for its ability to produce polyhydroxyalkanoates (PHAs), a class of biodegradable plastics. Its genome has been fully sequenced (Lu et al., 2019) and is available in public repositories. Although this bacterium is used as a production platform in industrial biotechnology, it is **not the primary focus of this project**. Instead, its genome serves as a reference for comparative analysis and supports the identification of pathways relevant to bioplastic production.
 
 ---
 
@@ -85,11 +89,20 @@ PHAs are industrially relevant bioplastics that reduce reliance on fossil fuels.
 
 ---
 
-## Alignment with Applied Genomics Course
-This project aligns with the Applied Genomics course by integrating:
-- **Sequencing technologies** (Illumina and PacBio) as studied in class.
-- **De novo assembly and annotation** using tools discussed in the course.
-- **Comparative genomics** to link genetic differences to industrial performance, supporting applied research goals and sustainability.
+## Sequencing Technology Overview
+
+| Technology       | Read Length      | Coverage      | Phred Score | Advantages                                              | Typical Use            |
+|------------------|------------------|---------------|-------------|---------------------------------------------------------|------------------------|
+| Illumina NovaSeq | ~150 bp (paired) | ~100X         | >30         | Accurate base calling; cost-effective; high throughput  | Variant calling; polishing |
+| PacBio HiFi      | ~15–20 kb        | ~50–100X      | >30         | Long reads resolve repeats; high consensus accuracy     | De novo assembly       |
+
+### Additional Concepts
+- **Coverage**: higher coverage increases confidence in genome assembly and variant calling.  
+- **Phred Score**: indicates sequencing quality; >30 means 99.9% accuracy.  
+- **Hybrid Assembly**: combines long reads for structure and short reads for polishing.  
+- **Annotation**: identifies coding sequences, regulatory elements, and pathways (e.g., phaA, phaB, phaC).  
+- **Comparative Genomics**: highlights differences and similarities with DSM 428 and industrial strains, aiding in strain optimization.
+
 
 ---
 
@@ -104,6 +117,8 @@ This project aligns with the Applied Genomics course by integrating:
 
 - Lu, Y. et al. (2019). Complete genome sequence of *Cupriavidus necator* H16 (DSM 428). Microbiology Resource Announcements.  
   https://journals.asm.org/doi/10.1128/mra.00814-19
+- *Cupriavidus necator* H16 (DSM 428) — DSMZ Strain Information:  
+  https://bacmedia.dsmz.de/strains/view/DSM%20428
 - Applied Genomics course materials – University of Bologna.
 - Illumina NovaSeq: https://www.illumina.com/systems/sequencing-platforms/novaseq.html
 - PacBio HiFi sequencing: https://www.pacb.com/hifi-sequencing/
