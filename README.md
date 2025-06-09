@@ -1,6 +1,5 @@
 ## De novo Genome Assembly and Variant Analysis of *Cupriavidus necator* H16
 
----
 
 ## Table of Contents
 
