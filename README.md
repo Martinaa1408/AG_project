@@ -9,6 +9,7 @@
 - [Expected Results](#expected-results)
 - [Budget and Explanations](#budget-and-explanations)
 - [Additional Notes on Budget Items](#additional-notes-on-budget-items)
+- [References](#references)
 - [Contact](#contact)
 
 ---
@@ -93,6 +94,22 @@ This project aims to generate a high-quality de novo genome assembly of an indus
 - **Assembly and variant analysis**: Includes costs for software tools (some may require licenses or cloud resources) and for trained bioinformaticians.
 - **Personnel**: Reflects a half-year contract for one researcher, including social costs and benefits.
 - **Dissemination & consumables**: Covers publication fees, figure preparation, basic lab materials, and safety compliance.
+
+---
+
+## References
+
+- Lu, Y. et al. (2019). Complete genome sequence of *Cupriavidus necator* H16 (DSM 428). Microbiology Resource Announcements. https://journals.asm.org/doi/10.1128/mra.00814-19  
+- Applied Genomics course notes, University of Bologna.  
+- Official documentation of key bioinformatics tools:  
+  - Flye: https://github.com/fenderglass/Flye  
+  - Pilon: https://github.com/broadinstitute/pilon  
+  - BWA: http://bio-bwa.sourceforge.net/  
+  - Samtools: http://www.htslib.org/  
+  - GATK HaplotypeCaller: https://gatk.broadinstitute.org/  
+  - VCFtools: https://vcftools.github.io/  
+  - SnpEff: http://snpeff.sourceforge.net/  
+  - IGV: https://software.broadinstitute.org/software/igv/  
 
 ---
 
