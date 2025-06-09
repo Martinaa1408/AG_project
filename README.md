@@ -1,4 +1,4 @@
-## De novo Genome Sequencing and Comparative Genomic Analysis of *Cupriavidus necator* H16 for Bioeconomy Applications
+## De novo Genome Sequencing and Comparative Genomic Analysis for Bioeconomic Optimization of Bioplastic Production
 
 
 ## Table of Contents
@@ -9,56 +9,56 @@
 - [Methodological Pipeline](#methodological-pipeline)
 - [Detailed Cost Breakdown](#detailed-cost-breakdown)
 - [Expected Results and Bioeconomy Impact](#expected-results-and-bioeconomy-impact)
+- [Alignment with Applied Genomics Course](#alignment-with-applied-genomics-course)
 - [Data Management](#data-management)
+- [References](#references)
 - [Contact](#contact)
 
 ---
 
 ## Project Overview
-This project focuses on the **de novo genome sequencing** of an industrial strain of *Cupriavidus necator* H16, combined with a **comparative analysis** against the reference strain (DSM 428) and selected industrial strains. The aim is to identify key genomic features relevant to sustainable bioplastic production, aligning with the principles of the bioeconomy.
+This project supports the sustainable production of biodegradable plastics (polyhydroxyalkanoates, PHAs) through applied genomics. By sequencing and comparing the genome of an industrial strain to the reference strain (DSM 428) and additional industrial strains, the project aims to identify key genes and pathways relevant to industrial PHA production, aligning with circular bioeconomy goals.
 
 ---
 
 ## Background and Rationale
-*Cupriavidus necator* H16 is an industrially relevant bacterium known for producing polyhydroxyalkanoates (PHAs), a family of biodegradable plastics. The genome of the reference strain (DSM 428) is publicly available, but industrial strains may present genomic variations that influence PHA yields and stress tolerance. Comparative genomic analysis is crucial to identify key differences, guiding future metabolic engineering and contributing to circular economy initiatives.
-
-This approach ensures that the project is not solely focused on bacteria but integrates **genome assembly, annotation, and comparative genomics**, thus aligning with the recommended project guidelines.
+PHAs are industrially relevant bioplastics that reduce reliance on fossil fuels. Industrial production using bacterial fermentation is an established process, yet strain performance can vary significantly. Integrating **de novo genome assembly, annotation, and comparative analysis** allows the identification of genomic differences that may affect PHA yields and stress tolerance, supporting targeted strain improvement strategies aligned with bioeconomic sustainability.
 
 ---
 
 ## Objectives
-- Assemble a high-quality genome of an industrial strain of *C. necator* H16 using long-read and short-read sequencing.
-- Annotate the genome, focusing on genes involved in PHA production and relevant metabolic pathways.
-- Compare the assembled genome with the reference strain DSM 428 and with selected industrial strains to identify genomic differences that may impact bioplastic production.
-- Contribute to sustainable industrial processes through applied genomics research.
+- Generate a high-quality genome assembly of an industrial strain used in PHA production using long- and short-read sequencing.
+- Annotate the genome with a focus on PHA biosynthesis pathways and stress-response genes.
+- Compare the industrial strain’s genome to the DSM 428 reference and other industrial strains to identify relevant genomic differences.
+- Apply findings to support sustainable and efficient bioplastic production.
 
 ---
 
 ## Methodological Pipeline
 
-### 1. Sample Collection and DNA Extraction
-- Culture the industrial strain in appropriate media under controlled conditions.
-- Extract high-molecular-weight DNA using commercial kits (e.g., Qiagen DNeasy).
-- Assess DNA purity (Nanodrop) and concentration (Qubit).
+### 1. Sample Preparation and DNA Extraction
+- Grow the industrial strain in standard laboratory conditions.
+- Extract high-quality genomic DNA using Qiagen DNeasy or similar kits.
+- Assess DNA quality and concentration using Nanodrop and Qubit.
 
 ### 2. Sequencing
-- **Short-read sequencing**: Illumina NovaSeq PE150 (~100X coverage) for high-accuracy base calls.
-- **Long-read sequencing**: PacBio HiFi (~50-100X coverage) to improve assembly contiguity.
+- **Short-read sequencing**: Illumina NovaSeq PE150 (~100X coverage) for accurate base calling.
+- **Long-read sequencing**: PacBio HiFi (~50-100X coverage) to enhance assembly quality.
 
 ### 3. Genome Assembly
-- Assemble long reads with Flye or a similar assembler.
+- Assemble long reads using a suitable assembler (e.g. Flye or equivalent).
 - Polish the assembly using Illumina reads with Pilon.
-- Evaluate assembly quality using QUAST (N50, L50, completeness).
+- Assess assembly quality using QUAST (N50, L50, completeness).
 
 ### 4. Genome Annotation
-- Annotate genes using Prokka.
-- Cross-reference PHA-related genes (e.g., phaA, phaB, phaC) with public databases and literature.
+- Annotate the genome using Prokka.
+- Focus on PHA-related genes (phaA, phaB, phaC) and stress response genes.
 
 ### 5. Comparative Genomics
-- Compare the assembled genome with:
+- Compare the assembled genome to:
   - The DSM 428 reference genome.
-  - Additional industrial strains available in public repositories (e.g., NCBI).
-- Use tools like Mauve or MUMmer to identify synteny, insertions/deletions, and gene cluster differences.
+  - Other industrial strains from public repositories (e.g. NCBI).
+- Identify gene differences, insertions/deletions, and synteny using alignment tools.
 
 ---
 
@@ -66,34 +66,57 @@ This approach ensures that the project is not solely focused on bacteria but int
 
 | Activity | Estimated Cost (€) | Description |
 |-------------------------------|--------------------|-------------|
-| Sample Preparation & DNA Extraction | 5,000 | Media, DNA extraction kits, quality checks (Nanodrop, Qubit). |
-| Illumina Sequencing | 35,000 | Short-read sequencing with library preparation. |
-| PacBio Sequencing | 50,000 | Long-read sequencing with library preparation. |
-| Assembly and Annotation | 20,000 | Genome assembly, polishing, and annotation with essential software. |
-| Comparative Analysis | 15,000 | Identification of gene differences, synteny, and visualization. |
-| Personnel (essential) | 60,000 | Researcher(s) dedicated to lab work, data curation, and report preparation. |
-| Dissemination & Consumables | 15,000 | Reports, presentations, laboratory supplies. |
+| Sample Preparation & DNA Extraction | 5,000 | Media, extraction kits, quality checks. |
+| Illumina Sequencing | 35,000 | Short-read sequencing and library preparation. |
+| PacBio Sequencing | 50,000 | Long-read sequencing and library preparation. |
+| Assembly and Annotation | 20,000 | Genome assembly, polishing, and annotation. |
+| Comparative Analysis | 15,000 | Gene cluster analysis, synteny, visualization. |
+| Personnel (essential) | 60,000 | Lab work, data management, report preparation. |
+| Dissemination & Consumables | 15,000 | Reports, presentations, lab supplies. |
 | **Total** | **200,000** |  |
 
 ---
 
 ## Expected Results and Bioeconomy Impact
-- Generation of a complete, high-quality genome assembly of the industrial strain.
-- Identification of genes and pathways relevant to PHA production and stress adaptation.
-- Comparative insights that support strain optimization and sustainable bioplastic production.
-- Contribution to the European bioeconomy strategy through applied genomics research.
+- High-quality genome assembly of the industrial strain.
+- Annotation of PHA biosynthesis genes and stress-related pathways.
+- Comparative insights to support strain optimization and sustainable production.
+- Contribution to the European bioeconomy strategy by enabling improved bioplastic production.
+
+---
+
+## Alignment with Applied Genomics Course
+This project aligns with the Applied Genomics course by integrating:
+- **Sequencing technologies** (Illumina and PacBio) as studied in class.
+- **De novo assembly and annotation** using tools discussed in the course.
+- **Comparative genomics** to link genetic differences to industrial performance, supporting applied research goals and sustainability.
 
 ---
 
 ## Data Management
-- All sequencing data and assemblies will be stored securely on institutional servers.
-- Data will be submitted to NCBI SRA/ENA for public access.
-- Reports, figures, and scripts will be stored in a dedicated GitHub repository.
+- Data stored on secure institutional servers.
+- Raw reads and assemblies deposited in public repositories (e.g. NCBI SRA/ENA).
+- Reports, figures, and protocols managed in a dedicated GitHub repository.
+
+---
+
+## References
+
+- Lu, Y. et al. (2019). Complete genome sequence of *Cupriavidus necator* H16 (DSM 428). Microbiology Resource Announcements.  
+  https://journals.asm.org/doi/10.1128/mra.00814-19
+- Applied Genomics course materials – University of Bologna.
+- Illumina NovaSeq: https://www.illumina.com/systems/sequencing-platforms/novaseq.html
+- PacBio HiFi sequencing: https://www.pacb.com/hifi-sequencing/
+- Prokka: https://github.com/tseemann/prokka
+- BWA: http://bio-bwa.sourceforge.net/
+- Samtools: http://www.htslib.org/
+- GATK HaplotypeCaller: https://gatk.broadinstitute.org/
+- VCFtools: https://vcftools.github.io/
+- FastQC: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
 ---
 
 ## Contact
-Martina Castellucci 
-
+Martina Castellucci  
 Applied Genomics Project – University of Bologna  
 Email: martina.castellucci@studio.unibo.it
