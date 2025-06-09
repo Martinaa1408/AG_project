@@ -6,7 +6,6 @@
 - [Objectives](#-objectives)
 - [Materials and Methods](#-materials-and-methods)
 - [Expected Results](#-expected-results)
-- [Computational Resources](#-computational-resources)
 - [Budget](#-budget)
 - [Contact](#-contact)
 
@@ -72,14 +71,6 @@ This project focuses on the **de novo assembly and variant analysis** of an indu
 
 ---
 
-## Computational Resources
-
-- Linux environment with standard bioinformatics tools (command-line).  
-- Sufficient RAM (≥128 GB) for assembly and polishing steps.  
-- Storage (~1–2 TB) for raw and processed data.
-
----
-
 ## Budget (Indicative)
 
 **Total Budget**: **200,000 €**  
@@ -100,9 +91,9 @@ This project focuses on the **de novo assembly and variant analysis** of an indu
 ## Contact
 
 For questions, please contact:  
-**[Your Name]**  
+**[Martina Castellucci]**  
 *Applied Genomics Project – University of Bologna*  
-Email: [your-email@example.com]
+Email: [martina.castellucci@studio.unibo.it]
 
 ---
 
