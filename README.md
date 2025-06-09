@@ -21,7 +21,7 @@ This project supports the sustainable production of biodegradable plastics (poly
 
 ### About *Cupriavidus necator* H16
 
-*Cupriavidus necator* H16 (DSM 428) is a Gram-negative, hydrogen-oxidizing bacterium known for its ability to produce polyhydroxyalkanoates (PHAs). Its genome has been fully sequenced (Lu et al., 2019) and is available in public repositories. Although this bacterium is used as a production platform in industrial biotechnology, it is **not the primary focus of this project**. Instead, its genome serves as a reference for comparative analysis and supports the identification of pathways relevant to bioplastic production.
+*Cupriavidus necator* H16 (DSM 428) is a Gram-negative, facultative chemolithoautotrophic bacterium known for its remarkable metabolic versatility. It can grow on organic substrates (heterotrophy) or by fixing carbon dioxide using hydrogen as an energy source (autotrophy). Notably, C. necator H16 is widely recognized for its ability to produce polyhydroxyalkanoates (PHAs), biodegradable bioplastics of significant interest for the bioeconomy. Its genome comprises two chromosomes and a megaplasmid, with a total size of approximately 7.4 Mb. The well-characterized genome makes it an excellent model for studies on industrial bioproduction of bioplastics and sustainable bioprocesses.
 
 ---
 
