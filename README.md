@@ -1,4 +1,4 @@
-# De novo Genome Sequencing and Comparative Genomic Analysis of a Novel Fungal Isolate for Bioeconomic Applications in Bioplastic Degradation
+# De novo Genome Sequencing and Functional Annotation of a PLA-Degrading Fungal Isolate for Bioeconomic Innovation
 
 ## Table of Contents
 
