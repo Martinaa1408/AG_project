@@ -1,4 +1,4 @@
-# De novo Genome Sequencing and Comparative Genomic Analysis for Bioeconomic Optimization of Bioplastic Degradation in Fusarium solani
+# De novo Genome Sequencing and Comparative Genomic Analysis of a Novel Fungal Isolate for Bioeconomic Applications in Bioplastic Degradation
 
 ## Table of Contents
 
@@ -16,49 +16,51 @@
 ---
 
 ## Project Overview
-This project aims to support sustainable solutions to plastic pollution by exploring the biodegradation potential of fungi. Through the de novo sequencing and comparative analysis of the fungal genome of *Fusarium solani*, isolated from a bioplastic-contaminated soil, the study will identify candidate genes encoding enzymes involved in the degradation of biodegradable plastics such as PLA, PHA, and PCL. This genomic approach contributes to the circular bioeconomy by enabling nature-based waste management strategies.
+This project applies advanced genomic techniques to support the circular bioeconomy by identifying fungal genes involved in the enzymatic degradation of biodegradable plastics. A novel fungal isolate was obtained from a compost bin containing PLA (polylactic acid) fragments. Through whole-genome sequencing, de novo assembly, functional annotation, and comparative genomics, this study aims to uncover new enzymes potentially useful in sustainable waste management.
 
 ---
 
 ## Background and Rationale
-Biodegradable plastics like PLA are increasingly used as eco-friendly alternatives to petroleum-based polymers. However, their natural degradation remains limited without specific microbial or enzymatic interventions. Fungi, particularly *Fusarium solani*, have demonstrated the ability to degrade PLA via extracellular enzymes (e.g., esterases, cutinases). Yet, the genomic determinants of this phenotype remain poorly characterized. By sequencing and analyzing the genome of *F. solani*, this project provides insights into its biotechnological potential for bioplastic degradation.
+The accumulation of plastic waste, even biodegradable plastics like PLA and PHA, represents a growing environmental issue. Fungi are underexplored but promising candidates for biodegradation, thanks to their ability to secrete powerful extracellular enzymes such as esterases and cutinases. This project is aligned with the core themes of Applied Genomics, focusing on sequencing-based genome analysis and functional annotation. By characterizing the genome of a novel fungal strain isolated from a PLA-contaminated site, we aim to contribute to innovative solutions in environmental biotechnology and bioeconomy.
 
 ---
 
 ## Objectives
-- Perform high-quality de novo sequencing and genome assembly of an environmental *Fusarium solani* strain.
-- Annotate the genome with a focus on genes encoding enzymes such as esterases, cutinases, and depolymerases.
-- Compare the genome to related fungal species with known enzymatic capabilities (*Trichoderma reesei*, *Aspergillus niger*).
-- Identify conserved and unique gene clusters that may contribute to bioplastic degradation.
+- Isolate and characterize a fungal strain from a compostable PLA-contaminated environment.
+- Perform high-quality whole-genome sequencing and de novo assembly using hybrid technologies.
+- Annotate coding sequences and identify gene families involved in bioplastic degradation.
+- Compare the genome to those of known industrial fungal species to highlight unique enzymatic features.
+- Provide a publicly available genome resource to support future functional and biotechnological studies.
 
 ---
 
 ## Methodological Pipeline
 
-### 1. Fungal Isolation and DNA Extraction
-- Soil sample collection from a PLA-contaminated environment.
-- Fungal isolation via plating and morphological selection.
-- Genomic DNA extraction using a fungal-specific protocol (e.g., CTAB-based or commercial kits).
-- DNA quality control with Nanodrop, Qubit, and gel electrophoresis.
+### 1. Sample Collection and Fungal Isolation
+- Soil and compost samples were collected from a household compost bin containing partially degraded PLA cups.
+- Fungal strains growing directly on PLA fragments were isolated on PDA media and screened for esterase-like activity.
 
-### 2. Sequencing
-- **Illumina NovaSeq (PE150, ~100X coverage)** for high-accuracy short reads.
-- **Oxford Nanopore (MinION/GridION, ~30–50X coverage)** for long reads supporting assembly continuity.
+### 2. DNA Extraction and QC
+- High molecular weight genomic DNA was extracted using a CTAB-based protocol adapted for filamentous fungi.
+- DNA quality and concentration were evaluated via Nanodrop, Qubit, and agarose gel electrophoresis.
 
-### 3. Genome Assembly
-- Long-read assembly using Flye.
-- Polishing with short reads using Pilon.
-- Evaluation of assembly metrics (N50, completeness via BUSCO, total genome size).
+### 3. Genome Sequencing
+- **Short-read sequencing**: Illumina NovaSeq PE150 (~100X coverage) for accurate base-calling.
+- **Long-read sequencing**: Oxford Nanopore (MinION/GridION, ~30–50X coverage) to support contiguity and structural resolution.
 
-### 4. Genome Annotation
-- Gene prediction using BRAKER2 and Augustus.
-- Functional annotation with InterProScan, eggNOG-mapper, Pfam, and KEGG.
-- Targeted search for genes with domains associated with plastic degradation (esterases, cutinases, lipases).
+### 4. Assembly and Quality Assessment
+- Long reads assembled using Flye; short reads used to polish the assembly with Pilon.
+- Assembly quality assessed via QUAST (N50, L50) and BUSCO with the "fungi_odb10" dataset.
 
-### 5. Comparative Genomics
-- Whole-genome comparison against *Trichoderma reesei* and *Aspergillus niger* reference genomes.
-- Orthologous cluster identification via OrthoFinder.
-- Synteny and gene cluster visualization using MCScanX or similar tools.
+### 5. Genome Annotation
+- Gene prediction performed with BRAKER2 and Augustus.
+- Functional annotation using InterProScan, eggNOG-mapper, Pfam, and KEGG.
+- Identification of putative bioplastic-degrading enzymes based on the presence of relevant domains (e.g., esterase, cutinase, lipase, PHA depolymerase).
+
+### 6. Comparative Genomic Analysis
+- Whole-genome comparison with *Trichoderma reesei*, *Aspergillus niger*, and selected Fusarium species.
+- Ortholog identification with OrthoFinder and gene family clustering.
+- Synteny analysis with MCScanX to highlight conserved and strain-specific regions.
 
 ---
 
@@ -66,22 +68,25 @@ Biodegradable plastics like PLA are increasingly used as eco-friendly alternativ
 
 | Activity | Estimated Cost (€) | Description |
 |-------------------------------|--------------------|-------------|
-| Isolation & DNA Extraction | 5,000 | Soil processing, fungal growth, DNA kits |
-| Illumina Sequencing | 30,000 | Paired-end sequencing (NovaSeq) |
-| Nanopore Sequencing | 50,000 | Long-read sequencing (MinION/GridION) |
-| Assembly and Annotation | 25,000 | Assembly pipelines, annotation, software licenses |
-| Comparative Genomics | 20,000 | Reference genome analysis, visualization |
-| Personnel | 60,000 | Salary for wet lab and computational staff |
-| Dissemination & Consumables | 10,000 | Lab supplies, reporting, data sharing |
+| Sampling & Isolation | 3,000 | Compost handling, fungal plating |
+| DNA Extraction & QC | 2,000 | Fungal genomic DNA protocol, reagents |
+| Illumina PE150 Sequencing | 30,000 | Short-read sequencing and library prep |
+| Oxford Nanopore Sequencing | 50,000 | Long-read sequencing |
+| Genome Assembly & Polishing | 10,000 | Hybrid assembly with Flye and Pilon |
+| Functional Annotation | 15,000 | BRAKER2, InterProScan, KEGG, etc. |
+| Comparative Genomics | 20,000 | Ortholog detection, synteny, tree building |
+| Personnel (lab & bioinfo) | 60,000 | Wet and dry lab salaries |
+| Reports, Dissemination | 10,000 | Final report, poster, publications |
 | **Total** | **200,000** |  |
 
 ---
 
 ## Expected Results and Bioeconomy Impact
-- A high-quality annotated genome of *Fusarium solani* from a bioplastic environment.
-- Identification of candidate genes and pathways for plastic degradation.
-- Comparative insights into enzymatic repertoires across relevant fungal species.
-- Foundation for applied biotechnology aimed at plastic biodegradation and bioeconomy innovation.
+- High-quality annotated genome of a novel fungal isolate from a PLA-contaminated environment.
+- Identification of novel enzyme-coding genes involved in plastic degradation.
+- Comparative insights into the evolution of fungal biodegradative capacity.
+- New genomic data to support the development of fungal-based biodegradation strategies.
+- Contribution to European Green Deal objectives by promoting nature-based, genomics-informed waste solutions.
 
 ---
 
@@ -89,29 +94,37 @@ Biodegradable plastics like PLA are increasingly used as eco-friendly alternativ
 
 | Technology       | Read Length      | Coverage      | Phred Score | Advantages                                              | Typical Use            |
 |------------------|------------------|---------------|-------------|---------------------------------------------------------|------------------------|
-| Illumina NovaSeq | ~150 bp (paired) | ~100X         | >30         | Accurate and affordable base calling                    | Polishing and variant calling |
-| Oxford Nanopore  | ~15–20 kb        | ~30–50X       | >30         | Captures long genomic repeats; portable                  | De novo assembly       |
+| Illumina NovaSeq | ~150 bp (paired) | ~100X         | >30         | High accuracy, ideal for polishing and SNP calling      | Polishing assemblies   |
+| Oxford Nanopore  | ~10–20 kb        | ~30–50X       | >30         | Long reads capture repetitive and structural features   | De novo assembly       |
+
+### Additional Concepts (aligned with AG course)
+- **Coverage**: ensures redundancy and confidence in variant calling and assembly.
+- **Hybrid assembly**: combines the structural accuracy of long reads with the base-level precision of short reads.
+- **BUSCO**: benchmark for genome completeness using orthologous genes.
+- **Orthology inference**: essential for identifying conserved biodegradation pathways in comparative genomics.
+- **Domain-based annotation**: key to enzyme discovery in functional genomics.
 
 ---
 
 ## Data Management
-- Raw reads and final assemblies deposited in ENA/NCBI SRA under open-access BioProject ID.
-- Annotated genome, metadata, and analysis scripts maintained in this GitHub repository.
-- All data handled under FAIR principles and institutional data protection policies.
+- Raw sequencing data deposited to ENA under open access BioProject ID.
+- Assembly files, annotation tables, and comparative outputs hosted in this GitHub repository.
+- All data and scripts managed under FAIR principles and institutional guidelines.
 
 ---
 
 ## References
 
-- Urbanek, A.K. et al. (2018). Biodegradation of plastics by fungal communities – opportunities and limitations. *Applied Microbiology and Biotechnology*.
-- Ma, Y. et al. (2021). Biodegradation of polylactic acid by *Fusarium* species: gene and enzyme characterization. *Frontiers in Microbiology*.
-- Nanopore sequencing: https://nanoporetech.com  
+- Urbanek, A.K. et al. (2018). Biodegradation of plastics by fungal communities – opportunities and limitations. *Appl Microbiol Biotechnol*.
+- Harms, H. et al. (2021). Plastics in the environment – fungal enzymes to the rescue? *Biotechnol Adv*.
+- BUSCO: https://busco.ezlab.org/
+- BRAKER2: https://github.com/Gaius-Augustus/BRAKER
 - InterProScan: https://www.ebi.ac.uk/interpro/
-- Applied Genomics course materials – University of Bologna
+- Applied Genomics materials – University of Bologna
 
 ---
 
 ## Contact
 Martina Castellucci  
 Email: martina.castellucci@studio.unibo.it  
-Applied Genomics Project – University of Bologna
+Applied Genomics Project – University of Bologna  
