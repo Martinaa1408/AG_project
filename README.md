@@ -66,18 +66,23 @@ The accumulation of plastic waste, even biodegradable plastics like PLA and PHA,
 
 ## Detailed Cost Breakdown
 
-| Activity | Estimated Cost (€) | Description |
-|-------------------------------|--------------------|-------------|
-| Sampling & Isolation | 3,000 | Compost handling, fungal plating |
-| DNA Extraction & QC | 2,000 | Fungal genomic DNA protocol, reagents |
-| Illumina PE150 Sequencing | 30,000 | Short-read sequencing and library prep |
-| Oxford Nanopore Sequencing | 50,000 | Long-read sequencing |
-| Genome Assembly & Polishing | 10,000 | Hybrid assembly with Flye and Pilon |
-| Functional Annotation | 15,000 | BRAKER2, InterProScan, KEGG, etc. |
-| Comparative Genomics | 20,000 | Ortholog detection, synteny, tree building |
-| Personnel (lab & bioinfo) | 60,000 | Wet and dry lab salaries |
-| Reports, Dissemination | 10,000 | Final report, poster, publications |
-| **Total** | **200,000** |  |
+| Personnel             | Activity                              | Estimated Cost (€) | Description                                      |
+|----------------------|---------------------------------------|--------------------|--------------------------------------------------|
+| Wet lab Postdoc salary |                                       | 45,000             | One year project                                 |
+|                      | Sampling & Isolation                  | 3,000              | Compost handling, fungal plating                 |
+|                      | DNA Extraction & QC                   | 2,000              | Fungal genomic DNA protocol, reagents            |
+|                      | Illumina PE150 Sequencing             | 30,000             | Short-read sequencing and library prep           |
+|                      | Oxford Nanopore Sequencing            | 50,000             | Long-read sequencing                             |
+|                      | RNA extraction (12 libraries)         | 1,000              |                                                  |
+|                      | RNA library preparation (12 libraries)| 1,500              |                                                  |
+|                      | RNASeq Illumina (12 libraries)        | 2,500              |                                                  |
+| Bioinformatics Postdoc|                                       | 45,000             | One year project                                 |
+|                      | Genome Assembly & Polishing           | 0                  | Hybrid assembly with Flye and Pilon              |
+|                      | Functional Annotation                 | 0                  | BRAKER2, InterProScan, KEGG, etc.                |
+|                      | Comparative Genomics                  | 0                  | Ortholog detection, synteny, tree building       |
+|                      | Non-open source softwares             | 5,000              | Genious & others                                 |
+|                      | Reports, Dissemination                | 15,000             | Publications & Conferences                       |
+|                      | **Total**                             | **200,000**        |                                                  |
 
 ---
 
