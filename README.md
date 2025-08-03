@@ -18,19 +18,19 @@
 
 ## Project Overview
 
-This project applies advanced genomic and transcriptomic techniques to support the circular bioeconomy by identifying fungal genes involved in the enzymatic degradation of biodegradable plastics. A novel fungal isolate was obtained from a compost bin containing PLA (polylactic acid) fragments. Through whole-genome sequencing, de novo assembly, transcriptomic profiling, functional annotation, and comparative genomics, this study aims to uncover new enzymes potentially useful in sustainable waste management.
+This project applies advanced genomic and transcriptomic techniques to support the circular bioeconomy by identifying fungal genes involved in the enzymatic degradation of biodegradable plastics. The chosen isolate is **Purpureocillium lilacinum strain PLA-C1**, a compost-derived filamentous fungus capable of growing on PLA fragments. Through whole-genome sequencing, de novo assembly, transcriptomic profiling, functional annotation, and comparative genomics, this study aims to uncover new enzymes potentially useful in sustainable waste management.
 
 ---
 
 ## Background and Rationale
 
-The accumulation of plastic waste, even biodegradable plastics like PLA and PHA, represents a growing environmental issue. Fungi are underexplored but promising candidates for biodegradation, thanks to their ability to secrete powerful extracellular enzymes such as esterases and cutinases. This project is aligned with the core themes of Applied Genomics, focusing on sequencing-based genome analysis, transcriptomics, and functional annotation. By characterizing the genome and gene expression of a novel fungal strain isolated from a PLA-contaminated site, we aim to contribute to innovative solutions in environmental biotechnology and bioeconomy.
+The accumulation of plastic waste, even biodegradable plastics like PLA and PHA, represents a growing environmental issue. Fungi are underexplored but promising candidates for biodegradation, thanks to their ability to secrete powerful extracellular enzymes such as esterases and cutinases. This project is aligned with the core themes of Applied Genomics, focusing on sequencing-based genome analysis, transcriptomics, and functional annotation. By characterizing the genome and gene expression of **P. lilacinum PLA-C1**, isolated from PLA-contaminated compost, we aim to contribute to innovative solutions in environmental biotechnology and bioeconomy.
 
 ---
 
 ## Objectives
 
-* Isolate and characterize a fungal strain from a compostable PLA-contaminated environment.
+* Isolate and characterize **P. lilacinum PLA-C1** from a compostable PLA-contaminated environment.
 * Perform high-quality whole-genome sequencing and de novo assembly using hybrid technologies.
 * Annotate coding sequences and identify gene families involved in bioplastic degradation.
 * Perform transcriptomic profiling under PLA/PHA-containing media vs control to detect differentially expressed genes.
@@ -46,6 +46,7 @@ The accumulation of plastic waste, even biodegradable plastics like PLA and PHA,
 
 * Soil and compost samples were collected from a household compost bin containing partially degraded PLA cups.
 * Fungal strains growing directly on PLA fragments were isolated on PDA media and screened for esterase-like activity.
+* The selected strain was identified as **Purpureocillium lilacinum PLA-C1** via ITS rDNA sequencing.
 
 ### 2. DNA Extraction and QC
 
@@ -55,19 +56,20 @@ The accumulation of plastic waste, even biodegradable plastics like PLA and PHA,
 ### 3. Genome Sequencing
 
 * **Short-read sequencing**: Illumina NovaSeq PE150 (\~100X coverage) for accurate base-calling.
-* **Long-read sequencing**: Oxford Nanopore (MinION/GridION, \~30–50X coverage) to support contiguity and structural resolution.
+* **Long-read sequencing**: Oxford Nanopore (GridION, \~30–50X coverage) to support contiguity and structural resolution.
 
 ### 4. Assembly and Quality Assessment
 
 * Long reads assembled using Flye; short reads used to polish the assembly with Pilon.
 * Assembly quality assessed via QUAST (N50, L50) and BUSCO with the "fungi\_odb10" dataset.
 
-Expected assembly metrics:
-- Estimated genome size: ~35 Mb
-- Contig N50: >1.0 Mb
-- Number of contigs: <200
-- BUSCO completeness (fungi_odb10): >95%
-- GC content: 48–52%
+Expected assembly metrics for *P. lilacinum* PLA-C1:
+
+* Genome size: \~41.6 Mb
+* N50: \~1.32 Mb
+* Contigs: \~119
+* GC content: \~50.2%
+* BUSCO completeness (fungi\_odb10): \~98.3%
 
 ### 5. Transcriptome Analysis
 
@@ -77,32 +79,23 @@ Expected assembly metrics:
 * Differential expression analysis using DESeq2 to identify overexpressed genes in bioplastic conditions.
 
 RNA-Seq experimental design:
-- Conditions: standard medium, PLA-supplemented, PHA-supplemented
-- Replicates: 4 per condition (total: 12 libraries)
-- RNA integrity: assessed via Bioanalyzer RIN ≥8.0
-- Read depth: ≥20 million paired-end reads per sample
+
+* Conditions: standard medium, PLA-supplemented, PHA-supplemented
+* Replicates: 4 per condition (total: 12 libraries)
+* RNA integrity: RIN ≥ 8.5
+* Read depth: ≥20 million paired-end reads per sample
 
 ### 6. Genome Annotation
 
 * Gene prediction performed with **MAKER3**, integrating evidence from transcriptomic reads, Augustus, and GeneMark.
 * Functional annotation using InterProScan, eggNOG-mapper, Pfam, KEGG, and **Fungal AntiSMASH** for BGCs.
-* Identification of candidate bioplastic-degrading enzymes based on relevant domains (e.g., esterase, cutinase, lipase, PHA depolymerase), refined with **Markov models** for enzyme families.
-
-Candidate enzyme discovery focused on identifying sequences with domains:
-- Esterase/lipase (IPR000379, IPR000734)
-- Cutinase (IPR000675)
-- PHA depolymerase-like (custom HMM profiles from UniProt & literature)
-
-These were validated through:
-- InterProScan domain intersection
-- Cross-check with CAZy families (CE1, CE5, CE15)
-- Manual curation and expression filtering from DESeq2 results
+* Identification of candidate bioplastic-degrading enzymes based on relevant domains (cutinase IPR000675, esterase IPR000379, lipase IPR000734, PHA depolymerase via UniProt HMMs), refined with CAZy and expression filtering.
 
 ### 7. Comparative Genomic Analysis
 
-* Whole-genome comparison with *Trichoderma reesei*, *Aspergillus niger*, selected *Fusarium* species, and non-biodegrading close relatives.
+* Whole-genome comparison with *Talaromyces purpureogenus*, *Paecilomyces variotii*, *Fusarium solani*, and non-biodegrading relatives.
 * Ortholog identification with OrthoFinder and gene family clustering.
-* Synteny analysis and alignment with **MAUVE** (at varying window sizes) and **MCScanX** to highlight lineage-specific genomic regions.
+* Synteny analysis and alignment with **MAUVE** and **MCScanX** to highlight lineage-specific genomic regions.
 
 ### 8. Phylogenetic Analysis
 
@@ -110,24 +103,24 @@ These were validated through:
 * Aligned with MAFFT, conserved blocks selected via Gblocks, concatenated using AMAS.
 * Phylogenetic trees constructed using MEGA11, FastTree, RAxML, and MrBayes.
 
-
 ---
+
 ## Summary Table of Experimental Workflow
 
-| Step | Category             | Tool/Protocol                         | Output                                   |
-|------|----------------------|---------------------------------------|------------------------------------------|
-| 1    | Sample isolation     | PLA-enriched compost plating (PDA)    | Fungal isolate on bioplastic             |
-| 2    | DNA extraction       | CTAB protocol                         | High-MW DNA (>20 kb)                     |
-| 3    | DNA QC               | Nanodrop, Qubit, gel electrophoresis  | DNA concentration and purity             |
-| 4    | Illumina sequencing  | NovaSeq PE150                         | ~100X paired-end reads                   |
-| 5    | Nanopore sequencing  | GridION (LSK-109)                     | Long reads (~30–50X coverage)            |
-| 6    | Assembly             | Flye + Pilon                          | `assembly.fasta`, `quast_report.txt`     |
-| 7    | RNA-Seq              | Illumina PE150                        | 12 libraries (control/PLA/PHA)           |
-| 8    | Expression analysis  | STAR + DESeq2                         | `rna_counts.tsv`, `deseq2_results.csv`   |
-| 9    | Gene prediction      | MAKER3 + Augustus/GeneMark            | `annotation.gff3`, `transcripts.fasta`   |
-|10    | Functional annotation| InterProScan, eggNOG, KEGG, AntiSMASH| Annotated domains, enzymes, BGCs         |
-|11    | Comparative genomics | OrthoFinder + MAUVE/MCScanX           | `orthogroups.tsv`, synteny plots         |
-|12    | Phylogenetics        | MAFFT, RAxML, MrBayes, MEGA11         | `phylogenetic_tree.nwk`                  |
+| Step | Category              | Tool/Protocol                         | Output                                 |
+| ---- | --------------------- | ------------------------------------- | -------------------------------------- |
+| 1    | Sample isolation      | PLA-enriched compost plating (PDA)    | Fungal isolate (PLA-C1)                |
+| 2    | DNA extraction        | CTAB protocol                         | High-MW DNA (>20 kb)                   |
+| 3    | DNA QC                | Nanodrop, Qubit, gel electrophoresis  | DNA concentration and purity           |
+| 4    | Illumina sequencing   | NovaSeq PE150                         | \~100X paired-end reads                |
+| 5    | Nanopore sequencing   | GridION (LSK-109)                     | Long reads (\~30–50X coverage)         |
+| 6    | Assembly              | Flye + Pilon                          | `assembly.fasta`, `quast_report.txt`   |
+| 7    | RNA-Seq               | Illumina PE150                        | 12 libraries (control/PLA/PHA)         |
+| 8    | Expression analysis   | STAR + DESeq2                         | `rna_counts.tsv`, `deseq2_results.csv` |
+| 9    | Gene prediction       | MAKER3 + Augustus/GeneMark            | `annotation.gff3`, `transcripts.fasta` |
+| 10   | Functional annotation | InterProScan, eggNOG, KEGG, AntiSMASH | Annotated domains, enzymes, BGCs       |
+| 11   | Comparative genomics  | OrthoFinder + MAUVE/MCScanX           | `orthogroups.tsv`, synteny plots       |
+| 12   | Phylogenetics         | MAFFT, RAxML, MrBayes, MEGA11         | `phylogenetic_tree.nwk`                |
 
 ---
 
@@ -155,7 +148,7 @@ These were validated through:
 
 ## Expected Results and Bioeconomy Impact
 
-* High-quality annotated genome and transcriptome of a novel fungal isolate from a PLA-contaminated environment.
+* High-quality annotated genome and transcriptome of **P. lilacinum PLA-C1** from a PLA-contaminated environment.
 * Identification and expression analysis of novel enzyme-coding genes involved in plastic degradation.
 * Detection of biosynthetic gene clusters (BGCs) with potential metabolic innovation.
 * Comparative insights into lineage-specific genomic features related to biodegradation.
@@ -188,21 +181,26 @@ These were validated through:
 * Raw sequencing and RNA-Seq data deposited to ENA under open access BioProject ID.
 * Assembly files, annotation tables, expression matrices, and comparative outputs hosted in this GitHub repository.
 * All data and scripts managed under FAIR principles and institutional guidelines.
-  
-All metadata are formatted according to the MIxS (Minimum Information about any (x) Sequence) standard to ensure compatibility with public databases and future reuse.
+* All metadata formatted according to the MIxS standard for compatibility with public databases.
 
 ---
 
 ## References
 
-* Urbanek, A.K. et al. (2018). Biodegradation of plastics by fungal communities – opportunities and limitations. *Appl Microbiol Biotechnol*.
-* Harms, H. et al. (2021). Plastics in the environment – fungal enzymes to the rescue? *Biotechnol Adv*.
-* BUSCO: [https://busco.ezlab.org/](https://busco.ezlab.org/)
-* BRAKER2: [https://github.com/Gaius-Augustus/BRAKER](https://github.com/Gaius-Augustus/BRAKER)
-* InterProScan: [https://www.ebi.ac.uk/interpro/](https://www.ebi.ac.uk/interpro/)
-* AntiSMASH: [https://fungismash.secondarymetabolites.org/](https://fungismash.secondarymetabolites.org/)
-* MAKER3: [http://www.yandell-lab.org/software/maker.html](http://www.yandell-lab.org/software/maker.html)
-* Applied Genomics materials – University of Bologna
+* Urbanek, A.K. et al. (2018). Biodegradation of plastics by fungal communities – opportunities and limitations. *Appl Microbiol Biotechnol*. DOI: 10.1007/s00253-018-9271-y
+* Harms, H. et al. (2021). Plastics in the environment – fungal enzymes to the rescue? *Biotechnol Adv*. DOI: 10.1016/j.biotechadv.2021.107712
+* Dobin, A. et al. (2013). STAR: ultrafast universal RNA-seq aligner. *Bioinformatics*. DOI: 10.1093/bioinformatics/bts635
+* Liao, Y. et al. (2014). featureCounts: efficient read summarization. *Bioinformatics*. DOI: 10.1093/bioinformatics/btt656
+* Love, M.I. et al. (2014). DESeq2. *Genome Biology*. DOI: 10.1186/s13059-014-0550-8
+* Emms, D.M., & Kelly, S. (2019). OrthoFinder: phylogenetic orthology inference. *Genome Biology*. DOI: 10.1186/s13059-019-1832-y
+* Jones, P. et al. (2014). InterProScan 5: genome-scale protein function classification. *Bioinformatics*. DOI: 10.1093/bioinformatics/btu031
+* Blin, K. et al. (2021). antiSMASH 6: improving cluster detection and comparison. *Nucleic Acids Res*. DOI: 10.1093/nar/gkab335
+* NCBI Taxonomy: https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=123399
+* UniProt Taxonomy 123399: https://www.uniprot.org/taxonomy/123399
+* MycoBank: https://www.mycobank.org/page/Name%20details/305200
+* GBIF Occurrence: https://www.gbif.org/species/5241926
+
+
 
 ---
 
