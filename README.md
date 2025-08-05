@@ -19,6 +19,8 @@
 
 ## Project Overview
 
+<img width="710" height="391" alt="Screenshot 2025-08-05 110720" src="https://github.com/user-attachments/assets/f550e898-247b-4728-9f7c-b5b15e393c0d" />
+
 *Purpureocillium lilacinum* strain PLA-C1 was isolated from compost enriched with biodegradable polylactic acid (PLA). This environmental filamentous fungus shows growth directly on PLA fragments and produces extracellular esterases detectable by rhodamine B screening, indicating a potential for **bioplastic degradation**.
 
 This **Applied Genomics project** focuses on:
