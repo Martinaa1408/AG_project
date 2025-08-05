@@ -1,5 +1,8 @@
 # Hybrid Genome Assembly and Integrative Multi-Omics of *Purpureocillium lilacinum* PLA-C1 Reveals Enzymatic Potential for Bioplastic Degradation
 
+<img width="551" height="346" alt="image" src="https://github.com/user-attachments/assets/8a020d0a-9ee4-4814-a24c-8aac29ee5c8a" />
+
+
 ## Table of Contents
 
 * [Project Overview](#project-overview)
