@@ -1,7 +1,5 @@
 # Hybrid Genome Assembly and Integrative Multi-Omics of *Purpureocillium lilacinum* PLA-C1 Reveals Enzymatic Potential for Bioplastic Degradation
 
-<img width="551" height="346" alt="image" src="https://github.com/user-attachments/assets/8a020d0a-9ee4-4814-a24c-8aac29ee5c8a" />
-
 
 ## Table of Contents
 
@@ -64,6 +62,9 @@ Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic 
 ---
 
 ## Methodological Pipeline
+
+<img width="515" height="265" alt="image" src="https://github.com/user-attachments/assets/162fb104-93be-4885-978c-9c7e1915781b" />
+
 
 ### 1. Sample Collection and Fungal Isolation
 
