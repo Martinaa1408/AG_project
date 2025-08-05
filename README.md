@@ -195,6 +195,12 @@ Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic 
 | Illumina NovaSeq | ~150 bp (paired)  | ~100X    | >30         | High accuracy, polishing assemblies   | SNPs, DEGs           |
 | Oxford Nanopore  | ~10–20 kb         | ~30–50X  | >30         | Long reads for complex regions        | De novo assembly     |
 
+1. **Illumina NovaSeq 6000**
+   - Product page: [https://www.illumina.com/systems/sequencing-platforms/novaseq.html](https://www.illumina.com/systems/sequencing-platforms/novaseq.html)
+
+2. **Oxford Nanopore GridION**
+   - Product page: [https://nanoporetech.com/products/gridion](https://nanoporetech.com/products/gridion)
+     
 ---
 
 ## Data Management
