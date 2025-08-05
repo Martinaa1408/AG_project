@@ -1,11 +1,6 @@
 # Hybrid Genome Assembly and Integrative Multi-Omics of *Purpureocillium lilacinum* PLA-C1 Reveals Enzymatic Potential for Bioplastic Degradation
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/YourUser/PLA-C1-GenomeProject)
-[![NCBI BioProject](https://img.shields.io/badge/NCBI-BioProject-336699?logo=databricks&logoColor=white)](https://www.ncbi.nlm.nih.gov/bioproject/)
-[![ENA Sequencing](https://img.shields.io/badge/ENA-Reads%20%26%20RNASeq-FF6600?logo=databricks&logoColor=white)](https://www.ebi.ac.uk/ena/browser/home)
-[![Illumina NovaSeq](https://img.shields.io/badge/Illumina-NovaSeq%20PE150-FF0000?logo=illumina&logoColor=white)](https://www.illumina.com/systems/sequencing-platforms/novaseq.html)
-[![Oxford Nanopore](https://img.shields.io/badge/Nanopore-GridION-0078D4?logo=nanopore&logoColor=white)](https://nanoporetech.com/products/gridion)
-[![Contact](https://img.shields.io/badge/Contact-Email-EA4335?logo=gmail&logoColor=white)](mailto:martina.castellucci@studio.unibo.it)
 [![PDF Report](https://img.shields.io/badge/Download-Final_Report-lightgrey?logo=adobeacrobatreader&logoColor=red)](link_al_pdf)
 
 
