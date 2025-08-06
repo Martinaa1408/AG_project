@@ -1,204 +1,150 @@
-## SLIDE
+# Applied Genomics – Slide Recap
 
-- [🔎Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN9sgMsIyVQvUfpziG5/view?usp=sharing)
+Full slide deck: [🔗 Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN9sgMsIyVQvUfpziG5/view?usp=sharing)
 
----
-
-### 1. Genetics Foundations
-
-Branches of Genetics:
-
-Classical / Transmission genetics → Mendel, crosses, law of segregation & independent assortment.
-
-Molecular genetics → Gene structure, replication, transcription, translation, regulation.
-
-Population genetics → Allele frequencies, Hardy-Weinberg equilibrium, evolution.
-
-Quantitative genetics → Polygenic traits, heritability, variance decomposition.
-
-Key concepts:
-
-Gene, allele, genotype, phenotype.
-
-Pedigree symbols & PLINK .fam file format.
-
-Chromosomes, karyotypes, sex determination systems.
-
-Morgan’s linkage and crossing-over → recombination & mapping.
+This document summarizes the **core concepts of the Applied Genomics course**, including classical and molecular genetics, NGS technologies, genome assembly, functional and population genomics, and applied bioinformatics workflows.
 
 ---
 
-### 2. Genomics & NGS Basics
+## 1️⃣ Genetics Foundations
 
-Genome definitions & history:
+- **Branches of Genetics**
+  - **Classical / Transmission** → Mendel’s laws, segregation, independent assortment
+  - **Molecular** → Gene structure, replication, transcription, translation, regulation
+  - **Population** → Allele frequencies, Hardy–Weinberg equilibrium (HWE), evolution
+  - **Quantitative** → Polygenic traits, heritability, variance decomposition
 
-Genome = all DNA of an organism.
-
-Genomics = analysis of full gene sets & their function.
-
-Origin: HGP → comparative & functional genomics.
-
-NGS Generations:
-
-Sanger sequencing (dideoxy, 1st-gen).
-
-NGS / 2nd-gen: Illumina, 454, SOLiD, Ion Torrent.
-
-3rd-gen / TGS: PacBio SMRT, Oxford Nanopore.
-
-NGS Key files & metrics:
-
-FASTQ (raw reads), BAM (alignments), VCF (variants), BED (features).
-
-Phred score (Q): Q30 = 0.1% error.
-
-Depth (coverage) = LN/G; Breadth of coverage %.
+- **Key Concepts**
+  - Gene / allele / genotype / phenotype  
+  - Pedigree symbols → male ◻, female ●, carriers half-filled  
+  - PLINK `.fam` format → Family ID, individual ID, parental info, sex, phenotype
+  - Morgan’s linkage → crossing-over & genetic mapping
 
 ---
 
-### 3. NGS Data Analysis Pipeline
+## 2️⃣ Genomics & NGS Essentials
 
-Typical workflow:
+- **Genome & Genomics**
+  - Genome = complete DNA content  
+  - Genomics = analysis of all genes and functions  
+  - Evolution from **HGP** → comparative & functional genomics
 
-QC → FastQC, trimming (PrinSeq, Trimmomatic).
+- **Sequencing Generations**
+  - 1st: **Sanger** (dideoxy chain-termination)  
+  - 2nd: **Illumina, 454, SOLiD, Ion Torrent**  
+  - 3rd: **PacBio SMRT, Oxford Nanopore (ONT)**
 
-Alignment → BWA, Bowtie; BAM/SAM; mapping quality (MQ).
-
-Filtering → Remove duplicates (Picard), low MQ reads.
-
-Variant calling → GATK, VarScan, bcftools; output VCF.
-
-Variant annotation → SnpEff, ANNOVAR, Ensembl VEP.
-
-Manual inspection → IGV.
-
-QC checks:
-
-Base quality per cycle.
-
-GC content distribution.
-
-Read duplication levels.
+- **Core NGS Files & Metrics**
+  - **FASTQ** (raw reads + Phred quality)  
+  - **BAM/SAM** (aligned reads)  
+  - **VCF** (variants), **BED** (features)  
+  - Phred Q30 ≈ 0.1% error; Coverage = (read length × reads) / genome size
 
 ---
 
-### 4. Genome Assembly
+## 3️⃣ NGS Data Analysis Pipeline
 
-Strategies:
+1. **Quality control** → FastQC, MultiQC  
+2. **Trimming / filtering** → Trimmomatic, PrinSeq  
+3. **Alignment** → BWA / Bowtie2 → BAM/SAM  
+4. **Post-processing** → Sort, index, mark duplicates  
+5. **Variant calling** → GATK, FreeBayes, VarScan → VCF  
+6. **Annotation** → SnpEff, ANNOVAR, Ensembl VEP  
+7. **Manual review** → IGV genome browser
 
-De novo vs Reference-guided.
-
-Shotgun approaches: Classical, hierarchical BAC-based.
-
-Graph models:
-
-OLC (Overlap-Layout-Consensus)
-
-De Bruijn Graphs (k-mer nodes/edges, Eulerian path).
-
-Hybrid assemblies (Illumina + TGS).
-
-Quality metrics:
-
-N50, NG50, L50 (contiguity).
-
-BUSCO → genome completeness.
-
-Gap filling & scaffolding → paired-end, mate-pair, Hi-C, optical maps.
+**QC checks:** base quality per cycle, GC bias, duplication levels
 
 ---
 
-### 5. Genome Annotation
+## 4️⃣ Genome Assembly
 
-Steps:
+- **Approaches**
+  - **De novo** → no reference genome  
+  - **Reference-guided** → use existing genome  
+  - **Hybrid** → combine Illumina + ONT/PacBio
 
-Repeat masking → RepeatMasker, DFAM, REPET.
+- **Graph Models**
+  - OLC (Overlap–Layout–Consensus)  
+  - **De Bruijn Graph** → (k-1)-mers as nodes, k-mers as edges
 
-Structural annotation → ab-initio (AUGUSTUS), extrinsic (RNA-seq, protein homology), combiners.
-
-Functional annotation → GO terms, BLAST, UniProt, domains.
-
-Output formats:
-
-GFF3, BED, GenBank/EMBL for genome browsers.
-
----
-
-### 6. Transcriptomics & RNA-Seq
-
-Principles:
-
-mRNA enrichment → poly-A selection.
-
-RNA → cDNA → library prep → NGS.
-
-Reads can be SE or PE; align-then-assemble vs de novo assembly.
-
-Expression analysis:
-
-Normalization metrics: RPKM / FPKM / TPM.
-
-Differential expression: DESeq2, edgeR.
-
-Junction-aware mapping → STAR, HISAT2.
+- **Key Metrics**
+  - **N50 / NG50 / L50** → contiguity  
+  - **BUSCO** → completeness using single-copy orthologs  
+  - **Scaffolding** → paired-end, mate-pair, Hi-C, optical maps
 
 ---
 
-### 7. Population Genomics & GWAS
+## 5️⃣ Genome Annotation
 
-PLINK file types:
-
-.ped + .map (text); .bed/.bim/.fam (binary).
-
-Quality control filters: --mind, --geno, --maf, --hwe.
-
-Population analysis:
-
-MAF, HWE, FST.
-
-PCA / MDS for population structure.
-
-GWAS & ROH (Runs of Homozygosity).
-
-Visualization: Manhattan plots, QQ plots.
+- **Repeat masking** → RepeatMasker, DFAM  
+- **Structural annotation** → AUGUSTUS, GeneMark, RNA-Seq evidence  
+- **Functional annotation** → BLAST, UniProt, InterProScan, GO terms  
+- **Outputs** → GFF3, BED, GenBank for browsers
 
 ---
 
-### 8. High-Throughput Genotyping & CNV
+## 6️⃣ Transcriptomics & RNA-Seq
 
-Technologies:
+- **Workflow**
+  - Poly-A mRNA enrichment or rRNA depletion  
+  - cDNA library prep → SE/PE sequencing  
+  - Alignment → STAR, HISAT2 (splice-aware)  
+  - Counting → HTSeq, featureCounts  
+  - Differential expression → DESeq2, edgeR
 
-SNP arrays (Illumina BeadChip, Axiom arrays).
+- **Normalization metrics** → RPKM / FPKM / TPM
 
-NGS-based genotyping: RAD-Seq, ddRAD, GBS.
-
-Copy Number Variation (CNV) detection: aCGH, SNP intensity, NGS depth.
-
----
-
-### 9. Epigenomics & Functional Genomics
-
-ChIP-Seq → protein-DNA binding sites.
-
-Methyl-Seq / WGBS → CpG methylation & regulation.
-
-ATAC-seq / DNase-seq → open chromatin regions.
-
-AntiSMASH / functional pipelines → BGCs and secondary metabolites.
+- **Challenges** → splice junctions, batch effects, low expression genes
 
 ---
 
-### 10. Practical NGS Case Study
+## 7️⃣ Population Genomics & GWAS
 
-Pipeline with Galaxy:
+- **PLINK basics**
+  - Text: `.ped + .map`  
+  - Binary: `.bed + .bim + .fam`  
+  - QC filters: `--mind` (missing), `--geno`, `--maf`, `--hwe`
 
-FASTQ → QC → Trimming → BWA → BAM → Dedup → Variant Calling → VCF → Annotation with VEP.
+- **Population analyses**
+  - MAF, HWE, \( F_{ST} \)  
+  - PCA / MDS → population structure
 
-Key Takeaways:
+- **GWAS & ROH**
+  - Runs of Homozygosity → inbreeding detection  
+  - Manhattan and QQ plots for association signals
 
-Always collect sample & library metadata.
+---
 
-Evaluate sequencing depth & breadth.
+## 8️⃣ High-Throughput Genotyping & CNV
 
-Validate candidate SNPs/indels with visualization (IGV).
+- **SNP arrays** → Illumina BeadChip, Axiom arrays  
+- **NGS-based genotyping** → RAD-Seq, ddRAD, GBS  
+- **CNV detection**
+  - Array CGH (aCGH) → hybridization intensity  
+  - Read depth-based → CNVnator, XHMM
+
+---
+
+## 9️⃣ Epigenomics & Functional Genomics
+
+- **ChIP-Seq** → Protein-DNA interactions (TFs, histones)  
+- **Methyl-Seq / WGBS** → CpG methylation & epigenetic regulation  
+- **ATAC-Seq / DNase-Seq** → Chromatin accessibility  
+- **AntiSMASH** → Biosynthetic gene cluster (BGC) prediction
+
+---
+
+## 🔟 Practical NGS Case Study
+
+**Pipeline Example (Galaxy / Snakemake)**  
+
+FASTQ → QC → Trimming → Alignment (BWA)
+→ BAM processing → Variant Calling (GATK)
+→ VCF → Annotation (VEP) → Visualization (IGV)
+
+
+**Key Takeaways**
+- Always collect **metadata** (sample, library, environment)  
+- Evaluate **depth & breadth** before interpretation  
+- Validate **candidate variants** visually in IGV  
 
