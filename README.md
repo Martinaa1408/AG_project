@@ -222,6 +222,18 @@ Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic 
 
 ---
 
+## Environmental Relevance and EEA Alignment
+
+The study aligns with the European Environment Agency (EEA) guidelines on biodegradable and compostable plastics (EEA, 2020).  
+According to the EEA, bio-based plastics such as **PBS, PBAT, and PLA** often exhibit **slow or incomplete biodegradation** in soil and aquatic environments, leading to potential microplastic accumulation.  
+
+The **hybrid genome assembly and integrative multi-omics** analysis of *Purpureocillium lilacinum* PLA‑C1 identifies **lipases, cutinases, and esterases** that could **enhance bioplastic degradation** under realistic environmental conditions.  
+This connection highlights the potential contribution of such biotechnological studies to the **EU circular economy goals** and to the sustainable management of biodegradable plastic waste.
+
+Reference: [EEA — Biodegradable and compostable plastics](https://www.eea.europa.eu/en/analysis/publications/biodegradable-and-compostable-plastics)
+
+---
+
 ## References
 
 ### Scientific Articles
