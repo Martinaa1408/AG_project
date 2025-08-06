@@ -1,6 +1,6 @@
 # Applied Genomics – Slide Recap
 
-Full slide deck: [🔗 Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN9sgMsIyVQvUfpziG5/view?usp=sharing)
+Full slide deck: [Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN9sgMsIyVQvUfpziG5/view?usp=sharing)
 
 This document summarizes the **core concepts of the Applied Genomics course**, including classical and molecular genetics, NGS technologies, genome assembly, functional and population genomics, and applied bioinformatics workflows.
 
