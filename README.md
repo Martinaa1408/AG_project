@@ -22,6 +22,7 @@
 * [Expected Results and Bioeconomy Impact](#expected-results-and-bioeconomy-impact)
 * [Sequencing Technology Overview](#sequencing-technology-overview)
 * [Data Management](#data-management)
+* [Environmental Relevance and EEA Alignment](#environmental-relevance-and-EEA-alignment)
 * [References](#references)
 * [Contact](#contact)
 
