@@ -1,7 +1,10 @@
-Category,Count,Percentage
-Complete (C),1247,98.3
-Complete single-copy (S),1225,96.5
-Complete duplicated (D),22,1.8
-Fragmented (F),12,0.9
-Missing (M),9,0.7
-Total BUSCOs,1268,100.0
+Metric,Value
+BUSCO version,5.3.2
+Lineage dataset,fungi_odb10
+Total BUSCO groups searched,758
+Complete BUSCOs (C),746
+Complete and single-copy BUSCOs (S),730
+Complete and duplicated BUSCOs (D),16
+Fragmented BUSCOs (F),6
+Missing BUSCOs (M),6
+Completeness %,98.3
