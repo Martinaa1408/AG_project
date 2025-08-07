@@ -1,4 +1,4 @@
 Condition,DEGs Detected,Key Functional Categories
-PLA vs Control,84,Esterases, Cutinases, Lipases
-PHA vs Control,52,Depolymerases, Lipases
-Shared PLA/PHA,29,Hydrolases, Transporters
+PLA vs Control,84,"Esterases, Cutinases, Lipases"
+PHA vs Control,52,"Depolymerases, Lipases"
+Shared PLA/PHA,29,"Hydrolases, Transporters"
