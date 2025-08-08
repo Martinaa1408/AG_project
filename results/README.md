@@ -4,14 +4,21 @@ This repository contains the outputs and intermediate results from the **Applied
 
 ---
 
-## 00 – Input Data
+## 00 – Input Data  
 **Folder:** `00_Input_data/`  
-Contains the raw genomic and transcriptomic input files used across analyses.
+Contains the raw genomic and transcriptomic input files used across analyses.  
 
-- `genomic.gff` – Genome feature annotations.
-- `GCF_023168085.1_PurlilCBS_1.0_genomic.zip` – Genomic assembly in FASTA format.
-- `protein.faa` – Predicted protein sequences.
-- `rna.fna` – Transcript sequences.
+- `genomic.gff` – Genome feature annotations.  
+  *Used in:* transcript extraction (gffread), CAZyme annotation.  
+
+- `GCF_023168085.1_PurlilCBS_1.0_genomic.zip` – Genomic assembly in FASTA format.  
+  *Used in:* BUSCO genome completeness assessment.  
+
+- `protein.faa` – Predicted protein sequences.  
+  *Used in:* CAZyme annotation, OrthoVenn3 orthology analysis.  
+
+- `rna.fna` – Transcript sequences.  
+  *Used in:* transcriptome reference for RNA-Seq quantification.  
 
 ---
 
@@ -50,11 +57,11 @@ Inference of orthologous groups with **OrthoFinder**.
 - `Multiple_sequence_alignment.fasta` – Alignment of orthologous sequences.
   
 - **figures/**
-  - `jVenn_chart.png` – Venn diagram of orthogroup intersections.
-  - `UpSetJS.png` – UpSet plot of orthogroup overlaps.
-  - `Screenshot_2025-07-24_103445.png` – Cluster count visualization.
-  - `Screenshot_2025-07-24_104047.png` – Cluster composition and relationships.
-  - Any additional exported plots.
+  - `jVenn_chart.png` – overlap of orthogroups between the three species.
+  - `UpSetJS.png` – umber of shared and unique orthogroups among species.
+  - `result_statics.png` – overlaps, total clusters, single-copy clusters, protein counts, and singleton percentage.
+  - `table_data.png` – number of proteins, clusters, and singletons per species.
+  - `pairwise_heatmap.png` – visual similarity in cluster content between species (darker red = higher similarity).
 
 **Pipeline:**
 1. OrthoFinder (orthogroup inference)  
