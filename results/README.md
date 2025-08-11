@@ -91,8 +91,8 @@ Reconstruction of species relationships using single-copy orthologs.
 Transcript abundance estimation and differential expression.
 
 - `Galaxy11-[gffread on data 7 and data 10_pep.fa].fasta` – Transcript sequences extracted from GFF.
-- *(to be added)* `rna_counts.tsv` – Transcript counts from Salmon quant.
-- *(to be added)* `deseq2_results.csv` – Differentially expressed genes from DESeq2.
+- `rna_counts.tsv` – Transcript counts from Salmon quant.
+- `deseq2_results.csv` – Differentially expressed genes from DESeq2.
 
 **Pipeline:**
 1. **Salmon quant** – Mapping RNA-Seq reads to transcripts.
