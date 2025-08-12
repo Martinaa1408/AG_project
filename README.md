@@ -11,64 +11,75 @@
 [![Comparative Genomics](https://img.shields.io/badge/Comparative_Genomics-OrthoFinder%2C_MCScanX-DA70D6?logo=git-branch&logoColor=white)]()
 [![Phylogenetics](https://img.shields.io/badge/Phylogenetics-MAFFT%2C_RAxML%2C_MEGA11-DC143C?logo=tree&logoColor=white)]()
 
-## Table of Contents
+---
 
-* [Project Overview](#project-overview)
-* [Background and Rationale](#background-and-rationale)
-* [Objectives](#objectives)
-* [Methodological Pipeline](#methodological-pipeline)
-* [Summary Table of Experimental Workflow](#summary-table-of-experimental-workflow)
-* [Detailed Cost Breakdown](#detailed-cost-breakdown)
-* [Expected Results and Bioeconomy Impact](#expected-results-and-bioeconomy-impact)
-* [Sequencing Technology Overview](#sequencing-technology-overview)
-* [Data Management](#data-management)
-* [Environmental Relevance and EEA Alignment](#environmental-relevance-and-EEA-alignment)
-* [References](#references)
-* [Contact](#contact)
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Habitat & Ecology](#habitat--ecology)
+- [Background and Rationale](#background-and-rationale)
+- [Objectives](#objectives)
+- [Methodological Pipeline](#methodological-pipeline)
+- [Summary Table of Experimental Workflow](#summary-table-of-experimental-workflow)
+- [Detailed Cost Breakdown](#detailed-cost-breakdown)
+- [Key Results](#key-results)
+- [Expected Bioeconomy Impact](#expected-bioeconomy-impact)
+- [Sequencing Technology Overview](#sequencing-technology-overview)
+- [Data Management](#data-management)
+- [References](#references)
+- [Contact](#contact)
 
 ---
 
 ## Project Overview
 
-*Purpureocillium lilacinum* strain PLA-C1 was isolated from compost enriched with biodegradable polylactic acid (PLA). This environmental filamentous fungus shows growth directly on PLA fragments and produces extracellular esterases detectable by rhodamine B screening, indicating a potential for **bioplastic degradation**.
+*Purpureocillium lilacinum* strain PLA-C1 was isolated from compost enriched with biodegradable polylactic acid (PLA) and polyhydroxyalkanoates (PHA). This filamentous fungus demonstrates growth directly on PLA fragments and produces extracellular esterases detectable by rhodamine B screening, indicating **bioplastic degradation potential**.
 
-This **Applied Genomics project** focuses on:
+The **Applied Genomics project** aimed to:
+1. Generate a **hybrid de novo genome assembly** (Nanopore + Illumina).
+2. Perform **functional annotation** to identify polymer-degrading enzymes.
+3. Conduct **RNA-Seq** differential expression analysis under PLA, PHA, and control conditions.
+4. Perform **comparative genomics and phylogeny** with related fungal species.
 
-1. **Hybrid de novo genome assembly** (~41.6 Mb, N50 1.32 Mb, 119 contigs, 98.3% BUSCO) using **Oxford Nanopore** and **Illumina** data.  
-2. **Functional annotation** to identify **candidate degradative genes** (cutinases, esterases, lipases, PHA depolymerases) and **14 biosynthetic gene clusters (BGCs)**, 3 unique to this strain.  
-3. **Transcriptomic profiling (RNA-Seq)** under PLA, PHA, and control conditions to detect **differentially expressed genes** involved in polymer degradation.  
-4. **Comparative and phylogenomic analyses** to determine the environmental adaptation and unique gene content relevant to bioplastic degradation.
+---
 
-This genomic resource provides the **foundation for functional enzyme discovery** and supports **bioeconomic applications** in **compost-based bioplastic waste management**.
+## Habitat & Ecology
+
+*Purpureocillium lilacinum* is a filamentous fungus in the **Ophiocordycipitaceae** family, widely distributed in soils, sediments, rhizospheres, and decaying organic matter. It occurs in:
+- Agricultural soils
+- Forest and grassland ecosystems
+- Estuarine sediments
+- Moist indoor environments
+
+It is **multitrophic** — acting as a saprophyte, nematophagous parasite, or endophyte — and is used as a **biocontrol agent** against plant-pathogenic nematodes.
+
+**Environmental tolerance**:
+- Temperature: 8 °C to ~38 °C
+- pH: 4 to 9
+- Tolerant to various environmental stresses and some disinfectants
+
+Its enzyme secretion profile (cutinases, esterases, lipases) makes it an ideal candidate for **bioremediation** and **bioplastic degradation** in compost-based waste management systems.
 
 ---
 
 ## Background and Rationale
 
-Plastics, including “biodegradable” ones such as PLA and PHA, often persist under real composting conditions, creating environmental concerns.  
+Although PLA and PHA are marketed as biodegradable, they degrade slowly under natural composting conditions. Fungi like *P. lilacinum*:
+- Secrete **extracellular hydrolases**
+- Tolerate harsh environments
+- Can metabolize complex carbon sources
 
-Filamentous fungi are promising candidates for **bioplastic biodegradation** because they:
-
-- Secrete **extracellular hydrolases** (esterases, cutinases, lipases)  
-- Can adapt to **nutrient-limited environments** like compost  
-- Exhibit **metabolic flexibility** to degrade complex polymers
-
-**Gap in knowledge:**  
-Few **high-quality genome assemblies** and **transcriptomic datasets** exist for environmental fungi capable of PLA degradation, limiting enzyme discovery for applied biotechnology.
-
-**Aim of this project:**  
-Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic potential** of *P. lilacinum* PLA-C1 for **applied bioplastic degradation**.
+This study fills the **gap in high-quality genomic and transcriptomic resources** for fungi capable of bioplastic degradation.
 
 ---
 
 ## Objectives
 
-* Isolate and characterize **P. lilacinum PLA-C1** from compost enriched with PLA.
-* Produce a **high-quality hybrid de novo genome assembly** and evaluate completeness (BUSCO).  
-* Perform **functional annotation** to identify candidate degradative enzymes and BGCs.  
-* Profile **gene expression via RNA-Seq** under PLA/PHA vs control to detect **induced genes**.  
-* Compare the genome with related fungi to detect **lineage-specific genes and synteny**.  
-* Generate **genomic and transcriptomic resources** for **applied environmental biotechnology**.
+- Isolate *P. lilacinum* PLA-C1 from PLA/PHA-enriched compost.
+- Generate a **high-quality hybrid genome assembly**.
+- Identify **candidate degradative enzymes** via functional annotation.
+- Conduct **RNA-Seq differential expression** under PLA and PHA.
+- Compare genome structure with related taxa.
+- Build phylogenomic trees from **single-copy orthologs**.
 
 ---
 
@@ -76,96 +87,145 @@ Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic 
 
 <img width="515" height="265" alt="image" src="https://github.com/user-attachments/assets/162fb104-93be-4885-978c-9c7e1915781b" />
 
+1. **Sample Collection & Isolation**  
+   - PDA + 0.5% PLA + Rhodamine B  
+   - ITS sequencing confirmation
 
-### 1. Sample Collection and Fungal Isolation
+2. **DNA Extraction & QC**  
+   - CTAB protocol  
+   - Qubit, Nanodrop, agarose gel
 
-* Compost samples with partially degraded PLA cups (Bologna, Italy).  
-* Isolation on PDA + 0.5% PLA + 0.02% Rhodamine B (esterase screen).  
-* ITS rDNA sequencing confirmed **Purpureocillium lilacinum PLA-C1**.
+3. **Genome Sequencing**  
+   - Illumina NovaSeq PE150 (~100X coverage)  
+   - Oxford Nanopore GridION (~35X coverage)
 
-### 2. DNA Extraction and QC
+4. **Assembly & Polishing**  
+   - Flye → Pilon (3 rounds)  
+   - QUAST, BUSCO (fungi_odb10) for QC
 
-* CTAB-based protocol for filamentous fungi.  
-* QC: Qubit (130 ng/µL), Nanodrop (A260/280 1.85), agarose gel (band >20 kb).  
+5. **Functional Annotation**  
+   - MAKER3 + Augustus + GeneMark  
+   - InterProScan, Pfam, eggNOG, KEGG, dbCAN (CAZy), AntiSMASH
 
-### 3. Genome Sequencing
+6. **Comparative Genomics**  
+   - OrthoFinder, MCScanX, MAUVE
 
-* **Illumina NovaSeq PE150 (~100X)** → high accuracy, polishing, RNA-Seq  
-* **Oxford Nanopore GridION (~30–50X)** → long reads for assembly  
+7. **Phylogeny**  
+   - MAFFT → Gblocks → AMAS  
+   - Tree inference: RAxML, MrBayes, MEGA11
 
-### 4. Assembly and Quality Assessment
-
-* Flye (long-read assembly) + Pilon (short-read polishing, 3 rounds)  
-* QC via QUAST and BUSCO (fungi_odb10)  
-
-**Expected Assembly Metrics**:
-
-| Feature             | Value      |
-|---------------------|-----------|
-| Genome size         | ~41.6 Mb  |
-| Contigs             | 119       |
-| N50                 | 1.32 Mb   |
-| GC content          | 50.2%     |
-| BUSCO completeness  | 98.3%     |
-
-### 5. Transcriptome Analysis
-
-* 3 conditions × 4 replicates (12 RNA-Seq libraries):  
-  - Control (MM + glucose 1%)  
-  - PLA (MM + 1% PLA fragments)  
-  - PHA (MM + 1% PHB)  
-* RNA integrity RIN ≥ 8.5, ~20M PE150 reads/sample  
-* Pipeline: **STAR → featureCounts → DESeq2** (log2FC>2, FDR<0.05)
-
-**Differential Expression**:  
-- 84 DEGs in PLA  
-- 29 DEGs shared PLA/PHA
-
-### 6. Genome Annotation
-
-* **MAKER3** + Augustus + GeneMark + RNA-Seq evidence  
-* Functional annotation: InterProScan, Pfam, eggNOG, KEGG, CAZy, AntiSMASH  
-
-**Candidate Enzymes**:
-
-| Enzyme Family         | Domain        | Genes | PLA DEGs |
-|-----------------------|---------------|-------|---------|
-| Cutinase              | IPR000675      | 9     | 5       |
-| Esterase              | IPR000379      | 45    | 12      |
-| Lipase                | IPR000734      | 27    | 7       |
-| PHA depolymerase-like | UniProt HMM    | 4     | 2       |
-
-### 7. Comparative Genomics
-
-* Reference: *Talaromyces purpureogenus*, *Paecilomyces variotii*, *Fusarium solani*  
-* OrthoFinder → 10,312 shared orthogroups, 314 unique genes  
-* MAUVE & MCScanX → synteny and unique segments
-
-### 8. Phylogenetic Analysis
-
-* 338 single-copy orthologs (MAFFT → Gblocks → AMAS)  
-* Trees: RAxML + MrBayes + MEGA11 → PLA-C1 forms distinct clade
+8. **Transcriptomics**  
+   - RNA extraction from 3 conditions × 4 replicates  
+   - Salmon quantification → tximport → DESeq2
 
 ---
 
 ## Summary Table of Experimental Workflow
 
-| Step | Category              | Tool/Protocol                         | Output                                 |
-| ---- | --------------------- | ------------------------------------- | -------------------------------------- |
-| 1    | Sample isolation      | PLA compost plating (PDA+Rhodamine B) | Fungal isolate (PLA-C1)                |
-| 2    | DNA extraction        | CTAB protocol                         | High-MW DNA (>20 kb)                   |
-| 3    | DNA QC                | Nanodrop, Qubit, gel electrophoresis  | DNA purity & concentration             |
-| 4    | Illumina sequencing   | NovaSeq PE150                         | ~100X PE reads                         |
-| 5    | Nanopore sequencing   | GridION (LSK-109)                     | Long reads (~30–50X)                   |
-| 6    | Assembly              | Flye + Pilon                          | `assembly.fasta`, `quast_report.txt`   |
-| 7    | RNA-Seq               | Illumina PE150                        | 12 libraries                           |
-| 8    | Expression analysis   | STAR + DESeq2                         | `rna_counts.tsv`, `deseq2_results.csv` |
-| 9    | Gene prediction       | MAKER3 + Augustus/GeneMark            | `annotation.gff3`, `transcripts.fasta` |
-| 10   | Functional annotation | InterPro, Pfam, KEGG, AntiSMASH       | Annotated domains, enzymes, BGCs       |
-| 11   | Comparative genomics  | OrthoFinder + MAUVE/MCScanX           | `orthogroups.tsv`, synteny plots       |
-| 12   | Phylogenetics         | MAFFT, RAxML, MrBayes, MEGA11         | `phylogenetic_tree.nwk`                |
+| Step | Category | Tool(s) | Output Files |
+|------|----------|---------|--------------|
+| 1 | Isolation | PDA+Rhodamine B | – |
+| 2 | DNA Extraction/QC | CTAB, Qubit, Nanodrop | – |
+| 3 | Sequencing | NovaSeq, GridION | `illumina_reads.fastq.gz`, `nanopore_reads.fastq.gz` |
+| 4 | Assembly | Flye + Pilon | `assembly.fasta` |
+| 5 | QC | QUAST, BUSCO | `busco_summary.txt` |
+| 6 | Annotation | MAKER3, InterPro, AntiSMASH, dbCAN | `genomic.gff`, `protein.faa`, `CAZyme.pep` |
+| 7 | Comparative Genomics | OrthoFinder, MCScanX | `Orthogroups.txt`, `Orthologs.txt` |
+| 8 | Phylogeny | MAFFT, RAxML, MrBayes | `phylogenetic_tree.png` |
+| 9 | Transcriptomics | Salmon, DESeq2 | `rna_counts.tsv`, `deseq2_results.csv` |
 
 ---
+
+## Detailed Cost Breakdown
+
+| Category | Cost (€) | Notes |
+|----------|----------|-------|
+| Personnel (wet lab, bioinformatics) | 90,000 | 1-year |
+| Sampling & Isolation | 3,000 | Compost handling |
+| DNA extraction & QC | 2,000 | Reagents |
+| Illumina sequencing | 30,000 | Short reads |
+| Nanopore sequencing | 50,000 | Long reads |
+| RNA-Seq prep & sequencing | 5,000 | 12 libraries |
+| Software licenses | 5,000 | Non-open-source |
+| Dissemination | 15,000 | Publications, conferences |
+| **Total** | **200,000** | |
+
+---
+
+## Key Results
+
+### Genome Assembly
+- Genome size: **41.6 Mb**
+- Contigs: **119**
+- N50: **1.32 Mb**
+- GC content: **50.2%**
+- BUSCO completeness: **98.3%**
+
+### Functional Annotation
+- **Candidate degradative enzymes**:
+  - Cutinases: 9 genes (5 PLA-induced)
+  - Esterases: 45 genes (12 PLA-induced)
+  - Lipases: 27 genes (7 PLA-induced)
+  - PHA depolymerase-like: 4 genes (2 PLA-induced)
+- **Biosynthetic Gene Clusters (BGCs)**: 14 total, 3 unique
+
+### Comparative Genomics (OrthoFinder)
+- 10,312 shared orthogroups  
+- 314 strain-specific genes
+
+### Transcriptomics (DESeq2)
+- PLA: 84 DEGs  
+- PHA: 65 DEGs  
+- PLA/PHA shared: 29 DEGs
+
+---
+
+## Expected Bioeconomy Impact
+
+This genomic and transcriptomic resource can:
+- Guide **enzyme discovery** for industrial bioplastic degradation
+- Inform **composting optimization** for PLA/PHA waste
+- Support the **EU Circular Economy Action Plan**
+
+---
+
+## Sequencing Technology Overview
+
+| Technology       | Read Length       | Coverage | Phred Score | Advantages                            | Typical Use          |
+| ---------------- | ----------------- | -------- | ----------- | ------------------------------------- | -------------------- |
+| Illumina NovaSeq | ~150 bp (paired)  | ~100X    | >30         | High accuracy, polishing assemblies   | SNPs, DEGs           |
+| Oxford Nanopore  | ~10–20 kb         | ~30–50X  | >30         | Long reads for complex regions        | De novo assembly     |
+
+1. **Illumina NovaSeq 6000**
+   - Product page: [https://www.illumina.com/systems/sequencing-platforms/novaseq.html](https://www.illumina.com/systems/sequencing-platforms/novaseq.html)
+
+2. **Oxford Nanopore GridION**
+   - Product page: [https://nanoporetech.com/products/gridion](https://nanoporetech.com/products/gridion)
+
+---
+
+## Data Management
+
+All input, intermediate, and output files are stored in:
+- `results/` — BUSCO, CAZy, OrthoFinder, phylogeny, transcriptomics
+- `00_Input_data/` — genome, proteins, transcripts
+
+---
+
+## References
+
+
+
+---
+
+## Contact
+Martina Castellucci  
+Email: [martina.castellucci@studio.unibo.it](mailto:martina.castellucci@studio.unibo.it)  
+University of Bologna — Applied Genomics Project
+
+
+
+
 
 ## Detailed Cost Breakdown
 
@@ -189,39 +249,7 @@ Combine **hybrid genomics and transcriptomics** to **characterize the enzymatic 
 
 ---
 
-## Expected Results and Bioeconomy Impact
 
-* High-quality **annotated genome and transcriptome** of *P. lilacinum* PLA-C1  
-* **Candidate enzyme catalog** for PLA/PHA degradation  
-* **Unique BGCs and lineage-specific genes** revealed by comparative genomics  
-* **Differential expression data** confirming enzyme induction under PLA exposure  
-* Genomic resource supporting **bioplastic composting and circular bioeconomy**
-
----
-
-## Sequencing Technology Overview
-
-| Technology       | Read Length       | Coverage | Phred Score | Advantages                            | Typical Use          |
-| ---------------- | ----------------- | -------- | ----------- | ------------------------------------- | -------------------- |
-| Illumina NovaSeq | ~150 bp (paired)  | ~100X    | >30         | High accuracy, polishing assemblies   | SNPs, DEGs           |
-| Oxford Nanopore  | ~10–20 kb         | ~30–50X  | >30         | Long reads for complex regions        | De novo assembly     |
-
-1. **Illumina NovaSeq 6000**
-   - Product page: [https://www.illumina.com/systems/sequencing-platforms/novaseq.html](https://www.illumina.com/systems/sequencing-platforms/novaseq.html)
-
-2. **Oxford Nanopore GridION**
-   - Product page: [https://nanoporetech.com/products/gridion](https://nanoporetech.com/products/gridion)
-     
----
-
-## Data Management
-
-* Raw reads → **ENA BioProject (TBA)**  
-* Assembly + annotations + expression matrices → **GitHub repository**  
-* **Snakemake workflows** and **Jupyter notebooks** for reproducibility  
-* **MIxS-compliant metadata** for FAIR data sharing
-
----
 
 ## Environmental Relevance and EEA Alignment
 
