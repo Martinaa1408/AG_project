@@ -155,11 +155,11 @@ This study fills the **gap in high-quality genomic and transcriptomic resources*
 ## Key Results
 
 ### Genome Assembly
-- Genome size: **41.6 Mb**
-- Contigs: **119**
-- N50: **1.32 Mb**
-- GC content: **50.2%**
-- BUSCO completeness: **98.3%**
+- Genome size: **38.6 Mb**
+- Contigs: **10**
+- N50: **5.3 Mb**
+- GC content: **58.5%**
+- BUSCO completeness: **76.3%**
 
 ### Functional Annotation
 - **Candidate degradative enzymes**:
