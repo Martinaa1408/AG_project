@@ -1,16 +1,5 @@
 # Hybrid Genome Assembly and Integrative Multi-Omics of *Purpureocillium lilacinum* PLA-C1 Reveals Enzymatic Potential for Bioplastic Degradation
 
-[![Fungal Isolate](https://img.shields.io/badge/Fungal_Isolate-PLA--C1-6A0DAD?logo=leaflet&logoColor=white)]()
-[![DNA Extraction](https://img.shields.io/badge/DNA-CTAB_Protocol-228B22?logo=dna&logoColor=white)]()
-[![QC](https://img.shields.io/badge/QC-Nanodrop%2C_Qubit%2C_Gel-1E90FF?logo=zoom&logoColor=white)]()
-[![Hybrid Assembly](https://img.shields.io/badge/Assembly-Flye+Pilon-FFD700?logo=files&logoColor=white)]()
-[![RNA-Seq](https://img.shields.io/badge/RNA--Seq-Illumina_12_Libraries-FF69B4?logo=rna&logoColor=white)]()
-[![Expression Analysis](https://img.shields.io/badge/Expression-STAR+DESeq2-8A2BE2?logo=graph&logoColor=white)]()
-[![Gene Prediction](https://img.shields.io/badge/Gene_Prediction-MAKER3+Augustus-20B2AA?logo=dna&logoColor=white)]()
-[![Functional Annotation](https://img.shields.io/badge/Functional_Annotation-InterPro%2C_KEGG%2C_AntiSMASH-32CD32?logo=network&logoColor=white)]()
-[![Comparative Genomics](https://img.shields.io/badge/Comparative_Genomics-OrthoFinder%2C_MCScanX-DA70D6?logo=git-branch&logoColor=white)]()
-[![Phylogenetics](https://img.shields.io/badge/Phylogenetics-MAFFT%2C_RAxML%2C_MEGA11-DC143C?logo=tree&logoColor=white)]()
-
 ---
 
 ## Table of Contents
