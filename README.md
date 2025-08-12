@@ -91,39 +91,41 @@ Despite these advantages, there is a lack of **high-quality genome assemblies** 
 <img width="515" height="265" alt="image" src="https://github.com/user-attachments/assets/162fb104-93be-4885-978c-9c7e1915781b" />
 
 1. **Sample Collection & Isolation**  
-   - Compost originating from PLA/PHA-enriched waste was plated on PDA medium supplemented with polylactic acid (PLA) and Rhodamine B.  
-   - Positive extracellular esterase activity was confirmed via rhodamine fluorescence assay under UV illumination.  
-   - Taxonomic identity of the isolate (*Purpureocillium lilacinum* strain PLA-C1) was confirmed through ITS rDNA sequencing and BLAST-based phylogenetic placement.  
+   - Compost originating from PLA/PHA-enriched waste was plated on PDA medium supplemented with 0.5% PLA and Rhodamine B.  
+   - Extracellular esterase activity confirmed via rhodamine fluorescence assay under UV illumination.  
+   - Identity of the isolate (*Purpureocillium lilacinum* strain PLA-C1) confirmed by ITS rDNA sequencing and BLAST-based phylogenetic placement.  
 
 2. **DNA Extraction & Quality Control**  
-   - High-molecular-weight genomic DNA was extracted using the CTAB protocol optimized for filamentous fungi.  
-   - Quality assessment included spectrophotometric purity ratios (A260/280, A260/230), fluorometric quantification, and agarose gel electrophoresis to confirm integrity.  
+   - High-molecular-weight genomic DNA extracted using the CTAB protocol optimized for filamentous fungi.  
+   - QC included Qubit fluorometry, Nanodrop spectrophotometry (A260/280, A260/230), and agarose gel electrophoresis (>20 kb bands).  
 
 3. **Genome Sequencing**  
-   - A dual-platform approach was applied, combining short-read Illumina sequencing for high base accuracy and long-read Oxford Nanopore sequencing for improved assembly contiguity.  
-   - Paired-end short reads and long single-molecule reads were generated to achieve comprehensive genome coverage.  
+   - Illumina NovaSeq PE150 (~101× coverage) for short reads.  
+   - Oxford Nanopore GridION (~35× coverage) for long reads.  
 
 4. **Genome Assembly & Polishing**  
-   - Primary assembly was generated from long reads, followed by iterative polishing rounds with short-read data to correct sequencing errors.  
-   - Assembly quality was evaluated using QUAST for contiguity metrics and BUSCO for completeness against the *Eurotiomycetes* lineage dataset.  
+   - Flye v2.9 (Nanopore) for primary assembly.  
+   - Pilon v1.24 (3 rounds) for polishing using Illumina reads.  
+   - Assembly quality assessed via QUAST (contiguity) and BUSCO (fungi_odb10 lineage dataset).  
 
 5. **Functional Genome Annotation**  
-   - Structural annotation was performed using MAKER3, integrating ab initio predictors (Augustus, GeneMark-ES) and evidence-based alignments.  
-   - Functional annotation incorporated domain-based searches (InterProScan, Pfam), orthology assignments (eggNOG, KEGG), carbohydrate-active enzyme prediction (dbCAN3/CAZy), and secondary metabolite biosynthetic gene cluster detection (AntiSMASH).  
-   - The CAZy analysis identified a diverse repertoire of glycoside hydrolases, glycosyltransferases, carbohydrate esterases, auxiliary activities, and carbohydrate-binding modules relevant to polymer degradation.  
+   - Annotation performed with MAKER3, integrating **Augustus** and **GeneMark-ES** predictions with RNA-Seq alignments.  
+   - CAZyme prediction via dbCAN3 (HMMER search against CAZy HMM database).  
+   - Manual validation and visualization of gene models and annotations performed in **Geneious**.  
 
 6. **Comparative Genomics**  
-   - Orthogroup inference was conducted with OrthoFinder, enabling the identification of shared gene families and strain-specific genes.  
-   - Genome synteny and collinearity were examined using MCScanX and MAUVE to assess structural genome conservation across related taxa.  
+   - OrthoFinder for orthogroup inference and unique gene identification.  
+   - MCScanX and MAUVE for synteny and collinearity analysis.  
 
 7. **Phylogenetic Reconstruction**  
-   - Single-copy orthologs were aligned using MAFFT, filtered for conserved blocks with Gblocks, concatenated into a supermatrix with AMAS, and analyzed using RAxML (maximum likelihood), MrBayes (Bayesian inference), and MEGA11.  
-   - Phylogenomic trees were rooted and visualized to clarify evolutionary relationships within *Ophiocordycipitaceae*.  
+   - 338 single-copy orthologs aligned using MAFFT, conserved regions selected with Gblocks, concatenated using AMAS.  
+   - Tree inference with RAxML (maximum likelihood), MrBayes (Bayesian inference), MEGA11 (visualization).  
+   - Final trees curated and annotated in **Geneious**.  
 
 8. **Transcriptomic Analysis**  
-   - RNA was extracted from biological replicates grown under control, PLA, and PHA conditions.  
-   - Transcript quantification was performed using Salmon with bias correction, followed by aggregation via tximport.  
-   - Differential expression analysis was conducted with DESeq2, applying multiple-testing correction to identify significantly up- or down-regulated genes associated with polymer degradation pathways.  
+   - RNA extracted from 3 growth conditions (Control, PLA, PHA) × 4 replicates.  
+   - Quantification with Salmon (bias correction enabled) → aggregation with tximport.  
+   - Differential expression with DESeq2 (FDR ≤ 0.05, |log2FC| ≥ 2).  
 
 ---
 
@@ -133,13 +135,13 @@ Despite these advantages, there is a lack of **high-quality genome assemblies** 
 |------|----------|---------|--------------|
 | 1 | Isolation | PDA+Rhodamine B | – |
 | 2 | DNA Extraction/QC | CTAB, Qubit, Nanodrop | – |
-| 3 | Sequencing | NovaSeq, GridION | `illumina_reads.fastq.gz`, `nanopore_reads.fastq.gz` |
+| 3 | Sequencing | NovaSeq, GridION | – |
 | 4 | Assembly | Flye + Pilon | `assembly.fasta` |
 | 5 | QC | QUAST, BUSCO | `Galaxy14-[Busco_summary].txt` |
-| 6 | Annotation | MAKER3, InterProScan, AntiSMASH, dbCAN3 | `genomic.gff`, `protein.faa`, `CAZyme.pep`, `overview.txt` |
-| 7 | Comparative Genomics | OrthoFinder, MCScanX | `Orthogroups.txt`, `Orthologs.txt` |
-| 8 | Phylogeny | MAFFT, RAxML, MrBayes | `f1a8dba68a6f43b189057b437429746f-fasta-tree.png` |
-| 9 | Transcriptomics | Salmon, DESeq2 | `rna_counts.tsv`, `deseq2_results.csv` |
+| 6 | Annotation | MAKER3, GeneMark-ES, Augustus, dbCAN3, Geneious | `genomic.gff`, `protein.faa`, `CAZyme.pep`, `overview.txt` |
+| 7 | Comparative Genomics | OrthoFinder, MCScanX, MAUVE | `Orthogroups.txt`, `Orthologs.txt` |
+| 8 | Phylogeny | MAFFT, Gblocks, AMAS, RAxML, MrBayes, MEGA11, Geneious | `f1a8dba68a6f43b189057b437429746f-fasta-tree.png` |
+| 9 | Transcriptomics | Salmon, tximport, DESeq2 | `rna_counts.tsv`, `deseq2_results.csv` |
 
 ---
 
@@ -147,20 +149,20 @@ Despite these advantages, there is a lack of **high-quality genome assemblies** 
 
 | Personnel              | Activity                               | Estimated Cost (€) | Description                              |
 | ---------------------- | -------------------------------------- | ------------------ | ---------------------------------------- |
-| Wet lab Postdoc salary |                                        | 45,000             | One-year contract                        |
-|                        | Sampling & Isolation                   | 3,000              | Compost collection & fungal plating      |
-|                        | DNA Extraction & QC                    | 2,000              | Reagents & consumables                   |
-|                        | Illumina PE150 Sequencing              | 30,000             | Short-read library + sequencing          |
-|                        | Oxford Nanopore Sequencing             | 50,000             | Long-read sequencing                     |
-|                        | RNA extraction (12 libraries)          | 1,000              | TRIzol & column kits                     |
-|                        | RNA library preparation (12 libraries) | 1,500              | Illumina TruSeq kits                     |
+| Wet lab Postdoc salary |                                        | 45,000             | One-year contract for lab activities     |
+|                        | Sampling & Isolation                   | 3,000              | Compost collection & fungal culturing    |
+|                        | DNA Extraction & QC                    | 2,000              | CTAB reagents, plasticware, gel materials|
+|                        | Illumina PE150 Sequencing              | 30,000             | Short-read library preparation & sequencing |
+|                        | Oxford Nanopore Sequencing             | 50,000             | Long-read flow cells & library kits      |
+|                        | RNA extraction (12 libraries)          | 1,000              | TRIzol & silica column kits              |
+|                        | RNA library preparation (12 libraries) | 1,500              | Illumina TruSeq RNA kits                 |
 |                        | RNASeq Illumina (12 libraries)         | 2,500              | PE150 sequencing                         |
-| Bioinformatics Postdoc |                                        | 45,000             | One-year contract                        |
+| Bioinformatics Postdoc |                                        | 45,000             | One-year contract for analysis & reporting |
 |                        | Genome Assembly & Polishing            | 0                  | Flye + Pilon (open-source)               |
-|                        | Functional Annotation                  | 0                  | MAKER3, InterProScan, AntiSMASH          |
+|                        | Functional Annotation                  | 0                  | MAKER3, dbCAN3, Geneious (manual curation)|
 |                        | Comparative Genomics                   | 0                  | OrthoFinder, MAUVE, MCScanX              |
-|                        | Non-open source softwares              | 5,000              | Genious & other licensed tools           |
-|                        | Reports, Dissemination                 | 15,000             | Publications & Conferences               |
+|                        | Non-open source softwares              | 5,000              | Geneious & other licensed tools          |
+|                        | Reports, Dissemination                 | 15,000             | Publications, conferences, outreach     |
 | **Total**              |                                        | **200,000**        |                                          |
 
 ---
@@ -246,7 +248,7 @@ These findings directly address the **European Environment Agency (EEA)** concer
 In doing so, *P. lilacinum* PLA-C1 serves as both a **model organism** for fungal bioplastic degradation and a **practical candidate** for industrial and municipal composting solutions.
 
 **Reference:**  
-[EEA — Biodegradable and compostable plastics](https://www.eea.europa.eu/en/analysis/publications/biodegradable-and-compostable-plastics))
+[EEA — Biodegradable and compostable plastics](https://www.eea.europa.eu/en/analysis/publications/biodegradable-and-compostable-plastics)
 
 ---
 
@@ -276,28 +278,7 @@ Data are archived in structured directories to facilitate direct integration int
 
 ---
 
-## Sequencing Technology Overview
-
-| Technology       | Read Length       | Coverage | Phred Score | Advantages                            | Typical Use          |
-| ---------------- | ----------------- | -------- | ----------- | ------------------------------------- | -------------------- |
-| Illumina NovaSeq | ~150 bp (paired)  | ~100X    | >30         | High accuracy, polishing assemblies   | SNPs, DEGs           |
-| Oxford Nanopore  | ~10–20 kb         | ~30–50X  | >30         | Long reads for complex regions        | De novo assembly     |
-
-1. **Illumina NovaSeq 6000**
-   - Product page: [https://www.illumina.com/systems/sequencing-platforms/novaseq.html](https://www.illumina.com/systems/sequencing-platforms/novaseq.html)
-
-2. **Oxford Nanopore GridION**
-   - Product page: [https://nanoporetech.com/products/gridion](https://nanoporetech.com/products/gridion)
-
----
-
-## Data Management
-
-All input, intermediate, and output files are stored in:
-- `results/` — BUSCO, CAZy, OrthoFinder, phylogeny, transcriptomics
-- `00_Input_data/` — genome, proteins, transcripts
-
----
+## References
 
 ## References
 
@@ -306,47 +287,50 @@ All input, intermediate, and output files are stored in:
 **Fungal bioplastic degradation and *Purpureocillium lilacinum* studies**
 
 * Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus *Purpureocillium lilacinum*. **BMC Genomics**, 16:1004. DOI: [10.1186/s12864-015-2229-2](https://doi.org/10.1186/s12864-015-2229-2)  
-* Xie, J.-L. et al. (2016). Genome and transcriptome sequences reveal the specific parasitism of the nematophagous *Purpureocillium lilacinum* 36‑1. **Frontiers in Microbiology**, 7:1084. DOI: [10.3389/fmicb.2016.01084](https://doi.org/10.3389/fmicb.2016.01084)  
+* Xie, J.-L. et al. (2016). Genome and transcriptome sequences reveal the specific parasitism of the nematophagous *Purpureocillium lilacinum* 36-1. **Frontiers in Microbiology**, 7:1084. DOI: [10.3389/fmicb.2016.01084](https://doi.org/10.3389/fmicb.2016.01084)  
 * Li, Y. et al. (2024). Revealing the metabolic potential and environmental adaptation of piezotolerant *Purpureocillium lilacinum* FDZ8Y1 from the Mariana Trench. **Front. Microbiol.** DOI: [10.3389/fmicb.2024.1474180](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2024.1474180/full)  
-* Tseng, W. S. et al. (2023). Poly(butylene adipate‑co‑terephthalate) biodegradation by *Purpureocillium lilacinum* strain BA1S. **Appl Microbiol Biotechnol**. DOI: [10.1007/s00253-023-12566-9](https://doi.org/10.1007/s00253-023-12566-9)  
+* Tseng, W. S. et al. (2023). Poly(butylene adipate-co-terephthalate) biodegradation by *Purpureocillium lilacinum* strain BA1S. **Appl Microbiol Biotechnol**. DOI: [10.1007/s00253-023-12566-9](https://doi.org/10.1007/s00253-023-12566-9)  
 * Urbanek, A.K. et al. (2018). Biodegradation of plastics by fungal communities – opportunities and limitations. **Appl Microbiol Biotechnol**. DOI: [10.1007/s00253-018-9271-y](https://doi.org/10.1007/s00253-018-9271-y)  
 * Harms, H. et al. (2021). Plastics in the environment – fungal enzymes to the rescue? **Biotechnol Adv**. DOI: [10.1016/j.biotechadv.2021.107712](https://doi.org/10.1016/j.biotechadv.2021.107712)  
-* Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. **J. Fungal Biol.** DOI: [10.3390/jof11050378](https://www.mdpi.com/2309-608X/11/5/378)
+* Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. **J. Fungal Biol.** DOI: [10.3390/jof11050378](https://www.mdpi.com/2309-608X/11/5/378)  
+* Lo Giudice, A. et al. (2023). Purpureocillium lilacinum for biocontrol and bioremediation: insights from environmental and applied microbiology. **Processes**, 11(10):3445. DOI: [10.3390/pr11103445](https://doi.org/10.3390/pr11103445)  
 
 ### Bioinformatics Tools & Methods
 
-**Genome Assembly & Polishing**
-* Flye – Long-read genome assembler. [GitHub](https://github.com/fenderglass/Flye)  
-* Pilon – Assembly polishing using Illumina reads. [GitHub](https://github.com/broadinstitute/pilon)  
-* QUAST – Quality assessment of genome assemblies. [http://quast.sourceforge.net](http://quast.sourceforge.net)  
+**Genome Assembly & Polishing**  
+* Flye – Long-read genome assembler.  
+* Pilon – Assembly polishing with short reads.  
+* QUAST – Assembly quality assessment.  
+* BUSCO – Genome completeness evaluation.  
 
-**Genome Annotation & Functional Genomics**
-* MAKER3 – Genome annotation framework integrating ab initio and RNA-Seq evidence.  
-* InterProScan 5 – Genome-scale protein function classification. DOI: [10.1093/bioinformatics/btu031](https://doi.org/10.1093/bioinformatics/btu031)  
-* eggNOG-mapper – Orthology and functional annotation. [http://eggnog-mapper.embl.de](http://eggnog-mapper.embl.de)  
-* Pfam & CAZy – Protein domains and carbohydrate-active enzymes.  
+**Genome Annotation & Functional Genomics**  
+* MAKER3 – Genome annotation pipeline integrating ab initio predictors and transcript evidence.  
+* Augustus – Ab initio gene prediction.  
+* GeneMark-ES – Self-training gene prediction.  
+* dbCAN3 – Carbohydrate-active enzyme annotation.  
+* Geneious – Manual curation and secondary validation of annotations.  
 
-**Transcriptomics & DEG Analysis**
-* STAR – RNA-Seq aligner. DOI: [10.1093/bioinformatics/bts635](https://doi.org/10.1093/bioinformatics/bts635)  
-* featureCounts – Read summarization. DOI: [10.1093/bioinformatics/btt656](https://doi.org/10.1093/bioinformatics/btt656)  
-* DESeq2 – Differential expression analysis. DOI: [10.1186/s13059-014-0550-8](https://doi.org/10.1186/s13059-014-0550-8)  
+**Comparative Genomics & Phylogenetics**  
+* OrthoFinder – Orthogroup inference.  
+* MCScanX – Synteny and collinearity detection.  
+* MAUVE – Whole-genome alignment.  
+* MAFFT – Multiple sequence alignment.  
+* Gblocks – Selection of conserved sequence blocks.  
+* AMAS – Alignment concatenation.  
+* RAxML – Maximum likelihood phylogenetic analysis.  
+* MrBayes – Bayesian phylogenetic inference.  
+* MEGA11 – Tree visualization and evolutionary analysis.  
+* Geneious – Tree visualization and annotation.  
 
-**Comparative Genomics & Phylogenetics**
-* OrthoFinder – Orthology inference. DOI: [10.1186/s13059-019-1832-y](https://doi.org/10.1186/s13059-019-1832-y)  
-* MAUVE – Whole-genome alignment and synteny. [http://darlinglab.org/mauve/mauve.html](http://darlinglab.org/mauve/mauve.html)  
-* MCScanX – Detection of synteny and collinearity. [GitHub](https://github.com/wyp1125/MCScanX)  
-* RAxML – Phylogenetic analysis (ML). [https://github.com/stamatak/standard-RAxML](https://github.com/stamatak/standard-RAxML)  
-* MrBayes – Bayesian phylogenetic inference. [https://nbisweden.github.io/MrBayes/](https://nbisweden.github.io/MrBayes/)  
-* MEGA11 – Phylogenetic tree visualization and evolutionary analysis. [https://www.megasoftware.net/](https://www.megasoftware.net/)
+**Transcriptomics & DEG Analysis**  
+* Salmon – Transcript quantification.  
+* tximport – Aggregation of transcript counts.  
+* DESeq2 – Differential expression analysis.
 
-### Databases & Taxonomic Resources
-
-* [NCBI Taxonomy – *Purpureocillium lilacinum* (TaxID 123399)](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=123399)  
-* [UniProt Taxonomy 123399](https://www.uniprot.org/taxonomy/123399)  
-* [MycoBank – *Purpureocillium lilacinum*](https://www.mycobank.org/page/Name%20details/305200)  
-* [GBIF Occurrence Data – *Purpureocillium lilacinum*](https://www.gbif.org/species/5241926)  
-* [CAZy Database](http://www.cazy.org/) – Carbohydrate-active enzyme families.  
-* [KEGG](https://www.genome.jp/kegg/) – Pathways and metabolic annotations.  
+### Data Sources & Platforms
+* Galaxy Europe – [https://usegalaxy.eu/](https://usegalaxy.eu/) (workflow execution and analysis environment)  
+* CAZy Database – [http://www.cazy.org/](http://www.cazy.org/) (reference for carbohydrate-active enzymes)  
+* KEGG – [https://www.genome.jp/kegg/](https://www.genome.jp/kegg/) (pathway annotation)  
 
 ---
 
