@@ -40,6 +40,7 @@ Prediction of Carbohydrate-Active Enzymes using **dbCAN**.
 - `CAZyme.pep` – Protein sequences identified as CAZymes.
 - `h.out`, `hmmer.out` – HMMER search outputs against CAZy HMM database.
 - `overview.txt` – Summary of CAZyme predictions.
+- `cazyme_distribution_pie.png` – CAZyme profile, dominated by glycoside hydrolases (54.5%), indicating strong polymer- and carbohydrate-degrading potential.
 
 **Tool & Parameters:**  
 dbCAN3 with HMMER search, e-value < 1e-15, coverage > 0.35.
@@ -93,6 +94,7 @@ Transcript abundance estimation and differential expression.
 - `Galaxy11-[gffread on data 7 and data 10_pep.fa].fasta` – Transcript sequences extracted from GFF.
 - `rna_counts.tsv` – Transcript counts from Salmon quant.
 - `deseq2_results.csv` – Differentially expressed genes from DESeq2.
+- `top_pla_induced_barplot.png` – the top PLA-induced degradative enzymes, including candidate cutinases, lipases, and esterases with high log₂ fold change.
 
 **Pipeline:**
 1. **Salmon quant** – Mapping RNA-Seq reads to transcripts.
