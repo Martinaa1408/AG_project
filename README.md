@@ -205,7 +205,6 @@ Based on **literature and preliminary reports**, the following fungi are typical
 ### Scientific Articles
 
 - Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.  DOI 10.3389/ffunb.2025.1540469
-- Khan et al. (2021). Fungal esterases and cutinases: Key players in synthetic polyester degradation. Applied Microbiology and Biotechnology, 105(11), 4445–4463.
 - Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004. https://doi.org/10.1186/s12864-015-2229-2
 - Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol. https://doi.org/10.3390/jof11050378
 
