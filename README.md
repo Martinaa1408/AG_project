@@ -59,15 +59,51 @@ This project explores fungal diversity from compost, aiming to identify isolates
 
 ## Methodological Pipeline
 
-1. **Sample Collection & Isolation** – Compost plating on PDA + PLA + Rhodamine B.  
-2. **DNA & RNA Extraction** – High-quality nucleic acids prepared.  
-3. **Genome Sequencing** – Illumina short reads + Nanopore long reads.  
-4. **Hybrid Assembly & QC** – Flye + Pilon, evaluated with QUAST and BUSCO.  
-5. **Functional Annotation** – MAKER3, dbCAN3 for CAZymes, Geneious for manual curation.  
-6. **Comparative Genomics** – OrthoFinder, MCScanX, MAUVE for orthogroups and synteny.  
-7. **Phylogenomics** – Tree reconstruction with single-copy orthologs (ML + Bayesian).  
-8. **Transcriptomics** – RNA-Seq (12 libraries, 3 conditions × 4 replicates), DEG analysis with DESeq2.  
-9. **Integration** – Multi-omics approach to pinpoint candidate enzymes and pathways.  
+## Methodological Pipeline
+
+1. **Sample Collection & Isolation**  
+  - Compost enriched with PLA/PHA waste plated on **PDA + 0.5% PLA + Rhodamine B**.  
+  - **Rhodamine B assay** detects esterase activity via fluorescent halos.  
+  - Identity checked by **ITS rDNA sequencing** and microscopy (septate hyphae, conidia).  
+
+2. **DNA & RNA Extraction**  
+  - **Genomic DNA**: CTAB extraction, QC with Qubit, Nanodrop, gel electrophoresis (>20 kb).  
+  - **Total RNA**: TRIzol + silica columns, quality checked with Bioanalyzer.  
+
+3. **Genome Sequencing**  
+  - **Illumina NovaSeq PE150** (~100× coverage): short, high-accuracy reads for polishing.  
+  - **Oxford Nanopore GridION** (~30–40× coverage): long reads to resolve repeats/structural variants.  
+  - **Hybrid strategy** leverages accuracy + contiguity.  
+
+4. **Hybrid Assembly & QC**  
+  - Assembly: **Flye** (Nanopore-first).  
+  - Polishing: **Pilon** with Illumina reads.  
+  - QC: **QUAST** (contiguity) + **BUSCO** (completeness).  
+
+5. **Functional Annotation**  
+  - **MAKER3** pipeline with Augustus & GeneMark-ES.  
+  - Evidence: RNA-Seq alignments.  
+  - **dbCAN3**: CAZyme annotation.  
+  - **Geneious**: manual gene model curation.  
+
+6. **Comparative Genomics**  
+  - **OrthoFinder**: orthogroup inference, unique genes.  
+  - **MCScanX / MAUVE**: synteny and structural rearrangements.  
+
+7. **Phylogenomics**  
+  - Single-copy orthologs aligned with **MAFFT**, conserved regions via **Gblocks**.  
+  - Concatenation with **AMAS**.  
+  - Tree inference: **RAxML** (ML) + **MrBayes** (Bayesian).  
+  - Visualization: **MEGA11 / Geneious**.  
+
+8. **Transcriptomics**  
+  - **RNA-Seq design**: 12 libraries (Control, PLA, PHA × 4 replicates).  
+  - Quantification: **Salmon**, aggregation with **tximport**.  
+  - DEG analysis: **DESeq2** (FDR ≤ 0.05, |log2FC| ≥ 2).  
+
+9. **Integration**  
+  - Combine **genomics, comparative genomics, and transcriptomics**.  
+  - Identify **candidate enzymes & gene clusters** linked to PLA/PHA degradation.  
 
 ---
 
@@ -168,10 +204,10 @@ Based on **literature and preliminary reports**, the following fungi are typical
 
 ### Scientific Articles
 
-- Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.
+- Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.  DOI 10.3389/ffunb.2025.1540469
 - Khan et al. (2021). Fungal esterases and cutinases: Key players in synthetic polyester degradation. Applied Microbiology and Biotechnology, 105(11), 4445–4463.
-- Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004.
-- Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol.
+- Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004. https://doi.org/10.1186/s12864-015-2229-2
+- Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol. https://doi.org/10.3390/jof11050378
 
 ### Main Tools Used
 
