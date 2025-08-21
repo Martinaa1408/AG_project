@@ -9,6 +9,8 @@
 ![Tech](https://img.shields.io/badge/Tech-Illumina_NovaSeq+Nanopore_GridION-purple)
 ![Budget](https://img.shields.io/badge/Budget-200k%E2%82%AC-red)
 
+<img width="480" height="359" alt="image" src="https://github.com/user-attachments/assets/cb4f2b18-f932-4d4c-b224-0fb2c792ee53" />
+
 ---
 
 ## Table of Contents
