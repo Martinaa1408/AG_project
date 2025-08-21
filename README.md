@@ -59,8 +59,6 @@ This project explores fungal diversity from compost, aiming to identify isolates
 
 ## Methodological Pipeline
 
-## Methodological Pipeline
-
 1. **Sample Collection & Isolation**  
   - Compost enriched with PLA/PHA waste plated on **PDA + 0.5% PLA + Rhodamine B**.  
   - **Rhodamine B assay** detects esterase activity via fluorescent halos.  
