@@ -1,5 +1,14 @@
 # Hybrid Genome Assembly and Integrative Multi-Omics of Compost-Derived Fungal Isolates: Insights into Bioplastic Degradation Potential
 
+![Assembly](https://img.shields.io/badge/Assembly-Hybrid_(Illumina+Nanopore)-blue)
+![Annotation](https://img.shields.io/badge/Annotation-MAKER3_+_dbCAN3-green)
+![Transcriptomics](https://img.shields.io/badge/Transcriptomics-RNA--Seq_(Salmon+DESeq2)-orange)
+![Comparative](https://img.shields.io/badge/Comparative_Genomics-OrthoFinder+MCScanX-lightgrey)
+![QC](https://img.shields.io/badge/QC-QUAST_+_BUSCO-yellow)
+![PLA_PHA](https://img.shields.io/badge/PLA%2FPHA-Roles_in_Bioplastic_Degradation-brown)
+![Tech](https://img.shields.io/badge/Tech-Illumina_NovaSeq+Nanopore_GridION-purple)
+![Budget](https://img.shields.io/badge/Budget-200k%E2%82%AC-red)
+
 ---
 
 ## Table of Contents
