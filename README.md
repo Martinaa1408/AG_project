@@ -106,7 +106,7 @@ This project explores fungal diversity from compost, aiming to identify isolates
   - Visualization: **MEGA11 / Geneious**.  
 
 8. **Transcriptomics**  
-  - **RNA-Seq design**: 12 libraries (Control, PLA, PHA × 4 replicates).  
+  - **RNA-Seq design**: 12 libraries (Control, PLA, PHA, Blank × 3 replicates).  
   - Quantification: **Salmon**, aggregation with **tximport**.  
   - DEG analysis: **DESeq2** (FDR ≤ 0.05, |log2FC| ≥ 2).  
 
