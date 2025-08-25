@@ -154,9 +154,6 @@ This project explores fungal diversity from compost, aiming to identify isolates
 |                        | Reports, Dissemination                 | 15,000             | Publications, conferences, outreach     |
 | **Total**              |                                        | **200,000**        |                                          |
 
-<img width="415" height="381" alt="image" src="https://github.com/user-attachments/assets/887a9f59-fffa-4973-b87f-3d80efa15dcf" />
-
-
 ---
 
 ## Expected Key Results
