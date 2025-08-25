@@ -136,9 +136,6 @@ This project explores fungal diversity from compost, aiming to identify isolates
 
 ## Detailed Cost Breakdown
 
-<img width="498" height="374" alt="image" src="https://github.com/user-attachments/assets/1282193e-9d98-45ce-a46f-792825f58679" />
-
-
 | Personnel              | Activity                               | Estimated Cost (€) | Description                              |
 | ---------------------- | -------------------------------------- | ------------------ | ---------------------------------------- |
 | Wet lab Postdoc salary |                                        | 45,000             | One-year contract for lab activities     |
@@ -156,6 +153,9 @@ This project explores fungal diversity from compost, aiming to identify isolates
 |                        | Non-open source softwares              | 5,000              | Geneious & other licensed tools          |
 |                        | Reports, Dissemination                 | 15,000             | Publications, conferences, outreach     |
 | **Total**              |                                        | **200,000**        |                                          |
+
+<img width="415" height="381" alt="image" src="https://github.com/user-attachments/assets/887a9f59-fffa-4973-b87f-3d80efa15dcf" />
+
 
 ---
 
