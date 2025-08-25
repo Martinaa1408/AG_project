@@ -243,6 +243,13 @@ Based on **literature and preliminary reports**, the following fungi are typical
 - **R / Python** – For plotting and downstream analysis [https://www.r-project.org/](https://www.r-project.org/) | [https://www.python.org/](https://www.python.org/)  
 - **Geneious** – Manual curation and visualization [https://www.geneious.com/](https://www.geneious.com/)  
 
+### Course Reference
+
+- **Applied Genomics (2025)** – University of Bologna  
+  Course unit catalogue: [https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2025/524684](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2025/524684)  
+
+- Professors: Luca Fontanesi, Samuele Bovo (Animal and Food Genomics Group Department of Agricultural and Food Sciences)
+
 ---
 
 ## Contact
