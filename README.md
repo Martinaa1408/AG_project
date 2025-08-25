@@ -247,8 +247,7 @@ Based on **literature and preliminary reports**, the following fungi are typical
 
 - **Applied Genomics (2025)** – University of Bologna  
   Course unit catalogue: [https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2025/524684](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2025/524684)  
-
-- Professors: Luca Fontanesi, Samuele Bovo (Animal and Food Genomics Group Department of Agricultural and Food Sciences)
+Professors: Luca Fontanesi, Samuele Bovo (Animal and Food Genomics Group Department of Agricultural and Food Sciences)
 
 ---
 
