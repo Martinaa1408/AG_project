@@ -136,6 +136,9 @@ This project explores fungal diversity from compost, aiming to identify isolates
 
 ## Detailed Cost Breakdown
 
+<img width="498" height="374" alt="image" src="https://github.com/user-attachments/assets/1282193e-9d98-45ce-a46f-792825f58679" />
+
+
 | Personnel              | Activity                               | Estimated Cost (€) | Description                              |
 | ---------------------- | -------------------------------------- | ------------------ | ---------------------------------------- |
 | Wet lab Postdoc salary |                                        | 45,000             | One-year contract for lab activities     |
