@@ -218,6 +218,15 @@ Based on **literature and preliminary reports**, the following fungi are typical
 - Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.  DOI 10.3389/ffunb.2025.1540469
 - Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004. https://doi.org/10.1186/s12864-015-2229-2
 - Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol. https://doi.org/10.3390/jof11050378
+- Philp, J.C., Ritchie, R.J., Guy, K. (2013). Biobased plastics in a bioeconomy. Trends in Biotechnology, 31(2), 65–67. DOI: 10.1016/j.tibtech.2012.11.009
+- Lambert, S., Wagner, M. (2017). Environmental performance of bio-based and biodegradable plastics: the road ahead. Chem. Soc. Rev., 46, 6855–6871. DOI: 10.1039/c7cs00149e
+- Tokiwa, Y., Calabia, B.P. (2006). Biodegradability and biodegradation of poly(lactide). Appl. Microbiol. Biotechnol., 72, DOI: 244–251.10.1007/s00253-0060488-1
+- Emadian, S.M., Onay, T.T., Demirel, B. (2017). Biodegradation of bioplastics in natural environments. Waste Management, 59, 526–536. DOI: 10.1016/j.wasman.2016.10.006
+- European Commission (2018). A sustainable bioeconomy for Europe. Publications Office of the EU. DOI: 10.2777/792130
+- Economou, C. N. et al. Enhanced biodegradation of polylactic acid (PLA) films and microparticles by a commercial lipase from Aspergillus oryzae. Enzymatic Hydrolysis of PLA, (2023). DOI: 10.1016/j.biortech.2025.132807
+- Ekanayaka, A. H. et al. (2022). A review of fungi that degrade plastic. Fungal Biology, DOI: 10.3390/jof8080772
+- Li, L., Guo, Z., Guo, X., Dong, D., Fan, T.,Yao, L., Zha, Y., Kong, J., Dai, Y., Pan, T. (2025). Phanerochaete chrysosporium hyphae biocrack, endocytose and metabolize plastic films. Journal of Hazardous Materials, 468, 133565. DOI: 10.1016/j.jhazmat.2025.133565
+
 
 ### Main Tools Used
 
