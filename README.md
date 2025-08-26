@@ -214,9 +214,9 @@ Based on **literature and preliminary reports**, the following fungi are typical
 
 ### Scientific Articles
 
-- Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.  DOI 10.3389/ffunb.2025.1540469
-- Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004. https://doi.org/10.1186/s12864-015-2229-2
-- Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol. https://doi.org/10.3390/jof11050378
+- Menicucci, A., Iacono, S., Ramos, M., Fiorenzani, C., Peres, N. A., et al. (2025). Can whole genome sequencing resolve taxonomic ambiguities in fungi? The case study of Colletotrichum associated with ferns. Frontiers in Fungal Biology, 6, 1540469.  DOI: 10.3389/ffunb.2025.1540469
+- Prasad, P., Varshney, D., & Adholeya, A. (2015). Whole genome annotation and comparative genomic analyses of bio-control fungus Purpureocillium lilacinum. BMC Genomics, 16(1), 1004. DOI: 10.1186/s12864-015-2229-2
+- Ekanayaka, A. H. et al. (2025). Linking metabolic pathways to plastic-degrading fungi: a comprehensive review. J. Fungal Biol. DOI: 10.3390/jof11050378
 - Philp, J.C., Ritchie, R.J., Guy, K. (2013). Biobased plastics in a bioeconomy. Trends in Biotechnology, 31(2), 65–67. DOI: 10.1016/j.tibtech.2012.11.009
 - Lambert, S., Wagner, M. (2017). Environmental performance of bio-based and biodegradable plastics: the road ahead. Chem. Soc. Rev., 46, 6855–6871. DOI: 10.1039/c7cs00149e
 - Tokiwa, Y., Calabia, B.P. (2006). Biodegradability and biodegradation of poly(lactide). Appl. Microbiol. Biotechnol., 72, DOI: 244–251.10.1007/s00253-0060488-1
