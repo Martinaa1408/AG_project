@@ -1,5 +1,7 @@
 
-# <img width="433" height="360" alt="image" src="https://github.com/user-attachments/assets/dd2a2a50-bf4e-4dfd-9d0b-57b4ff079069" />
+# Hybrid Genome Assembly and Integrative Multi-Omics of Composting-Residue Isolates Reveal Bioplastic Degradation Potential
+
+<img width="433" height="360" alt="image" src="https://github.com/user-attachments/assets/dd2a2a50-bf4e-4dfd-9d0b-57b4ff079069" />
 
 
 ![Assembly](https://img.shields.io/badge/Assembly-Hybrid_(Illumina+Nanopore)-blue)
