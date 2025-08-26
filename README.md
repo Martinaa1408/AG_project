@@ -1,8 +1,6 @@
 
 # Hybrid Genome Assembly and Integrative Multi-Omics of Composting-Residue Isolates Reveal Bioplastic Degradation Potential
 
-<img width="433" height="360" alt="image" src="https://github.com/user-attachments/assets/dd2a2a50-bf4e-4dfd-9d0b-57b4ff079069" />
-
 
 ![Assembly](https://img.shields.io/badge/Assembly-Hybrid_(Illumina+Nanopore)-blue)
 ![Annotation](https://img.shields.io/badge/Annotation-MAKER3_+_dbCAN3-green)
@@ -21,6 +19,7 @@
 - [Project Overview](#project-overview)
 - [Background and Rationale](#background-and-rationale)
 - [Objectives](#objectives)
+- [Repository Structure](#repository-structure)
 - [Methodological Pipeline](#methodological-pipeline)
 - [Summary of Experimental Workflow](#summary-of-experimental-workflow)
 - [Detailed Cost Breakdown](#detailed-cost-breakdown)
@@ -69,6 +68,18 @@ This project explores fungal diversity from compost, aiming to identify isolates
 - Apply **RNA-Seq** to detect genes induced under PLA/PHA.  
 - Integrate datasets to provide a **pipeline for enzyme discovery**.  
 
+---
+
+## Repository Structure
+
+The repository is organized as follows:
+
+```text
+├── Alignment with AG Course Requirements/ # Checklist and mapping of project outputs with course requirements
+├── figures/ # Figures generated for report and presentation
+├── report and ppt/ # Final project report (PDF) and presentation slides (PPTX)
+└── README.md # Project documentation
+```
 ---
 
 ## Methodological Pipeline
