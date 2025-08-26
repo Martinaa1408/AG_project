@@ -266,3 +266,6 @@ Professors: Luca Fontanesi, Samuele Bovo (Animal and Food Genomics Group Departm
 **Martina Castellucci**  
 Email: [martina.castellucci@studio.unibo.it](mailto:martina.castellucci@studio.unibo.it)  
 University of Bologna — Applied Genomics Project
+
+--> For a deeper overview of the course materials, see the [AG_theory repository](https://github.com/Martinaa1408/AG_theory).
+
