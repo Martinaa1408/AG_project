@@ -20,16 +20,17 @@ All commands are **illustrative only** — they represent the expected pipeline,
 - Utilities: `fastqc`, `multiqc`, `trimmomatic`, `fastp`, `seqkit`, `parallel`  
 
 **Suggested folder layout:**
+```text
 AG_project/
-├─ data/ # raw FASTQ, reference, GTF/GFF
-├─ qc/ # read QC
-├─ assembly/ # Flye + Pilon outputs
-├─ annotation/ # MAKER3 / AUGUSTUS / dbCAN3
-├─ rna/ # Salmon quants + DESeq2
-├─ comparative/ # OrthoFinder / MCScanX / phylogeny
-├─ logs/ # HPC logs (SLURM/SGE)
-└─ envs/ # conda env files
-
+├─ data/         # Raw data and references
+├─ qc/           # Read quality control
+├─ assembly/     # Genome assembly & polishing
+├─ annotation/   # Genome annotation (structural + functional)
+├─ rna/          # Transcriptome quantification & DEG analysis
+├─ comparative/  # Orthology, synteny, and phylogenomics
+├─ logs/         # HPC job logs (SLURM/SGE)
+└─ envs/         # Conda environment files
+```
 
 **Environment creation (example with mamba):**
 ```bash
@@ -45,10 +46,10 @@ mamba activate agproj
 Compute needs:
 
 RAM: assembly ≥128 GB; comparative ≥256 GB; RNA-Seq ≤64 GB
-
 CPU: 16–40 cores typical
-
 GPU: optional for Nanopore basecalling (NVIDIA V100/A100)
+
+---
 
 ## 1) Sampling & Screening
 
@@ -60,6 +61,8 @@ Galaxy alternative: not applicable (wet-lab step).
 
 # Mock note: colonies with fluorescent halos under UV are retained
 
+---
+
 ## 2) DNA/RNA Extraction & QC
 
 Concept: High molecular weight DNA and intact RNA are critical for NGS.
@@ -67,7 +70,6 @@ Concept: High molecular weight DNA and intact RNA are critical for NGS.
 Quality thresholds:
 
 DNA: A260/280 ~1.8; A260/230 ~2.0; >20 kb fragments
-
 RNA: RIN >8; A260/280 ~2.0
 
 Procedure (mock):
@@ -81,6 +83,8 @@ multiqc qc/ -o qc/
 Expected: sequencing-grade DNA and RNA.
 Theory link: poor input compromises downstream results.
 Galaxy alternative: FastQC, MultiQC.
+
+---
 
 ## 3) Hybrid Sequencing
 
@@ -101,6 +105,8 @@ fastp -i data/illumina/R1.fastq.gz -I data/illumina/R2.fastq.gz \
 Expected: ~100× Illumina + 30–40× Nanopore coverage.
 Theory link: hybrid strategies balance accuracy and contiguity.
 Galaxy alternative: Fastp, Cutadapt, NanoPlot.
+
+---
 
 ## 4) Assembly & Polishing
 
@@ -128,6 +134,8 @@ Expected: few contigs, high N50, BUSCO completeness >90%.
 Theory link: single-copy orthologs benchmark assembly completeness.
 Galaxy alternative: Flye, Pilon, QUAST, BUSCO wrappers.
 
+---
+
 ## 5) Annotation
 
 Concept: MAKER3 integrates ab initio predictors (AUGUSTUS, GeneMark-ES), RNA-Seq, and protein homology. dbCAN3 annotates CAZymes.
@@ -147,6 +155,8 @@ run_dbcan maker_merged.fasta protein --out_dir dbcan_results --cpu 16
 Expected: 10–15k gene models, enriched in esterases, cutinases, lipases.
 Theory link: integration reduces false positives.
 Galaxy alternative: AUGUSTUS, InterProScan, dbCAN.
+
+---
 
 ## 6) RNA-Seq Quantification & DEG Analysis
 
@@ -179,6 +189,8 @@ Expected: ~300 DEGs; hydrolases strongly induced.
 Theory link: DEGs link genomic content to functional activity.
 Galaxy alternative: RNA-Seq → DESeq2 workflows.
 
+---
+
 ## 7) Comparative Genomics
 
 Concept: OrthoFinder identifies orthogroups; MCScanX analyzes synteny; Mauve detects rearrangements.
@@ -196,6 +208,8 @@ MCScanX A_B
 Expected: unique orthogroups in degraders; conserved synteny with local expansions.
 Theory link: orthology and synteny reveal adaptive signatures.
 Galaxy alternative: OrthoFinder, synteny modules.
+
+---
 
 ## 8) Phylogenomics
 
@@ -221,6 +235,8 @@ Expected: degraders cluster into a distinct clade.
 Theory link: single-copy orthologs provide robust phylogenetic signals.
 Galaxy alternative: MAFFT, RAxML, MrBayes.
 
+---
+
 ## 9) Integration
 
 Expected Narrative:
@@ -237,6 +253,8 @@ Phylogenomics → places isolates in evolutionary context
 
 Theory link: integrated pipelines demonstrate how genomics connects molecular data to applied biotechnology.
 Galaxy alternative: chain workflows end-to-end.
+
+---
 
 ## 10) HPC Templates
 
@@ -257,22 +275,25 @@ flye --nano-raw data/nanopore/reads.fastq --out-dir assembly/flye --threads 32
 module load mamba && mamba activate agproj
 orthofinder -f comparative/genomes/ -t 48 -a 48 -o comparative/orthofinder
 ```
+---
 
 ## 11) Galaxy Shortcuts
 
-QC: FastQC → MultiQC
+#### QC: FastQC → MultiQC
 
-Trimming: Fastp, Cutadapt
+#### Trimming: Fastp, Cutadapt
 
-Assembly: Flye + Pilon
+#### Assembly: Flye + Pilon
 
-QC: QUAST, BUSCO
+#### QC: QUAST, BUSCO
 
-Annotation: AUGUSTUS, InterProScan, dbCAN
+#### Annotation: AUGUSTUS, InterProScan, dbCAN
 
-RNA-Seq: Salmon → DESeq2
+#### RNA-Seq: Salmon → DESeq2
 
-Comparative: OrthoFinder, MAFFT, RAxML, synteny
+#### Comparative: OrthoFinder, MAFFT, RAxML, synteny
+
+---
 
 ## 12) Final Notes
 
