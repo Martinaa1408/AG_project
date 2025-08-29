@@ -212,7 +212,7 @@ Based on **literature and preliminary reports**, the following fungi are typical
 
 | Technology       | Read Length       | Coverage | Mean Q-Score | Advantages                                      | Primary Applications |
 | ---------------- | ----------------- | -------- | ------------ | ----------------------------------------------- | -------------------- |
-| Illumina NovaSeq | ~150 bp (paired)  | ~101×    | >30          | High-accuracy short reads; optimal for polishing assemblies | SNP calling, differential expression (DEGs) |
+| Illumina NovaSeq | ~150 bp (paired)  | ~up to 30×    | >30          | High-accuracy short reads; optimal for polishing assemblies | SNP calling, differential expression (DEGs) |
 | Oxford Nanopore  | ~10–20 kb         | ~35×     | >30          | Long reads; resolves complex repeats and structural variants | De novo assembly, structural genomics |
 
 **Platforms used:**
