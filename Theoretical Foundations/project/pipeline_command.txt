@@ -1,0 +1,395 @@
+---ITS rDNA barcoding sequencing----
+
+DNA (from CTAB or kit) → PCR with ITS primers
+   - ITS1 (forward: ITS1-F / ITS5) 
+   - ITS4 (reverse)
+   Amplicon size: ~600–700 bp (ITS1-5.8S-ITS2 region)
+   |
+   v
+PCR cleanup (ExoSAP-IT / kit) 
+   |
+   v
+Sanger sequencing (bidirectional) OR Illumina MiSeq amplicon sequencing
+   |
+   v
+Bioinformatics: 
+   - Sanger: assemble reads → BLAST against UNITE database
+   - Amplicon: DADA2/QIIME2 → ASVs → taxonomic assignment
+OUTPUT: fungal species-level identification
+
+----CTAB protocol----
+
+Sample → mycelium pellet (frozen, ground in liquid N2)
+   |
+   v
+CTAB buffer (2% CTAB, NaCl 1.4 M, Tris pH 8, EDTA 20 mM, ß-mercaptoethanol)
+   - Lyses cells, binds polysaccharides
+   - Proteinase K optional
+   |
+   v
+Chloroform:isoamyl extraction → centrifuge → aqueous phase
+   |
+   v
+Isopropanol precipitation → ethanol wash → resuspend in TE
+   |
+   v
+RNase A treatment → DNA storage at -20 °C
+OUTPUT: high-quality gDNA, good for ONT + Illumina
+QC: NanoDrop (A260/280 ~1.8), Qubit, gel
+
+----TRIZol----
+
+Sample → mycelium pellet (frozen, ground)
+   |
+   v
+TRIzol reagent (guanidinium + phenol)
+   - Lyses cells, denatures proteins & RNases
+   |
+   v
+Chloroform separation → centrifuge → aqueous phase
+   |
+   v
+Isopropanol precipitation → ethanol wash → resuspend RNAse-free water
+   |
+   v
+DNase treatment (remove genomic DNA)
+   |
+   v
+Optional: column cleanup (RNeasy)
+OUTPUT: total RNA (RIN >8)
+QC: NanoDrop (A260/280 ~2.0), Qubit, Bioanalyzer/TapeStation
+
+
+----ILLUMINA NOVASEQ PE150 — SHORT-READ PIPELINE----
+
+Step 1: Input — FASTQ (R1/R2, 150 bp PE)
+  - Output from NovaSeq run (bcl2fastq conversion)
+  - High accuracy, good for polishing and expression
+
+                     |
+                     v
+
+Step 2: Quality Check
+  - Command: fastqc R1.fastq.gz R2.fastq.gz -o qc/
+  - Command: multiqc qc/ -o qc/
+  - Does: assesses read quality, adapters, GC bias
+  - Output: HTML reports (per sample + global)
+
+                     |
+                     v
+
+Step 3: Trimming
+  - Command: fastp -i R1.fastq.gz -I R2.fastq.gz \
+                   -o R1.trim.fastq.gz -O R2.trim.fastq.gz \
+                   --detect_adapter_for_pe --thread 16
+  - Does: removes adapters + low-quality bases
+  - Output: cleaned paired-end FASTQs
+
+                     |
+                     v
+
+Step 4a: Genome polishing branch
+  - Command: bwa index assembly.fasta
+  - Command: bwa mem -t 32 assembly.fasta R1.trim.fastq.gz R2.trim.fastq.gz | \
+              samtools sort -o illumina.sorted.bam
+  - Command: samtools index illumina.sorted.bam
+  - Does: maps Illumina reads onto draft assembly (ONT Flye output)
+  - Output: BAM + BAI alignments → input for Pilon
+
+                     |
+                     v
+
+Step 4b: Transcriptome quantification branch
+  - Command: salmon index -t transcripts.fasta -i rna/index -k 31
+  - Command: salmon quant -i rna/index -l A \
+                           -1 R1.trim.fastq.gz -2 R2.trim.fastq.gz \
+                           -p 16 -o rna/quants/sample
+  - Does: pseudoaligns reads to transcripts, quantifies abundance
+  - Output: quant.sf files (TPM, counts)
+
+                     |
+                     v
+
+Step 5: Differential Expression (if RNA-Seq)
+  - R / DESeq2 (import tximport, run DESeq)
+  - Output: list of DEGs (log2FC, padj)
+
+FINAL OUTPUTS:
+  • Clean reads (FASTQ)
+  • Alignments (BAM/BAI) for polishing
+  • Transcript quantifications (quant.sf)
+  • DEG tables (CSV)
+
+
+----ONT GRIDION — LONG-READ PIPELINE----
+
+Step 1: Input — raw signals (POD5 / FAST5)
+  - Directly from GridION run
+
+                     |
+                     v
+
+Step 2: Basecalling
+  - Command: dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5/ > reads.fastq
+  - Does: converts raw signals to FASTQ sequences
+  - Output: Nanopore reads (FASTQ)
+
+                     |
+                     v
+
+Step 3: QC / Stats
+  - Command: seqkit stats reads.fastq > qc/nanopore_stats.txt
+  - Optional: NanoPlot for quality/length distribution
+  - Output: read count, N50, quality distribution
+
+                     |
+                     v
+
+Step 4: Assembly
+  - Command: flye --nano-raw reads.fastq.gz --out-dir assembly/flye --threads 32
+  - Does: de novo assembly from long reads
+  - Output: draft genome (FASTA)
+
+                     |
+                     v
+
+Step 5: Consensus polishing (ONT only, optional)
+  - Command: medaka_consensus -i reads.fastq.gz -d assembly/flye/assembly.fasta \
+                               -o assembly/medaka -t 32 -m r1041_e82_400bps_sup_v4.3.0
+  - Does: improves base accuracy using ONT models
+  - Output: medaka-polished FASTA
+
+                     |
+                     v
+
+Step 6: Short-read polishing with Illumina
+  - Prereq: Illumina BAM from NovaSeq pipeline
+  - Command: pilon --genome assembly/flye/assembly.fasta \
+                   --frags illumina.sorted.bam \
+                   --outdir assembly/pilon_r1 --threads 16
+  - Does: corrects SNPs/indels with Illumina evidence
+  - Output: polished assembly (FASTA)
+
+                     |
+                     v
+
+Step 7: Assembly QC
+  - Command: quast -o assembly/quast assembly/pilon_r1/pilon.fasta
+  - Command: busco -i assembly/pilon_r1/pilon.fasta -l fungi_odb10 -m genome -o assembly/busco
+  - Does: evaluates contiguity (QUAST) and completeness (BUSCO)
+  - Output: reports (HTML + txt)
+
+FINAL OUTPUTS:
+  • Draft assembly (Flye)
+  • ONT-polished assembly (Medaka, optional)
+  • Hybrid-polished assembly (Pilon with Illumina)
+  • QC metrics (QUAST + BUSCO)
+
+
+----GENOME ASSEMBLY & POLISHING PIPELINE----
+
+Step 1: Nanopore long reads (FASTQ)
+  - Input: raw long reads from ONT basecalling (dorado/guppy).
+  - Strength: long reads span repeats → better contiguity.
+
+                     |
+                     v
+
+Step 2: Flye (long-read assembler)
+  - Command: flye --nano-raw reads.fastq ...
+  - Does: constructs a draft genome assembly from Nanopore reads.
+  - Output: draft assembly (FASTA), usually fragmented but contiguous.
+
+                     |
+                     v
+
+Step 3: Illumina short reads (FASTQ)
+  - Input: accurate paired-end Illumina reads (trimmed with fastp).
+  - Strength: low error rate → ideal for error correction.
+
+                     |
+                     v
+
+Step 4: BWA + Samtools (mapping)
+  - Command: bwa mem draft.fasta R1.trim.fastq.gz R2.trim.fastq.gz | samtools sort ...
+  - Does: aligns Illumina reads back to the draft genome, sorts/indexes.
+  - Output: alignment file (BAM + BAI) showing how Illumina supports/corrects bases.
+
+                     |
+                     v
+
+Step 5: Pilon (polishing)
+  - Command: pilon --genome draft.fasta --frags illumina.sorted.bam ...
+  - Does: uses the alignment evidence to fix errors (SNPs, indels, misassemblies).
+  - Output: polished assembly (FASTA), more accurate than Flye-only.
+
+                     |
+                     v
+
+Step 6: QC of final assembly
+  - QUAST: contiguity metrics (N50, L50, #contigs, GC%).
+  - BUSCO: completeness check using universal single-copy orthologs.
+  - Output: quality reports, confirming assembly accuracy and completeness.
+
+Final Product:
+  → Polished genome assembly (FASTA)
+  → QC metrics (QUAST + BUSCO) confirming reliability
+
+
+----MAKER3 GENOME ANNOTATION PIPELINE----
+
+Step 1: Input
+  - Polished genome assembly (FASTA, from Flye+Pilon)
+  - Evidence: transcripts (RNA-Seq), proteins (related species)
+
+                     |
+                     v
+
+Step 2: Configure
+  - Command: maker -CTL
+  - Does: creates 3 control files (maker_opts.ctl, maker_bopts.ctl, maker_exe.ctl)
+  - Edit maker_opts.ctl → specify:
+        genome=assembly.fasta
+        protein=proteins.fa
+        est=transcripts.fa
+        model_org=simple/fungus
+  - Output: control files customized for your dataset
+
+                     |
+                     v
+
+Step 3: Run MAKER
+  - Command: maker
+  - Does: integrates evidence-based + ab initio predictions (AUGUSTUS, GeneMark-ES)
+  - Output: gene models (GFF3), predicted proteins (FASTA), logs
+
+                     |
+                     v
+
+Step 4: Merge results
+  - Command: gff3_merge -d *.maker.output/*/*_master_datastore_index.log > maker_merged.gff
+  - Command: fasta_merge -d *.maker.output/*/*_master_datastore_index.log > maker_merged.fasta
+  - Does: collects distributed MAKER results into single files
+  - Output: unified annotation (GFF3 + FASTA)
+
+                     |
+                     v
+
+Step 5: Functional annotation
+  - Command: interproscan.sh -i maker_merged.fasta -f tsv -dp -appl Pfam,SMART,ProSiteProfiles -cpu 16 -o interpro.tsv
+  - Does: assigns protein domains + GO terms
+  - Output: functional annotation table (domains + GO)
+
+                     |
+                     v
+
+Step 6: Enzyme annotation (CAZymes)
+  - Command: run_dbcan maker_merged.fasta protein --out_dir dbcan_results --cpu 16
+  - Does: identifies carbohydrate-active enzymes (CAZy families: esterases, lipases, cutinases)
+  - Output: dbCAN results (summary tables, enzyme families)
+
+FINAL OUTPUTS:
+  • maker_merged.gff  → structural annotation
+  • maker_merged.fasta → predicted proteins/transcripts
+  • interpro.tsv → functional domains
+  • dbcan_results/ → CAZy enzymes
+
+
+----ORTHOFINDER COMPARATIVE GENOMICS PIPELINE----
+
+Step 1: Input
+  - Protein FASTA files (predicted proteomes) from all genomes of interest
+  - Directory structure: comparative/genomes/*.faa
+
+                     |
+                     v
+
+Step 2: Run OrthoFinder
+  - Command: orthofinder -f comparative/genomes/ -t 32 -a 32 -o comparative/orthofinder
+  - Does: performs all-vs-all sequence similarity (DIAMOND/BLAST), clusters into orthogroups
+  - Output: orthogroups, gene trees, species tree
+
+                     |
+                     v
+
+Step 3: Outputs overview
+  - Orthogroups.tsv → mapping of each gene to an orthogroup
+  - Orthogroups_SingleCopyOrthologues.txt → list of single-copy orthologs
+  - Phylogenetic tree of included species
+  - Statistics: % genes in orthogroups, unique vs shared families
+
+                     |
+                     v
+
+Step 4: Downstream analysis
+  a) Identify unique orthogroups in PLA degraders
+  b) Extract single-copy orthologs for phylogenomic analysis
+  c) Compare expansions/contractions of CAZymes or specific gene families
+
+                     |
+                     v
+
+Step 5: Optional synteny with MCScanX
+  - Prereq: BLASTP similarity file + GFF with coordinates
+  - Command: MCScanX A_B
+  - Does: detects collinear blocks, visualizes synteny
+  - Output: synteny dotplots, block statistics
+
+FINAL OUTPUTS:
+  • Orthogroups.tsv (functional gene clusters)
+  • SingleCopyOrthologues.txt (phylogenomics input)
+  • Species tree (phylogeny of all proteomes)
+  • Comparative stats (unique vs conserved families)
+
+
+----RNA-SEQ QUANTIFICATION & DEG ANALYSIS PIPELINE----
+
+Step 1: Illumina RNA-Seq reads (FASTQ)
+  - Input: paired-end RNA-Seq reads (trimmed/clean).
+  - Goal: capture transcriptome (all expressed RNAs).
+
+                     |
+                     v
+
+Step 2: Salmon (indexing)
+  - Command: salmon index -t transcripts.fasta -i rna/index --type quasi -k 31
+  - Does: builds a lightweight index of transcriptome (from annotation).
+  - Output: Salmon index (for fast mapping).
+
+                     |
+                     v
+
+Step 3: Salmon (quantification)
+  - Command: salmon quant -i rna/index -l A -1 sample_R1.fastq.gz -2 sample_R2.fastq.gz -p 16 -o rna/quants/sample
+  - Does: maps reads directly to transcripts, estimates abundance (TPM, counts).
+  - Output: quant.sf file with expression values per transcript.
+
+                     |
+                     v
+
+Step 4: Tximport (R)
+  - R function: tximport(files, type="salmon", txOut=TRUE)
+  - Does: imports Salmon quantifications into R, aggregates by gene.
+  - Output: matrix of counts (genes × samples).
+
+                     |
+                     v
+
+Step 5: DESeq2 (R)
+  - Command (R code): DESeq(dds)
+  - Does: fits a negative binomial GLM, tests differential expression.
+  - Output: statistical results (log2 fold-change, p-value, adjusted p-value).
+
+                     |
+                     v
+
+Step 6: Shrinkage & results
+  - R function: lfcShrink(..., type="apeglm")
+  - Does: stabilizes log2 fold-changes for better interpretability.
+  - Output: final table of DEGs (differentially expressed genes).
+
+Final Products:
+  → Quantification files (quant.sf, TPM/counts)
+  → Normalized expression matrix
+  → DEG results (CSV with log2FC, padj)
+
