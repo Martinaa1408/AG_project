@@ -712,7 +712,7 @@ De novo assembly → high depth + long reads needed to resolve repeats and struc
 
 ## 4. Genome Assembly
 
-<img width="319" height="280" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
+<img width="259" height="280" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
 
 Genome assembly is the process of reconstructing the complete genomic sequence of an organism from millions of sequencing reads. Modern sequencing platforms produce vast numbers of short or long fragments, which must be computationally pieced together to rebuild the genome.
 
@@ -1544,7 +1544,7 @@ Provides powerful insights into gene expression regulation, splicing, and transc
 
 ### Genome-Wide Association Studies (GWAS)
 
-<img width="383" height="210" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
+<img width="253" height="310" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
 
 **Principle**: Detects statistical associations between SNPs and phenotypes across large populations.  
 
