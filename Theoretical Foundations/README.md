@@ -84,8 +84,9 @@ Full slide deck: [Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN
            5- detection is based on light or color emitted by the final ddNTP;
            6- by analyzing fragment lengths and terminal nucleotides the DNA sequence is reconstructed.
        -->key features: uses linear amplification millions of fragments of varying lengths, highly accurate but low throughput compared to modern methods, provided the               foundation for today's sequencing technologies.
-   <img width="376" height="308" alt="Screenshot 2025-08-29 153827" src="https://github.com/user-attachments/assets/7dfb8363-8369-406a-8f9c-abada9e001d9" />
-    
+   
+<img width="331" height="355" alt="Screenshot 2025-08-31 101946" src="https://github.com/user-attachments/assets/449affb3-d1d9-471a-aa68-1668a142e79f" />
+
      - **PCR (polymerase chain amplification)**: method for amplification. Its goal is to take a specific tiny segment of DNA and make billions copies of it. This process           is exponential amplification, each cycle double the number of copies.
            Process:
              - denaturation --> annealing --> extension
