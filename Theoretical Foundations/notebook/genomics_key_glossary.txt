@@ -236,6 +236,98 @@ Comparative genomics in biotechnology → Identify pathways for biodegradation, 
 
 ---PIPELINE----
 
+Full_ngs_pipeline
+  description: >
+    Full NGS workflow from sample preparation to annotated variants.
+    Linear and readable representation of data flow.
+
+  input:
+    sample: "Biological material (DNA or RNA)"
+    reference_genome: "FASTA file of reference genome"
+
+  workflow:
+    - step: sample_preparation
+      input: sample
+      output: extracted_dna
+      description: "Extract high-quality DNA or RNA from the biological sample."
+
+    - step: library_construction
+      input: extracted_dna
+      output: sequencing_library
+      description: "Generate sequencing library with adapters and barcodes."
+
+    - step: sequencing
+      input: sequencing_library
+      output: raw_fastq
+      description: "High-throughput sequencing produces raw reads (FASTQ)."
+
+    - step: fastq_quality_control
+      input: raw_fastq
+      output: fastqc_report
+      tool: FASTQC
+      description: "Assess read quality, GC content, adapters, per-base metrics."
+
+    - step: trimming_and_filtering
+      input: raw_fastq
+      output: trimmed_reads
+      tool: PRINSEQ
+      description: "Trim low-quality bases and adapters; filter poor reads."
+
+    - step: reference_indexing
+      input: reference_genome
+      output: indexed_reference
+      tool: BWA_index
+      description: "Index reference genome for efficient alignment."
+
+    - step: alignment
+      input:
+        - trimmed_reads
+        - indexed_reference
+      output: alignment_sam
+      tool: BWA_MEM
+      description: "Map reads to reference genome; produce SAM file."
+
+    - step: bam_processing
+      input: alignment_sam
+      output: sorted_indexed_bam
+      tool: SAMtools
+      description: "Convert SAM → BAM, sort, and index for downstream analyses."
+
+    - step: variant_calling
+      input:
+        - sorted_indexed_bam
+        - indexed_reference
+      output: variants_vcf
+      tool: bcftools
+      description: "Call SNPs and indels; produce VCF with positions and quality."
+
+    - step: variant_annotation
+      input: variants_vcf
+      output: annotated_variants
+      tool: snpEff
+      description: "Annotate variants with gene function, effect prediction, and clinical relevance."
+
+    - step: bam_to_bed
+      input: sorted_indexed_bam
+      output: features_bed
+      tool: BEDTools
+      description: "Convert alignments to BED format for visualization or downstream analysis."
+
+  output:
+    - extracted_dna
+    - sequencing_library
+    - raw_fastq
+    - fastqc_report
+    - trimmed_reads
+    - indexed_reference
+    - alignment_sam
+    - sorted_indexed_bam
+    - variants_vcf
+    - annotated_variants
+    - features_bed
+
+-----
+
 Sample Collection (cells, tissue, environment)
     ↓
 DNA or RNA Extraction
