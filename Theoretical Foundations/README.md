@@ -513,7 +513,7 @@ Step include:
   SEQ → read sequence.
   QUAL → base quality (Phred).
   
-<img width="331" height="366" alt="Screenshot 2025-08-31 103108" src="https://github.com/user-attachments/assets/b9f2c7db-0f0c-48e4-8c26-898aeea192ec" />
+<img width="381" height="376" alt="Screenshot 2025-08-31 103108" src="https://github.com/user-attachments/assets/b9f2c7db-0f0c-48e4-8c26-898aeea192ec" />
 
 
   
@@ -574,7 +574,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   1|1 → homozygous alternate.
   If multiple alternate alleles exist: 2, 3, etc.
   
-<img width="345" height="338" alt="Screenshot 2025-08-31 103139" src="https://github.com/user-attachments/assets/5b14f1b6-827e-47eb-b042-53b61c36bf3c" />
+<img width="375" height="378" alt="Screenshot 2025-08-31 103139" src="https://github.com/user-attachments/assets/5b14f1b6-827e-47eb-b042-53b61c36bf3c" />
 
 
 
@@ -629,7 +629,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   phase → for CDS: 0, 1, or 2 (frame of translation start)
   attributes → semicolon-separated key=value pairs (e.g., ID=gene1;Name=BRCA1)
 
-<img width="331" height="381" alt="Screenshot 2025-08-31 103731" src="https://github.com/user-attachments/assets/60980a43-bf0d-4d59-82fc-66b7cc7e0a0a" />
+<img width="341" height="381" alt="Screenshot 2025-08-31 103731" src="https://github.com/user-attachments/assets/60980a43-bf0d-4d59-82fc-66b7cc7e0a0a" />
 
 
   **BED** = simple intervals (coordinates, lightweight for browsers like UCSC/IGV).
@@ -637,7 +637,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   Format: Very light, 3 mandatory columns, max 12 optional.
   Optional (up to 12 fields): name, score, strand, thickStart, thickEnd, itemRgb, blockCount, etc.
   
-<img width="334" height="363" alt="Screenshot 2025-08-31 103741" src="https://github.com/user-attachments/assets/2c2b3d45-86ec-4751-b796-a741dcacf80d" />
+<img width="344" height="363" alt="Screenshot 2025-08-31 103741" src="https://github.com/user-attachments/assets/2c2b3d45-86ec-4751-b796-a741dcacf80d" />
 
 
 Raw sequencing output can be huge (terabytes); filtering and compression reduce size dramatically (2.5 TB raw data-->30 GB FASTQ); effcient storage and file format choice are critical for downstream analysis.
@@ -712,7 +712,7 @@ De novo assembly → high depth + long reads needed to resolve repeats and struc
 
 ## 4. Genome Assembly
 
-<img width="319" height="301" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
+<img width="319" height="280" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
 
 Genome assembly is the process of reconstructing the complete genomic sequence of an organism from millions of sequencing reads. Modern sequencing platforms produce vast numbers of short or long fragments, which must be computationally pieced together to rebuild the genome.
 
@@ -895,7 +895,7 @@ ex. MTDNA
 
 ## 5. Genome Annotation
 
-<img width="308" height="348" alt="Screenshot 2025-08-31 103645" src="https://github.com/user-attachments/assets/4317875c-ae1e-4934-b9c0-ad85e06510bf" />
+<img width="358" height="348" alt="Screenshot 2025-08-31 103645" src="https://github.com/user-attachments/assets/4317875c-ae1e-4934-b9c0-ad85e06510bf" />
 
 
 Genome annotation is the process of adding biological meaning to an assembled genome.
@@ -1079,7 +1079,7 @@ In addition to whole-genome sequencing, a range of **specialized approaches** ta
 
 ### aCGH (Array Comparative Genomic Hybridization)
 
-<img width="332" height="341" alt="Screenshot 2025-08-31 105100" src="https://github.com/user-attachments/assets/eef958dc-48d9-4b76-958c-b03effcbf9b0" />
+<img width="350" height="341" alt="Screenshot 2025-08-31 105100" src="https://github.com/user-attachments/assets/eef958dc-48d9-4b76-958c-b03effcbf9b0" />
 
 
 **Principle**: Detects **Copy Number Variations (CNVs)** using hybridization on a microarray. Test and reference DNA are labeled with different fluorescent dyes, co-hybridized to probes on a chip, and the fluorescence ratio indicates gains or losses.  
@@ -1168,7 +1168,7 @@ DNA/RNA → labeling → hybridization on chip probes → scanner reads fluoresc
 | **Limitations**| No individual genotypes, sensitive to unequal DNA contributions         |
 
 
-## Pool-Seq: Sequencing Pools of Individuals
+### Pool-Seq: Sequencing Pools of Individuals
 
 ### Concept
 - **Pool-seq** = Whole genome sequencing of pools of individuals.  
@@ -1198,7 +1198,7 @@ Applications
 - Study: 56 Gbp sequenced for ~$400 (using a non-Illumina machine; Illumina would cost ~$700).  
 - Shows strong cost-effectiveness for population-level studies.
 
-## Targeted Sequencing
+### Targeted Sequencing
 
 ### Concept
 - **Targeted sequencing** = focus on specific genes or regions of interest.  
@@ -1215,7 +1215,7 @@ Applications
 - Pharmacogenomics.  
 - Discovery of novel variants in selected loci.  
 
-## Amplicon Sequencing (Illumina)
+### Amplicon Sequencing (Illumina)
 
 <img width="361" height="326" alt="Screenshot 2025-08-31 104704" src="https://github.com/user-attachments/assets/5229a300-03fa-40f6-8a57-95f09288e179" />
 
@@ -1288,11 +1288,11 @@ Applications
 | **Strengths**  | Cheaper than WGS, deeper coverage, focuses on known disease-causing regions |
 | **Limitations**| Misses regulatory/non-coding variants, capture bias, uneven coverage    |
 
-# Whole-Exome Sequencing (WES)
+### Whole-Exome Sequencing (WES)
 
 <img width="370" height="350" alt="Screenshot 2025-08-31 104712" src="https://github.com/user-attachments/assets/722619e3-6476-4c1b-8551-aca165d3a15b" />
 
-## Introduction
+### Introduction
 - **Whole-exome sequencing (WES)** = NGS method targeting the protein-coding regions of the genome.  
 - Human exome = **<2% of the genome**, but contains ~85% of known disease-related variants.  
 - Cost-effective alternative to **whole-genome sequencing (WGS)**.  
@@ -1305,7 +1305,7 @@ Applications
 - Broad applications: population genetics, rare genetic disease, cancer studies.  
 
 
-## Hybridization Capture (Target Enrichment)
+### Hybridization Capture (Target Enrichment)
 WES relies on **hybridization capture** to enrich coding regions.
 
 **Workflow**:
@@ -1346,7 +1346,7 @@ After WES, thousands of variants are typically identified. Filtering is necessar
 3. Exclude common polymorphisms.  
 4. Prioritize rare, novel variants with potential disease impact.  
 
-## Comparison of Approaches
+### Comparison of Approaches
 
 | Approach | Target | Coverage per base | Data size | Cost | Notes |
 |----------|--------|-------------------|-----------|------|-------|
@@ -1355,7 +1355,7 @@ After WES, thousands of variants are typically identified. Filtering is necessar
 | **Whole-genome sequencing (WGS)** | Entire genome | Moderate (spread over 3 Gb) | Large (~90 Gb) | Highest | Comprehensive, unbiased |
 
 
-## Summary
+### Summary
 - WES focuses on **exons**, where most disease-related variants occur.  
 - **Hybridization capture** enriches exonic DNA for sequencing.  
 - Enables discovery of **rare variants** and candidate genes in Mendelian and complex diseases.  
@@ -1389,9 +1389,9 @@ After WES, thousands of variants are typically identified. Filtering is necessar
 | **Strengths**  | High resolution, genome-wide, quantitative                             |
 | **Limitations**| DNA damage from bisulfite, incomplete conversion artifacts, requires high input |
 
-# Epigenomics and Methyl-Seq
+### Epigenomics and Methyl-Seq
 
-## Introduction
+### Introduction
 - **Epigenomics** studies modifications that regulate gene expression without altering the DNA sequence.  
 - **DNA methylation** (mainly at cytosines in CpG dinucleotides) plays a key role in gene regulation.  
 - The **genome sequence** is the same in all cell types, but methylation patterns differ across tissues, cell types, and developmental stages.  
@@ -1429,7 +1429,7 @@ After WES, thousands of variants are typically identified. Filtering is necessar
   2. A **genuine variant (SNP)**.  
 - Distinguishing between these requires careful experimental design and sometimes complementary sequencing approaches.  
 
-## Library Preparation Strategies
+### Library Preparation Strategies
 - Different library prep methods have been developed to maximize sensitivity and distinguish:  
   - **Variants (SNPs)** vs **Methylation status**.  
   - Whole-genome vs exome-level methylation.  
@@ -1439,13 +1439,13 @@ After WES, thousands of variants are typically identified. Filtering is necessar
   - Targeted bisulfite sequencing (specific loci).  
 
 
-## Applications of Methyl-Seq
+### Applications of Methyl-Seq
 - Studying **tissue-specific regulation**.  
 - Identifying **epigenetic biomarkers** in cancer.  
 - Understanding developmental processes.  
 - Disentangling **genetic variants vs epigenetic modifications**.  
 
-## Summary
+### Summary
 - DNA methylation is a key epigenetic mechanism regulating gene expression.  
 - **Bisulfite sequencing** is the gold standard for detecting methylated cytosines.  
 - Distinguishing between **C→T SNPs** and **C→T due to bisulfite conversion** is critical.  
@@ -1544,7 +1544,7 @@ Provides powerful insights into gene expression regulation, splicing, and transc
 
 ### Genome-Wide Association Studies (GWAS)
 
-<img width="383" height="300" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
+<img width="383" height="210" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
 
 **Principle**: Detects statistical associations between SNPs and phenotypes across large populations.  
 
