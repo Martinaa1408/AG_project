@@ -53,9 +53,14 @@ Full slide deck: [Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN
      - **Sex chromosomes** and determination: in mammals XX is the female and XY the male, PARR (pseudoautosomal regions) allow delimited recombination between X and Y.
          in other system X0 (insect): XX female and X male; ZW (birds): ZZ male and ZW female; haplo-dyploid (bees): fertilized diploid female, unfertilized haploid male;           temperature-dependent sex in reptiles.
 
-<img width="374" height="364" alt="Screenshot 2025-08-29 153600" src="https://github.com/user-attachments/assets/e3338577-e990-4e36-afa0-806ab9d49a26" />
+<img width="302" height="338" alt="Screenshot 2025-08-31 101732" src="https://github.com/user-attachments/assets/a5c438de-fbbc-402f-abce-ca7d717ad84f" />
 
-       
+<img width="303" height="375" alt="Screenshot 2025-08-31 104841" src="https://github.com/user-attachments/assets/b2ddff33-b4b8-4c0d-8569-d760d1ee36b0" />
+
+<img width="350" height="315" alt="Screenshot 2025-08-31 104923" src="https://github.com/user-attachments/assets/5e0bea86-d9d2-4297-b723-767712eee993" />
+
+<img width="380" height="360" alt="Screenshot 2025-08-31 104849" src="https://github.com/user-attachments/assets/588aa424-c79e-42f5-bc46-f58df6faf922" />
+
 ---
 
 ## **Molecular genetics**: DNA as genetic material, PCR, Sanger sequencing.
