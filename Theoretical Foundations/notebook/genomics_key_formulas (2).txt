@@ -1,0 +1,83 @@
+Key Formulas & Definitions
+
+Sequencing & Assembly
+---------------------
+Q-score (Phred Quality Score)
+Q = -10 log10(e)
+where e = probability of base call error.
+Example: Q30 = 1 error per 1000 bases (99.9% accuracy).
+
+Coverage / Depth (C)
+C = (L * N) / G
+L = read length, N = number of reads, G = haploid genome size.
+Equivalent: Coverage = (Total assembled bases / Expected genome size) * 100.
+
+N50
+Length of the shortest contig such that, when ordered from longest to shortest, contigs sum to ≥50% of the total assembly length.
+
+GC content (%)
+(G + C) / (A + T + G + C) * 100
+
+Breadth of coverage (%)
+(Covered bases / Total target bases) * 100
+
+Genome size from C-value
+Genome size (bp) = DNA content (pg) * 0.978 * 10^9
+Conversion from picograms to base pairs.
+
+Genome size from K-mers
+Gbp = (Total K-mer count) / (Average K-mer depth)
+
+
+Population Genetics
+-------------------
+Hardy–Weinberg equilibrium
+p^2 + 2pq + q^2 = 1
+Genotype frequencies in ideal populations.
+
+FST
+FST = (HT - HS) / HT
+or
+FST = Var(p) / [p̄(1 - p̄)]
+Measures genetic differentiation between populations.
+
+D (LD coefficient)
+D = PAB - pA * pB
+Linkage disequilibrium between alleles A and B.
+
+H² (Broad-sense heritability)
+H² = VG / VP
+Ratio of genetic variance to phenotypic variance.
+
+h² (Narrow-sense heritability)
+h² = VA / VP
+Ratio of additive genetic variance to phenotypic variance.
+
+Breeder’s equation (Response to selection)
+R = h² * S
+R = response, h² = narrow-sense heritability, S = selection differential.
+
+Recombination frequency
+1 centiMorgan (cM) ≈ 1% recombination ≈ 1/100 meioses.
+
+
+Statistics & Genomics
+---------------------
+P-value threshold (Bonferroni correction)
+pthreshold = α / Ntests
+
+FDR (False Discovery Rate, Benjamini–Hochberg)
+qi = (i / m) * α
+where i = rank, m = number of tests.
+
+Manhattan plot (GWAS significance)
+y = -log10(p)
+Visualizes SNP association p-values.
+
+CNV signal
+log2(Sample intensity / Reference intensity)
+Used to detect copy-number variation.
+
+FROH (Runs of Homozygosity)
+FROH = (Length of all ROHs (Mb)) / (Total autosomal genome length (Mb))
+Estimator of inbreeding.
