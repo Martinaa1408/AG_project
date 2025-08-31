@@ -59,7 +59,8 @@ Full slide deck: [Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN
 
 <img width="350" height="315" alt="Screenshot 2025-08-31 104923" src="https://github.com/user-attachments/assets/5e0bea86-d9d2-4297-b723-767712eee993" />
 
-<img width="380" height="360" alt="Screenshot 2025-08-31 104849" src="https://github.com/user-attachments/assets/588aa424-c79e-42f5-bc46-f58df6faf922" />
+<img width="367" height="328" alt="Screenshot 2025-08-31 110118" src="https://github.com/user-attachments/assets/31cf2e72-ef63-4523-aea8-468eea93e513" />
+
 
 ---
 
