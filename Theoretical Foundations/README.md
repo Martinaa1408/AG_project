@@ -342,9 +342,9 @@ Mate-pair = long insert (2–20 kb) → long-range linking information, helps sc
 | **ABI SOLiD**   | **Sequencing by Ligation**: uses **DNA ligase** + fluorescent probes; unique **two-base encoding (color-space)** | 1. emPCR (clonal amplification on beads) <br> 2. Beads immobilized on slide <br> 3. Fluorescent probes hybridized & ligated <br> 4. Color signals detected | Short reads **50–75 bp**         | High throughput, ligation-based accuracy (error-correction via color-space) | Complex data analysis (color-space), short reads, platform discontinued |
 | **454 Roche**   | **Sequencing by Synthesis (SBS)** via **pyrosequencing** (detects light from PPi release) | 1. emPCR (DNA on beads) <br> 2. Load beads into **PicoTiterPlate wells** <br> 3. Flow nucleotides sequentially <br> 4. Incorporation → PPi release → luciferase reaction → light detected | Reads up to **400–700 bp**       | Longer reads than Illumina at the time; fast compared to Sanger; scalable with picotiterplate | Expensive reagents (luciferase/enzymes), homopolymer errors, high cost per base, discontinued |
 
-<img width="302" height="364" alt="Screenshot 2025-08-31 102337" src="https://github.com/user-attachments/assets/3789e3ca-91ed-4f27-8226-5dfe2c19985b" />
+<img width="322" height="364" alt="Screenshot 2025-08-31 102337" src="https://github.com/user-attachments/assets/3789e3ca-91ed-4f27-8226-5dfe2c19985b" />
 
-<img width="350" height="303" alt="Screenshot 2025-08-31 102306" src="https://github.com/user-attachments/assets/d0e9d705-1718-4a34-b444-6b7bab9654f0" />
+<img width="320" height="323" alt="Screenshot 2025-08-31 102306" src="https://github.com/user-attachments/assets/d0e9d705-1718-4a34-b444-6b7bab9654f0" />
 
 
 ---
@@ -362,7 +362,7 @@ Long read sequencing helps resolve: repetitive regions, structural variations, c
   
 <img width="324" height="323" alt="Screenshot 2025-08-31 102606" src="https://github.com/user-attachments/assets/3d630b35-44c4-4e75-95dc-7b61569882c1" />
 
-<img width="398" height="353" alt="Screenshot 2025-08-31 102619" src="https://github.com/user-attachments/assets/b45281b4-daf3-4df3-ba60-9eb42ba3224d" />
+<img width="328" height="323" alt="Screenshot 2025-08-31 102619" src="https://github.com/user-attachments/assets/b45281b4-daf3-4df3-ba60-9eb42ba3224d" />
 
 
 
@@ -415,7 +415,7 @@ Step include:
 
 <img width="377" height="372" alt="Screenshot 2025-08-31 102918" src="https://github.com/user-attachments/assets/d6ff8d1a-652d-4f4a-a05f-647ee83e4968" />
 
-<img width="300" height="301" alt="Screenshot 2025-08-31 102227" src="https://github.com/user-attachments/assets/c68a27a0-dd3d-40dd-a8f5-1e9337346cb9" />
+<img width="328" height="333" alt="Screenshot 2025-08-31 113326" src="https://github.com/user-attachments/assets/da51ca7c-8600-4958-9340-69d3eef32bb2" />
 
 ---
 
@@ -460,8 +460,7 @@ Step include:
 
   -GC content: distribution of GC content per read; compared against theoretical distribution of the target genome; deviations indicate biases in library prep and             contaminants; if multiple peaks-->contaminants or mixed DNA sources.
 
- <img width="396" height="344" alt="Screenshot 2025-08-31 103045" src="https://github.com/user-attachments/assets/df1bf145-6148-4996-9631-5c7b12deb04d" />
-
+<img width="321" height="326" alt="Screenshot 2025-08-31 113118" src="https://github.com/user-attachments/assets/044ef582-2db9-4529-adf5-b6c243698edb" />
 
   
   -Sequence duplication levels: most reads are unique (expected); high duplication bias in library prep; amplicon sequencing duplication expected; duplicated reads can        bias varaint calls, must be removed; after deduplication most reads should be unique.
