@@ -821,7 +821,7 @@ Build graph and create contigs.
 Infer consensus sequence.
 Accurate but computationally expensive for large NGS datasets.
 
-<img width="325" height="390" alt="Screenshot 2025-08-31 103341" src="https://github.com/user-attachments/assets/e30b4707-e67d-4bb6-9ae0-886a86c5493f" />
+<img width="325" height="320" alt="Screenshot 2025-08-31 103341" src="https://github.com/user-attachments/assets/e30b4707-e67d-4bb6-9ae0-886a86c5493f" />
 
 
 *De Bruijn Graph (DBG)*-->
@@ -870,7 +870,7 @@ Once contigs (continuous assembled sequences) are generated, **scaffolding** use
 | **Coverage** | Average sequencing depth per base (e.g. 20×, 40×). Calculated as: <br> \[ \text{Coverage} = \frac{L \times N}{G} \] where *L* = read length, *N* = number of reads, *G* = genome length. Higher coverage improves accuracy and completeness. |
 | **BUSCO**    | **Benchmarking Universal Single-Copy Orthologs**: searches for a set of evolutionarily conserved orthologous genes expected in a lineage. Results are reported as percentages of: <br> - **Complete (C)** → full-length ortholog found <br> - **Single-copy (S)** → present once <br> - **Duplicated (D)** → multiple copies detected <br> - **Fragmented (F)** → partial genes <br> - **Missing (M)** → not found <br> Example: BUSCO = 95% Complete (90% S, 5% D), 3% Fragmented, 2% Missing → indicates a very complete assembly. |
 
-<img width="309" height="385" alt="Screenshot 2025-08-31 103442" src="https://github.com/user-attachments/assets/efb4e9f1-e082-4f0f-a459-40185d5c8b38" />
+<img width="329" height="385" alt="Screenshot 2025-08-31 103442" src="https://github.com/user-attachments/assets/efb4e9f1-e082-4f0f-a459-40185d5c8b38" />
 
 
 **BUSCO (Benchmarking Universal Single-Copy Orthologs)**:
@@ -879,7 +879,7 @@ If genes appear more than once → possible misassembly.
 Useful for both assembly and annotation quality control.
 **In summary**, genome assembly integrates sequencing technologies, graph-based algorithms, k-mer analysis for genome size and C-value estimation, scaffolding strategies, and rigorous quality metrics (N50, coverage, BUSCO) to transform fragmented reads into a biologically meaningful genome sequence.
 
-<img width="305" height="393" alt="Screenshot 2025-08-31 103538" src="https://github.com/user-attachments/assets/56dd9b5b-0bc3-4b64-8f87-b663b7d34b32" />
+<img width="325" height="393" alt="Screenshot 2025-08-31 103538" src="https://github.com/user-attachments/assets/56dd9b5b-0bc3-4b64-8f87-b663b7d34b32" />
 
 
 ---
