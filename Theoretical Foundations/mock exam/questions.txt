@@ -1,5 +1,5 @@
 
-# 🧬 Chapter 1 — Foundations (Expanded Answers)
+# Chapter 1 — Foundations 
 
 ---
 
@@ -65,7 +65,7 @@
 
   * $h^2 = V_G / V_P$.
   * *Example*: If height variance in a population is 80% genetic, h² = 0.8.
-* ⚠️ *Important*: heritability is population-specific; it does not mean “trait is 80% genetic in an individual.”
+* *Important*: heritability is population-specific; it does not mean “trait is 80% genetic in an individual.”
 
 ---
 
@@ -164,7 +164,7 @@
 
 ---
 
-# 🧬 Chapter 2 — Sequencing Technologies (Very Expanded Answers)
+# Chapter 2 — Sequencing Technologies 
 
 ---
 
@@ -350,7 +350,7 @@ ZMWs are the core technology that makes PacBio’s long, high-fidelity reads pos
 
 ---
 
-# 🧬 Chapter 3 — Data & Formats (Expanded Answers, in English)
+# Chapter 3 — Data & Formats 
 
 ---
 
@@ -534,7 +534,7 @@ In practice, BWA-MEM is the gold standard for genome resequencing, whereas Bowti
 
 ---
 
-# 🧬 Chapter 4 — Genome Assembly (Expanded Answers)
+# Chapter 4 — Genome Assembly 
 
 ---
 
@@ -721,8 +721,7 @@ In practice, BWA-MEM is the gold standard for genome resequencing, whereas Bowti
 
 ---
 
-# 🧬 Chapter 5 — Genome Annotation (Expanded Answers)
-
+# Chapter 5 — Genome Annotation 
 ---
 
 ### **What is genome annotation and why is it important?**
@@ -883,7 +882,7 @@ In practice, BWA-MEM is the gold standard for genome resequencing, whereas Bowti
 
 ---
 
-# 🧬 Chapter 6 — Specialized Methods (RNA-seq, GWAS, Methylation, etc.)
+# Chapter 6 — Specialized Methods (RNA-seq, GWAS, Methylation, etc.)
 
 ---
 
