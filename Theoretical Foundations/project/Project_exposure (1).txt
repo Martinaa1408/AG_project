@@ -1,0 +1,162 @@
+Presentation of the project AG
+Slide 1 – Title
+This project was selected as my Applied Genomics case study because it addresses a pressing environmental challenge: the degradation of bioplastics such as PLA and PHA. 
+Its impact lies in combining de novo hybrid genome sequencing, annotation, comparative genomics, and transcriptomics to identify candidate fungal enzymes with bioremediation potential. 
+In this presentation, I will first outline the scientific background and rationale, then guide you through the methodological pipeline — from isolation and sequencing to functional analysis — before discussing the key results, tools, and broader applications for the circular bioeconomy.
+________________________________________
+Slide 2 – Scientific context and study rationale
+Plastic waste is a global challenge. Conventional plastics are fossil-based, persistent, and remain in the environment for centuries. 
+Bioplastics such as PLA and PHA are bio-based and marketed as biodegradable, but their real-world performance differs. 
+PLA is produced from renewable sugars, it is a polyester with ester linkages, but due to high crystallinity it only degrades efficiently at industrial composting conditions, around 60 °C. In natural compost or soil, PLA accumulates. 
+PHA, on the other hand, is produced naturally by bacteria as carbon storage and is more biodegradable. 
+This difference makes PLA the weak link in the bioplastic family: if it fails to degrade, it undermines the promise of sustainability. 
+Compost enriched with PLA and PHA fragments is an ideal selective environment for microbes that have evolved degradative enzymes. Filamentous fungi are especially interesting because they secrete extracellular hydrolases such as esterases, lipases, and cutinases. The rationale of this study was therefore to isolate fungi from compost, apply de novo genome sequencing and RNA-Seq, and identify enzymes responsible for the degradation of these polymers. The ultimate goal is to connect genomic information to applied green solutions.
+________________________________________
+Slide 3 – Research workflow
+The study was designed as a complete applied genomics pipeline. 
+The first step was collection of fungal isolates from compost enriched with plastic fragments. Isolates were phenotypically screened on PDA medium with PLA and Rhodamine B. Positive candidates were identified taxonomically through ITS rDNA barcoding. 
+DNA and RNA were extracted with strict quality control, then sequenced with a hybrid strategy using Illumina NovaSeq for accurate short reads and Nanopore GridION for long reads. Assembly was performed with Flye and Pilon, annotation with MAKER3 and dbCAN3, and comparative genomics with OrthoFinder and synteny tools. 
+Transcriptomic profiling with Salmon and DESeq2 revealed inducible genes in response to PLA and PHA. All results were integrated to prioritize candidate enzymes, while budget planning and application in bioremediation and bioeconomy completed the framework.
+________________________________________
+Slide 4 – Collection and identification
+From compost enriched with bioplastics, about twenty fungal isolates were recovered. 
+These isolates were screened on PDA medium supplemented with PLA and Rhodamine B dye. Rhodamine binds to PLA particles, and when esterases hydrolyze the polymer, hydrophobicity decreases and fluorescent halos appear under UV light. 
+About five isolates produced strong halos, suggesting secretion of extracellular esterases or cutinases. Morphological examination confirmed filamentous hyphae and spores, while ITS rDNA sequencing was used for precise identification. ITS, the official fungal barcode, combines conserved and variable regions, allowing resolution at species level. Identified candidates included genera well known for their degradative capacity: Purpureocillium lilacinum, Aspergillus, Penicillium, Fusarium, Phanerochaete, Trametes, and Rhizopus. Literature supports their roles in polyester degradation: for example, Aspergillus and Penicillium are rich in esterases, Phanerochaete and Trametes in laccases, while Purpureocillium has been reported to degrade synthetic polymers. This combination of functional assay and ITS barcoding provided both phenotype and genotype information for candidate selection.
+________________________________________
+Slide 5 – DNA extraction and RNA quality control
+High-quality DNA and RNA were crucial for sequencing. 
+DNA was extracted with the CTAB protocol, which is effective for fungi because it removes polysaccharides and phenolic compounds that interfere with downstream steps. 
+Importantly, it preserves high-molecular-weight DNA fragments over 20 kb, essential for Nanopore sequencing where read length equals fragment length. QC required a Qubit concentration above 50 ng/µL, Nanodrop purity ratios around 1.8–2.0, and intact bands on gels. 
+RNA was extracted with TRIzol, which lyses cells and separates RNA from DNA and proteins, followed by column purification for higher purity. RNA quality was checked with Bioanalyzer, and only samples with RIN >8 were used. In total, twelve RNA-Seq libraries were prepared: Control, PLA, PHA, and Blank, each in three biological replicates at three time points. Replication is essential for DESeq2 to estimate biological variability and ensure reliable detection of differentially expressed genes.
+________________________________________
+Slide 6 – Hybrid genome sequencing strategy
+The genomes were sequenced de novo using a hybrid approach. 
+Illumina NovaSeq PE150 was chosen for accurate short reads with Q30 quality, corresponding to 99.9% base accuracy. Illumina data provided ~30× depth and were also used for RNA-Seq. 
+Oxford Nanopore GridION was chosen for long reads often exceeding 20 kb, providing 40–60× depth. GridION allows running five flow cells simultaneously, each producing 20–30 Gb, sufficient for fungal genomes. 
+NovaSeq was chosen because it is cost-effective for multiple libraries, while GridION was chosen because it provides long reads at medium-scale throughput and cost, avoiding the underpowered MinION and the too-expensive PromethION. 
+Illumina provided accuracy, Nanopore provided contiguity, and together they enabled robust de novo assembly.
+________________________________________
+Slide 7 – Hybrid assembly and CAZyme profile
+Assembly was performed first with Flye using Nanopore long reads to build contigs and scaffolds. 
+Because Nanopore has higher error rates, polishing with Pilon and Illumina reads was required to correct substitutions and indels. 
+Quality control included QUAST for contiguity metrics such as N50, and BUSCO for completeness, with the target above 90%. Annotation was performed with MAKER3, which combines ab initio predictions from Augustus, GeneMark, and SNAP with extrinsic evidence such as RNA-Seq alignments and protein homology. 
+Functional annotation with dbCAN3 identified CAZyme families. The focus was on carbohydrate esterases, cutinases, lipases, and oxidoreductases. These enzymes are directly relevant to polyester hydrolysis and plastic degradation. The expected profile includes expansions in esterase and cutinase families in degraders compared to non-degraders.
+________________________________________
+Slide 8 – Genomic comparison and evolutionary context
+Comparative genomics was carried out with OrthoFinder, which groups genes into orthogroups. 
+Shared orthologs represent the conserved core genome, while unique orthologs in degraders highlight adaptations such as expanded families of esterases. 
+Single-copy orthologs were used for phylogenomic analysis, ensuring reliable evolutionary trees, similar to BUSCO logic. Synteny analysis with MCScanX and MAUVE examined conservation of gene order and detected duplications or rearrangements. 
+Breaks near CAZyme clusters may indicate selective adaptation to polymer degradation. The fungal candidates mentioned earlier — Purpureocillium, Aspergillus, Penicillium, Fusarium, Phanerochaete, Trametes, Rhizopus — are expected to show both conserved orthologs and unique gene expansions. 
+For example, basidiomycetes like Phanerochaete and Trametes may contribute laccases and peroxidases, while ascomycetes like Aspergillus and Penicillium show hydrolase diversity. This comparative step links genome content to evolutionary adaptation.
+________________________________________
+Slide 9 – Gene expression response to bioplastics
+Transcriptomic analysis was based on RNA-Seq. Reads were quantified with Salmon, summarized with tximport, and tested with DESeq2. 
+DESeq2 uses a negative binomial model and requires replicates to estimate dispersion. The thresholds were set at FDR <0.05 and |log₂ fold change| ≥2. Results are expected to show PLA-specific upregulation of cutinases, esterases, and lipases, PHA-specific induction of PHA depolymerase-like enzymes, and shared induction of oxidoreductases such as laccases and peroxidases. 
+These oxidoreductases represent a general fungal oxidative response that destabilizes polymer matrices and allows hydrolases to act more efficiently. The combination of substrate-specific hydrolases and shared oxidoreductases defines the fungal strategy for plastic degradation.
+________________________________________
+Slide 10 – From genome to green solutions
+The project demonstrates strong points: targeted enzyme discovery can improve PLA and PHA degradation; the use of integrated genomics and transcriptomics provides solid mechanistic insight; and the work is directly aligned with EU Green Deal and circular bioeconomy strategies. There is also a clear potential for industrial composting, waste valorization, and the creation of open-access datasets useful for biotechnology.
+At the same time, there are challenges: scaling from controlled lab assays to industrial composting facilities, ensuring enzyme stability and efficiency under real environmental conditions, addressing regulatory and safety requirements, and proving that enzymatic degradation can be economically competitive with conventional waste management. The value of the project is therefore in pointing to green solutions, while also making clear where further validation is needed.
+________________________________________
+Slide 11 – Estimated project budget
+The total estimated budget was 200,000 €. Personnel accounted for 45% (lab and bioinformatics staff). Sequencing accounted for 40%: NovaSeq at around 30,000 € for DNA and RNA-Seq, and GridION at around 50,000 € for long reads, flow cells, and kits. RNA-Seq library preparation accounted for 2.5%. Dissemination, including open-access publications and conferences, accounted for 7.5%. QC consumables like Qubit reagents and Bioanalyzer chips accounted for 2.5%, and HPC/software another 2.5%. This allocation reflects a clear priority: the largest share is invested in sequencing, because de novo hybrid assembly and transcriptomics are the most data-intensive steps. By concentrating resources on high-quality data generation and analysis, the project ensures that each methodological layer — genome, comparative analysis, and transcriptomics — contributes reliably to the final outcome. In this way, the budget itself supports the overall strategy: moving from raw data to validated enzyme candidates, and ultimately from genomics to green biotechnological solutions. 
+_____________________________________
+
+🔑 Keywords to remember
+Background & rationale
+
+PLA – crystalline, bio-based, poor degradation at ambient, 60 °C composting
+
+PHA – microbial polyester, biodegradable
+
+Weak link – PLA in circular bioeconomy
+
+Bioremediation – fungi as degraders
+
+Circular bioeconomy – waste → resource
+
+Collection & identification
+
+Compost isolates – ~20 fungi
+
+PDA + PLA + Rhodamine B – halo assay (esterase activity)
+
+ITS rDNA barcoding – species ID
+
+Candidates – Purpureocillium, Aspergillus, Penicillium, Fusarium, Phanerochaete, Trametes, Rhizopus
+
+DNA & RNA
+
+CTAB – HMW DNA >20 kb, remove polysaccharides
+
+TRIzol – RNA extraction, RIN >8
+
+12 RNA-Seq libraries – 4 conditions × 3 replicates
+
+Sequencing strategy
+
+De novo hybrid sequencing
+
+Illumina NovaSeq – accurate short reads, Q30, ~30×
+
+Nanopore GridION – long reads >20 kb, ~40–60×
+
+Assembly & annotation
+
+Flye – long-read assembly
+
+Pilon – Illumina polishing
+
+QC – QUAST (N50), BUSCO (>90%)
+
+MAKER3 – ab initio + RNA-Seq + homology
+
+dbCAN3 – CAZymes (esterases, cutinases, lipases, oxidoreductases)
+
+Comparative genomics
+
+OrthoFinder – shared vs unique orthologs, single-copy for phylogeny
+
+Synteny (MCScanX/MAUVE) – gene order, duplications, rearrangements
+
+Transcriptomics
+
+Salmon – quantification
+
+tximport – summarization
+
+DESeq2 – FDR <0.05, |log₂FC| ≥2
+
+PLA response – cutinases, esterases, lipases
+
+PHA response – depolymerase-like
+
+Shared response – oxidoreductases (laccases, peroxidases)
+
+Integration
+
+Present + Unique + Induced + Annotated = top candidates
+
+From genome to green solutions
+
+Strengths & Challenges
+
+Strengths → targeted enzyme discovery, multi-omics integration, EU Green Deal alignment, waste valorization, open dataset
+
+Challenges → scaling to industry, stability in real conditions, regulation, economic feasibility
+
+Budget
+
+200k € total
+
+Personnel 45%
+
+Sequencing 40% (NovaSeq ~30k, GridION ~50k)
+
+RNA-Seq prep 2.5%
+
+Dissemination 7.5%
+
+QC 2.5%
+
+HPC/software 2.5%
