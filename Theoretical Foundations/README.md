@@ -15,8 +15,8 @@ Full slide deck: [Google Drive](https://drive.google.com/file/d/1tV58Ldxbase2jpN
   --> Base material to review concepts.
 
 - **project/**  
-  Final project folder  
-  --> Includes presentation and some details.
+  Project folder  
+  --> Includes speech and details.
 
 ---
 
