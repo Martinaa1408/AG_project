@@ -77,7 +77,8 @@ The repository is organized as follows:
 ```text
 ├── Alignment with AG Course Requirements/ # Checklist and mapping of project outputs with course requirements
 ├── figures/ # Figures generated for report and presentation
-├── report and ppt/ # Final project report (PDF) and presentation slides (PPTX)
+├── report and ppt/ # Final project report (PDF) and presentation slides (PPT and PDF version)
+├── Theoretical Foundations/ # Lecture slide recaps and conceptual summaries, project discussion, mock exam materials and study aid
 └── README.md # Project documentation
 ```
 ---
