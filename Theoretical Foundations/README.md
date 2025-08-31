@@ -513,7 +513,7 @@ Step include:
   SEQ → read sequence.
   QUAL → base quality (Phred).
   
-<img width="301" height="366" alt="Screenshot 2025-08-31 103108" src="https://github.com/user-attachments/assets/b9f2c7db-0f0c-48e4-8c26-898aeea192ec" />
+<img width="331" height="366" alt="Screenshot 2025-08-31 103108" src="https://github.com/user-attachments/assets/b9f2c7db-0f0c-48e4-8c26-898aeea192ec" />
 
 
   
@@ -574,7 +574,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   1|1 → homozygous alternate.
   If multiple alternate alleles exist: 2, 3, etc.
   
-<img width="345" height="308" alt="Screenshot 2025-08-31 103139" src="https://github.com/user-attachments/assets/5b14f1b6-827e-47eb-b042-53b61c36bf3c" />
+<img width="345" height="338" alt="Screenshot 2025-08-31 103139" src="https://github.com/user-attachments/assets/5b14f1b6-827e-47eb-b042-53b61c36bf3c" />
 
 
 
@@ -598,9 +598,9 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
 
   **Types of variants**-->
   
- <img width="380" height="328" alt="Screenshot 2025-08-31 105007" src="https://github.com/user-attachments/assets/53e46b3a-0ca9-4e00-a6e8-bc283d2a4cc7" />
+ <img width="320" height="328" alt="Screenshot 2025-08-31 105007" src="https://github.com/user-attachments/assets/53e46b3a-0ca9-4e00-a6e8-bc283d2a4cc7" />
 
-<img width="308" height="374" alt="Screenshot 2025-08-31 102852" src="https://github.com/user-attachments/assets/9f935837-bbf6-4ef7-b4e4-8c3547d4dcdf" />
+<img width="308" height="334" alt="Screenshot 2025-08-31 102852" src="https://github.com/user-attachments/assets/9f935837-bbf6-4ef7-b4e4-8c3547d4dcdf" />
 
 
   **Small Variants**: SNPs (Single Nucleotide Polymorphisms), Substitution of one base with another.Must occur in ≥1% of the population → polymorphism.
@@ -629,7 +629,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   phase → for CDS: 0, 1, or 2 (frame of translation start)
   attributes → semicolon-separated key=value pairs (e.g., ID=gene1;Name=BRCA1)
 
-<img width="311" height="381" alt="Screenshot 2025-08-31 103731" src="https://github.com/user-attachments/assets/60980a43-bf0d-4d59-82fc-66b7cc7e0a0a" />
+<img width="331" height="381" alt="Screenshot 2025-08-31 103731" src="https://github.com/user-attachments/assets/60980a43-bf0d-4d59-82fc-66b7cc7e0a0a" />
 
 
   **BED** = simple intervals (coordinates, lightweight for browsers like UCSC/IGV).
@@ -637,7 +637,7 @@ b) Joint calling--> All samples analyzed together. Produces one merged VCF file.
   Format: Very light, 3 mandatory columns, max 12 optional.
   Optional (up to 12 fields): name, score, strand, thickStart, thickEnd, itemRgb, blockCount, etc.
   
-<img width="324" height="363" alt="Screenshot 2025-08-31 103741" src="https://github.com/user-attachments/assets/2c2b3d45-86ec-4751-b796-a741dcacf80d" />
+<img width="334" height="363" alt="Screenshot 2025-08-31 103741" src="https://github.com/user-attachments/assets/2c2b3d45-86ec-4751-b796-a741dcacf80d" />
 
 
 Raw sequencing output can be huge (terabytes); filtering and compression reduce size dramatically (2.5 TB raw data-->30 GB FASTQ); effcient storage and file format choice are critical for downstream analysis.
@@ -712,7 +712,7 @@ De novo assembly → high depth + long reads needed to resolve repeats and struc
 
 ## 4. Genome Assembly
 
-<img width="319" height="371" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
+<img width="319" height="301" alt="Screenshot 2025-08-31 103516" src="https://github.com/user-attachments/assets/315dda5a-33ae-4b8b-a04e-e575a5800354" />
 
 Genome assembly is the process of reconstructing the complete genomic sequence of an organism from millions of sequencing reads. Modern sequencing platforms produce vast numbers of short or long fragments, which must be computationally pieced together to rebuild the genome.
 
@@ -820,7 +820,7 @@ Build graph and create contigs.
 Infer consensus sequence.
 Accurate but computationally expensive for large NGS datasets.
 
-<img width="325" height="320" alt="Screenshot 2025-08-31 103341" src="https://github.com/user-attachments/assets/e30b4707-e67d-4bb6-9ae0-886a86c5493f" />
+<img width="305" height="300" alt="Screenshot 2025-08-31 103341" src="https://github.com/user-attachments/assets/e30b4707-e67d-4bb6-9ae0-886a86c5493f" />
 
 
 *De Bruijn Graph (DBG)*-->
@@ -841,7 +841,7 @@ Repeats lead to branched structures, resolved by longer libraries or paired/mate
 - **Heterozygosity**: heterozygous genomes show two peaks (diploid k-mer distribution).  
 - **Repeat content**: repetitive sequences distort the k-mer curve and increase multiplicity.
   
-<img width="321" height="373" alt="Screenshot 2025-08-31 103258" src="https://github.com/user-attachments/assets/9c3e1fa5-439a-443d-b81e-2d64f86c2a64" />
+<img width="331" height="373" alt="Screenshot 2025-08-31 103258" src="https://github.com/user-attachments/assets/9c3e1fa5-439a-443d-b81e-2d64f86c2a64" />
 
 
 ### C-Value (Absolute Genome Size)
@@ -849,7 +849,7 @@ The **C-value** is the amount of DNA contained in a haploid nucleus (1C, e.g., i
 - Example: the human haploid genome has a **C-value ≈ 0.978 × 10⁹ bp (~3.2 pg DNA)**.  
 - C-value is species-specific and important in planning sequencing projects (coverage and depth requirements).
   
-<img width="317" height="349" alt="Screenshot 2025-08-31 103247" src="https://github.com/user-attachments/assets/d9f68be7-6d39-4883-80e2-ce69047de30e" />
+<img width="337" height="349" alt="Screenshot 2025-08-31 103247" src="https://github.com/user-attachments/assets/d9f68be7-6d39-4883-80e2-ce69047de30e" />
 
 
 ### Scaffolding
@@ -869,7 +869,7 @@ Once contigs (continuous assembled sequences) are generated, **scaffolding** use
 | **Coverage** | Average sequencing depth per base (e.g. 20×, 40×). Calculated as: <br> \[ \text{Coverage} = \frac{L \times N}{G} \] where *L* = read length, *N* = number of reads, *G* = genome length. Higher coverage improves accuracy and completeness. |
 | **BUSCO**    | **Benchmarking Universal Single-Copy Orthologs**: searches for a set of evolutionarily conserved orthologous genes expected in a lineage. Results are reported as percentages of: <br> - **Complete (C)** → full-length ortholog found <br> - **Single-copy (S)** → present once <br> - **Duplicated (D)** → multiple copies detected <br> - **Fragmented (F)** → partial genes <br> - **Missing (M)** → not found <br> Example: BUSCO = 95% Complete (90% S, 5% D), 3% Fragmented, 2% Missing → indicates a very complete assembly. |
 
-<img width="329" height="385" alt="Screenshot 2025-08-31 103442" src="https://github.com/user-attachments/assets/efb4e9f1-e082-4f0f-a459-40185d5c8b38" />
+<img width="339" height="385" alt="Screenshot 2025-08-31 103442" src="https://github.com/user-attachments/assets/efb4e9f1-e082-4f0f-a459-40185d5c8b38" />
 
 
 **BUSCO (Benchmarking Universal Single-Copy Orthologs)**:
@@ -878,7 +878,7 @@ If genes appear more than once → possible misassembly.
 Useful for both assembly and annotation quality control.
 **In summary**, genome assembly integrates sequencing technologies, graph-based algorithms, k-mer analysis for genome size and C-value estimation, scaffolding strategies, and rigorous quality metrics (N50, coverage, BUSCO) to transform fragmented reads into a biologically meaningful genome sequence.
 
-<img width="325" height="393" alt="Screenshot 2025-08-31 103538" src="https://github.com/user-attachments/assets/56dd9b5b-0bc3-4b64-8f87-b663b7d34b32" />
+<img width="335" height="393" alt="Screenshot 2025-08-31 103538" src="https://github.com/user-attachments/assets/56dd9b5b-0bc3-4b64-8f87-b663b7d34b32" />
 
 
 ---
@@ -889,7 +889,7 @@ Useful for both assembly and annotation quality control.
 
 ex. MTDNA
 
-<img width="363" height="353" alt="Screenshot 2025-08-31 103919" src="https://github.com/user-attachments/assets/5cf36094-e77f-429b-8211-e6b9a5d0512b" />
+<img width="333" height="343" alt="Screenshot 2025-08-31 103919" src="https://github.com/user-attachments/assets/5cf36094-e77f-429b-8211-e6b9a5d0512b" />
 
 ---
 
@@ -1079,7 +1079,7 @@ In addition to whole-genome sequencing, a range of **specialized approaches** ta
 
 ### aCGH (Array Comparative Genomic Hybridization)
 
-<img width="312" height="301" alt="Screenshot 2025-08-31 105100" src="https://github.com/user-attachments/assets/eef958dc-48d9-4b76-958c-b03effcbf9b0" />
+<img width="332" height="341" alt="Screenshot 2025-08-31 105100" src="https://github.com/user-attachments/assets/eef958dc-48d9-4b76-958c-b03effcbf9b0" />
 
 
 **Principle**: Detects **Copy Number Variations (CNVs)** using hybridization on a microarray. Test and reference DNA are labeled with different fluorescent dyes, co-hybridized to probes on a chip, and the fluorescence ratio indicates gains or losses.  
@@ -1096,7 +1096,7 @@ In addition to whole-genome sequencing, a range of **specialized approaches** ta
 - **Positive log₂ ratio** → duplication/gain.  
 - **Negative log₂ ratio** → deletion/loss.
 
-<img width="385" height="310" alt="Screenshot 2025-08-31 105053" src="https://github.com/user-attachments/assets/543a7a68-808f-44fa-b08d-345624486cf8" />
+<img width="335" height="310" alt="Screenshot 2025-08-31 105053" src="https://github.com/user-attachments/assets/543a7a68-808f-44fa-b08d-345624486cf8" />
 
 
 **Microarray “chip pipeline”**:  
@@ -1149,7 +1149,7 @@ DNA/RNA → labeling → hybridization on chip probes → scanner reads fluoresc
 
 ### Pool-seq
 
-<img width="374" height="315" alt="Screenshot 2025-08-31 104153" src="https://github.com/user-attachments/assets/4c129a14-b180-4117-9056-3d24fc43137b" />
+<img width="354" height="335" alt="Screenshot 2025-08-31 104153" src="https://github.com/user-attachments/assets/4c129a14-b180-4117-9056-3d24fc43137b" />
 
 
 **Principle**: DNA from many individuals is pooled and sequenced together to estimate **allele frequencies**.  
@@ -1544,7 +1544,7 @@ Provides powerful insights into gene expression regulation, splicing, and transc
 
 ### Genome-Wide Association Studies (GWAS)
 
-<img width="383" height="317" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
+<img width="383" height="300" alt="Screenshot 2025-08-31 105400" src="https://github.com/user-attachments/assets/a1701052-27c0-4db7-a765-2c1a0ca514b5" />
 
 **Principle**: Detects statistical associations between SNPs and phenotypes across large populations.  
 
@@ -1558,7 +1558,7 @@ Provides powerful insights into gene expression regulation, splicing, and transc
 
 **Manhattan plots**: each SNP plotted by genomic position (x-axis) vs –log₁₀(p) (y-axis); significant peaks highlight candidate loci.  
 
-<img width="301" height="340" alt="Screenshot 2025-08-31 105228" src="https://github.com/user-attachments/assets/db9f8495-322f-4290-8a7b-c5f1dae90989" />
+<img width="331" height="340" alt="Screenshot 2025-08-31 105228" src="https://github.com/user-attachments/assets/db9f8495-322f-4290-8a7b-c5f1dae90989" />
 
 
 **QQ PLOT**
